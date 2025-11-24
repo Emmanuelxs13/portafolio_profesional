@@ -17,14 +17,21 @@ jest.mock('framer-motion', () => ({
   },
 }));
 
-const mockT = (key: string) => key;
+const mockT = (key: string) => {
+  const translations: Record<string, string> = {
+    'hero.greeting': 'Hola, soy',
+    'hero.subtitle': 'Transformando ideas en experiencias digitales excepcionales',
+    'hero.cta': 'Ver proyectos',
+    'hero.ctaSecondary': 'Contáctame',
+  };
+  return translations[key] || key;
+};
 
 describe('Hero Component', () => {
   const mockProps = {
     t: mockT,
     name: 'Emmanuel Berrio Jiménez',
-    title: 'Desarrollador Full-Stack',
-    summary: 'Test summary',
+    title: 'Desarrollador de Software FullStack',
   };
 
   it('renders hero component with name', () => {
@@ -34,17 +41,19 @@ describe('Hero Component', () => {
 
   it('renders title correctly', () => {
     render(<Hero {...mockProps} />);
-    expect(screen.getByText('Desarrollador Full-Stack')).toBeInTheDocument();
+    expect(screen.getByText('Desarrollador de Software FullStack')).toBeInTheDocument();
   });
 
-  it('renders summary', () => {
+  it('renders subtitle with translation', () => {
     render(<Hero {...mockProps} />);
-    expect(screen.getByText('Test summary')).toBeInTheDocument();
+    expect(
+      screen.getByText('Transformando ideas en experiencias digitales excepcionales')
+    ).toBeInTheDocument();
   });
 
-  it('renders CTA buttons', () => {
+  it('renders both CTA buttons', () => {
     render(<Hero {...mockProps} />);
-    const buttons = screen.getAllByRole('button');
-    expect(buttons.length).toBeGreaterThan(0);
+    expect(screen.getByText('Ver proyectos')).toBeInTheDocument();
+    expect(screen.getByText('Contáctame')).toBeInTheDocument();
   });
 });

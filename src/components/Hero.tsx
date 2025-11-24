@@ -1,13 +1,13 @@
 /**
  * Componente Hero (Sección Principal)
  *
- * Sección de bienvenida con:
- * - Animación de entrada con Framer Motion
- * - Nombre y título profesional
- * - Descripción breve
- * - Botones de CTA (Call to Action)
- * - Animación de texto tipo "typing"
- * - Fondo con gradiente y efectos visuales
+ * Sección de bienvenida optimizada para laptop/desktop:
+ * - Diseño minimalista y elegante
+ * - Animaciones sutiles con Framer Motion
+ * - Jerarquía visual clara: nombre → rol → frase de impacto
+ * - Layout limpio y balanceado
+ * - Frase breve que funciona como gancho rápido
+ * - Responsive y profesional para reclutadores internacionales
  */
 
 'use client';
@@ -22,42 +22,42 @@ interface HeroProps {
   name: string;
   /** Título profesional */
   title: string;
-  /** Descripción/resumen breve */
-  summary: string;
+  /** Descripción breve no se usa aquí para evitar saturación */
+  summary?: string;
 }
 
 /**
  * Variantes de animación para contenedores
- * Orquesta la animación secuencial de los elementos hijos
+ * Animación más sutil y profesional
  */
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2, // Delay entre animaciones de hijos
-      delayChildren: 0.3, // Delay inicial antes de animar hijos
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
     },
   },
 };
 
 /**
  * Variantes de animación para items individuales
- * Animación de desvanecimiento y desplazamiento vertical
+ * Movimiento más suave y natural
  */
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 15 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
-      ease: [0.6, -0.05, 0.01, 0.99] as const,
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
 
-export default function Hero({ t, name, title, summary }: Readonly<HeroProps>) {
+export default function Hero({ t, name, title }: Readonly<HeroProps>) {
   /**
    * Maneja el scroll suave hacia una sección específica
    * @param sectionId - ID de la sección destino
@@ -72,127 +72,127 @@ export default function Hero({ t, name, title, summary }: Readonly<HeroProps>) {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-900 via-gray-900 to-black"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-900 via-black to-black"
     >
-      {/* Efectos de fondo decorativos */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Efectos de fondo decorativos sutiles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Círculo degradado azul */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.1, scale: 1 }}
-          transition={{ duration: 2 }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 0.06, scale: 1 }}
+          transition={{ duration: 2, ease: 'easeOut' }}
+          className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500 rounded-full blur-3xl"
         />
         {/* Círculo degradado púrpura */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.1, scale: 1 }}
-          transition={{ duration: 2, delay: 0.5 }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 0.06, scale: 1 }}
+          transition={{ duration: 2, delay: 0.3, ease: 'easeOut' }}
+          className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500 rounded-full blur-3xl"
         />
-        {/* Grid decorativo */}
+        {/* Grid decorativo sutil */}
         <div
-          className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]"
+          className="absolute inset-0 bg-grid-white/[0.015] bg-[size:60px_60px]"
           style={{
-            maskImage: 'radial-gradient(ellipse at center, black, transparent 80%)',
+            maskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent)',
           }}
         />
       </div>
 
-      {/* Contenido principal */}
+      {/* Contenido principal - Layout optimizado para laptop/desktop */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 max-w-4xl mx-auto px-6 text-center"
+        className="relative z-10 max-w-5xl mx-auto px-6 text-center"
       >
-        {/* Saludo */}
+        {/* Saludo minimalista */}
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-blue-400 font-medium mb-4"
+          className="text-base md:text-lg text-blue-400/90 font-medium mb-6 tracking-wide"
         >
           {t('hero.greeting')}
         </motion.p>
 
-        {/* Nombre con animación de gradiente */}
+        {/* Nombre - Elemento principal con mayor peso visual */}
         <motion.h1
           variants={itemVariants}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
         >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-300">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-50 to-white">
             {name}
           </span>
         </motion.h1>
 
-        {/* Título profesional */}
+        {/* Título profesional - Jerarquía clara */}
         <motion.h2
           variants={itemVariants}
-          className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-300 mb-8"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-300/95 mb-8 leading-tight"
         >
           {title}
         </motion.h2>
 
-        {/* Descripción */}
+        {/* Frase de impacto - Breve, clara y atractiva */}
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-gray-400/90 max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          {summary}
+          {t('hero.subtitle')}
         </motion.p>
 
-        {/* Botones CTA */}
+        {/* Botones CTA - Diseño limpio y profesional */}
         <motion.div
           variants={itemVariants}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          {/* Botón primario - Ver trabajo */}
+          {/* Botón primario - Ver proyectos */}
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
             onClick={() => scrollToSection('#projects')}
-            className="group relative px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold overflow-hidden shadow-lg shadow-blue-500/50 hover:shadow-xl hover:shadow-blue-500/60 transition-all duration-300"
+            className="group relative px-8 py-3.5 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-lg font-semibold overflow-hidden shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300"
           >
-            {/* Efecto de hover con gradiente animado */}
-            <span className="absolute inset-0 w-0 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 ease-out group-hover:w-full"></span>
             <span className="relative flex items-center gap-2">
               {t('hero.cta')}
-              <ArrowDownIcon className="h-5 w-5 group-hover:translate-y-1 transition-transform" />
+              <ArrowDownIcon className="h-4 w-4 group-hover:translate-y-0.5 transition-transform duration-300" />
             </span>
           </motion.button>
 
           {/* Botón secundario - Contacto */}
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
             onClick={() => scrollToSection('#contact')}
-            className="px-8 py-4 bg-gray-800 text-white rounded-lg font-semibold border-2 border-gray-700 hover:border-blue-500 hover:bg-gray-700 transition-all duration-300 flex items-center gap-2"
+            className="px-8 py-3.5 bg-transparent text-gray-300 rounded-lg font-semibold border-2 border-gray-700/80 hover:border-blue-500/60 hover:bg-gray-800/50 transition-all duration-300 flex items-center gap-2"
           >
-            <EnvelopeIcon className="h-5 w-5" />
+            <EnvelopeIcon className="h-4 w-4" />
             {t('hero.ctaSecondary')}
           </motion.button>
         </motion.div>
 
-        {/* Indicador de scroll */}
+        {/* Indicador de scroll animado - Sutil y elegante */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 0.5, y: 0 }}
           transition={{
-            duration: 1,
-            delay: 1.5,
+            duration: 0.8,
+            delay: 1.2,
             repeat: Infinity,
             repeatType: 'reverse',
+            ease: 'easeInOut',
           }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:block"
         >
-          <ArrowDownIcon className="h-6 w-6 text-gray-500" />
+          <ArrowDownIcon className="h-5 w-5 text-gray-500" />
         </motion.div>
       </motion.div>
 
-      {/* Overlay de vignette para profundidad */}
+      {/* Vignette sutil para profundidad */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 100%)',
+          background:
+            'radial-gradient(ellipse 100% 80% at 50% 50%, transparent 0%, rgba(0,0,0,0.3) 100%)',
         }}
       />
     </section>

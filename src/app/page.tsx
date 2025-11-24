@@ -77,7 +77,7 @@ export default function Home() {
       {/* Contenido principal */}
       <main>
         {/* Hero Section */}
-        <Hero t={t} name={profile.name} title={profile.title} summary={profile.summary} />
+        <Hero t={t} name={profile.name} title={profile.title} />
 
         {/* About Section */}
         <About t={t} summary={profile.summary} stats={stats} locale={locale} />
