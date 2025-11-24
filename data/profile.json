@@ -1,222 +1,291 @@
 {
   "name": "Emmanuel Berrio Jiménez",
-  "title": "Desarrollador Full-Stack",
-  "summary": "Desarrollador Full-Stack apasionado por crear soluciones web modernas, escalables y accesibles. Especializado en React, Next.js, TypeScript y Node.js. Comprometido con las mejores prácticas de desarrollo y la experiencia de usuario.",
-  "location": "Medellin, Colombia",
+  "title": "Desarrollador de Software FullStack",
+  "summary": "Innovador Programador Fullstack con 3 años de experiencia, apasionado por la creación de aplicaciones web que transforman conceptos en experiencias digitales excepcionales. Mi destreza abarca un extenso repertorio de tecnologías, desde el diseño con HTML, CSS y Sass, hasta la implementación de frameworks como React.js, Vue.js y Angular. Mi trayectoria incluye el desarrollo eficiente con C#, ASP.NET, PHP y Node.js, gestión de bases de datos con MySQL y PostgreSQL, y la utilización efectiva de herramientas como Git. Con un enfoque proactivo, una capacidad de aprendizaje ágil y una mentalidad abierta hacia la evolución tecnológica, mi compromiso constante con el crecimiento en habilidades técnicas y blandas me posiciona como un profesional dinámico, listo para sobresalir en desafiantes entornos de desarrollo.",
+  "location": "Medellín, Antioquia, Colombia",
   "email": "emmanuel.berrio@example.com",
-  "phone": "+51 999 999 999",
-  "linkedin": "https://www.linkedin.com/in/emmanuelberrio",
-  "github": "https://github.com/emmanuelberrio",
+  "phone": "+57 999 999 999",
+  "linkedin": "https://www.linkedin.com/in/emmanuel-berrio-jimenez/",
+  "github": "https://github.com/Emmanuelxs13",
   "website": "https://emmanuelberrio.dev",
 
   "experience": [
     {
       "id": "exp-1",
-      "company": "Tech Solutions Inc.",
-      "title": "Senior Full-Stack Developer",
-      "from": "2022-03",
+      "company": "Botopia",
+      "title": "Desarrollador de Software Fullstack",
+      "from": "2024-04",
       "to": "present",
-      "description": "Lideré el desarrollo de aplicaciones web empresariales utilizando React, Next.js y Node.js. Implementé arquitecturas escalables y mejoras de rendimiento que resultaron en un 40% de reducción en tiempos de carga.",
+      "description": "Desarrollo de soluciones fullstack utilizando tecnologías modernas. Implementación de aplicaciones web escalables y mantenibles con enfoque en la experiencia de usuario y rendimiento.",
       "achievements": [
-        "Reducción del 40% en tiempos de carga mediante optimizaciones de rendimiento",
-        "Implementación de arquitectura de micro-frontends para mejorar la escalabilidad",
-        "Mentoría a 5 desarrolladores junior en mejores prácticas de React y TypeScript"
+        "Desarrollo de aplicaciones web con React.js y Vue.js",
+        "Implementación de APIs RESTful con Node.js y PHP",
+        "Gestión de bases de datos MySQL y PostgreSQL",
+        "Colaboración efectiva en equipo usando metodologías ágiles"
       ],
-      "technologies": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "AWS"]
+      "technologies": ["React", "Vue.js", "Node.js", "PHP", "MySQL", "PostgreSQL", "JavaScript", "HTML", "CSS"]
     },
     {
       "id": "exp-2",
-      "company": "Digital Agency Co.",
-      "title": "Full-Stack Developer",
-      "from": "2020-06",
-      "to": "2022-02",
-      "description": "Desarrollé aplicaciones web responsivas y progresivas para clientes internacionales. Colaboré con equipos de diseño y producto para entregar soluciones de alta calidad.",
+      "company": "Muv-u Estudios en el Exterior",
+      "title": "Programador de Sistemas",
+      "from": "2023-08",
+      "to": "2024-01",
+      "description": "MUV-U es una empresa líder dedicada a programas de estudios en el extranjero. Automatización de procesos internos mediante desarrollo de aplicaciones y herramientas de Microsoft 365.",
       "achievements": [
-        "Desarrollo de 12+ proyectos web para clientes Fortune 500",
-        "Implementación de CI/CD reduciendo el tiempo de despliegue en 60%",
-        "Mejora de accesibilidad alcanzando conformidad WCAG 2.1 AA"
+        "Automatización de procesos internos mediante desarrollo de aplicaciones",
+        "Soporte tecnológico en Hardware y Software a colaboradores",
+        "Soporte en el CRM Ontraport",
+        "Implementación de soluciones con React.js y Tailwind CSS"
       ],
-      "technologies": ["React", "Vue.js", "Express", "MongoDB", "Docker", "Azure"]
+      "technologies": ["React", "Tailwind CSS", "PHP", "MySQL", "Microsoft 365", "Laragon", "XAMPP", "SCRUM"]
     },
     {
       "id": "exp-3",
-      "company": "StartupXYZ",
-      "title": "Frontend Developer",
-      "from": "2019-01",
-      "to": "2020-05",
-      "description": "Construí interfaces de usuario interactivas y responsivas. Trabajé en estrecha colaboración con el equipo de UX para implementar diseños pixel-perfect.",
+      "company": "Portada Inmobiliaria S.A.S",
+      "title": "Programador Full Stack",
+      "from": "2022-08",
+      "to": "2023-05",
+      "description": "Portada Inmobiliaria es una agencia dedicada al proceso de compra, venta o alquiler de propiedades. Desarrollo y programación de secciones especiales para el CRM propio de la empresa.",
       "achievements": [
-        "Creación del sistema de diseño de la empresa desde cero",
-        "Mejora del rendimiento de la aplicación principal en un 35%",
-        "Implementación de testing automatizado aumentando la cobertura al 85%"
+        "Creación y programación de secciones especiales para el CRM propio",
+        "Soporte tecnológico de software a los colaboradores",
+        "Mejora y automatización de procesos internos",
+        "Manejo de servidor de datos a nivel local",
+        "Implementación de librerías como Mpdf para generación de documentos"
       ],
-      "technologies": ["React", "JavaScript", "SASS", "Jest", "Webpack"]
+      "technologies": ["PHP", "React", "Vue.js", "Node.js", "MySQL", "JavaScript", "Sass", "XAMPP", "SCRUM", "MVC"]
     }
   ],
 
   "education": [
     {
       "id": "edu-1",
-      "institution": "Universidad Nacional Mayor de San Marcos",
-      "degree": "Ingeniería de Software",
-      "field": "Ciencias de la Computación",
-      "from": "2015-03",
-      "to": "2019-12",
-      "description": "Graduado con honores. Especialización en Desarrollo Web y Arquitectura de Software."
+      "institution": "I.U Pascual Bravo",
+      "degree": "Ingeniería en Desarrollo de Software",
+      "field": "Ingeniería de Software",
+      "from": "2024-07",
+      "to": "present",
+      "description": "Formación en ingeniería de software con enfoque en desarrollo full stack y mejores prácticas de programación."
+    },
+    {
+      "id": "edu-2",
+      "institution": "Institución Universitaria Salazar y Herrera - IUSH",
+      "degree": "Técnico en Programación de Software",
+      "field": "Programación de Software",
+      "from": "2022-02",
+      "to": "2023-05",
+      "description": "Formación técnica en programación de software con énfasis en desarrollo web y bases de datos."
+    },
+    {
+      "id": "edu-3",
+      "institution": "SENA",
+      "degree": "Técnico en Programación de Software",
+      "field": "Programación de Software",
+      "from": "2022-02",
+      "to": "2023-05",
+      "description": "Programa técnico del SENA enfocado en fundamentos de programación y desarrollo de aplicaciones."
+    },
+    {
+      "id": "edu-4",
+      "institution": "Universidad de Antioquia",
+      "degree": "Certificado de Inglés B2",
+      "field": "Idiomas",
+      "from": "2019-08",
+      "to": "2023-12",
+      "description": "Programa de formación en inglés alcanzando nivel B2 (intermedio-avanzado)."
     }
   ],
 
   "certificates": [
     {
       "id": "cert-1",
-      "name": "AWS Certified Solutions Architect - Associate",
-      "issuer": "Amazon Web Services",
-      "date": "2023-06",
-      "credentialId": "AWS-SAA-12345",
-      "url": "https://aws.amazon.com/certification/"
+      "name": "Ve a lo seguro: Gestiona los riesgos de seguridad",
+      "issuer": "Google - Coursera",
+      "date": "2024-06",
+      "credentialId": "FXK90VID9ZYP",
+      "url": "https://www.coursera.org/account/accomplishments/verify/FXK90VID9ZYP"
     },
     {
       "id": "cert-2",
-      "name": "Professional Scrum Master I",
-      "issuer": "Scrum.org",
-      "date": "2023-03",
-      "credentialId": "PSM-67890",
-      "url": "https://www.scrum.org/certificates"
+      "name": "Herramientas del oficio: Linux y SQL",
+      "issuer": "Google - Coursera",
+      "date": "2024-05",
+      "credentialId": "VNTCQE79UQAN",
+      "url": "https://www.coursera.org/account/accomplishments/records/VNTCQE79UQAN"
     },
     {
       "id": "cert-3",
-      "name": "Meta Front-End Developer Professional Certificate",
-      "issuer": "Meta (Facebook)",
-      "date": "2022-11",
-      "credentialId": "META-FE-54321",
-      "url": "https://www.coursera.org/professional-certificates/meta-front-end-developer"
+      "name": "Conexión y protección: Redes y seguridad de redes",
+      "issuer": "Google - Coursera",
+      "date": "2024-04",
+      "credentialId": "SS5JJPQT5M1Z",
+      "url": "https://www.coursera.org/account/accomplishments/verify/SS5JJPQT5M1Z"
     },
     {
       "id": "cert-4",
-      "name": "Advanced React and Redux",
-      "issuer": "Udemy",
-      "date": "2022-08",
-      "credentialId": "UC-REACT-11223",
-      "url": "https://www.udemy.com/certificate/UC-REACT-11223"
+      "name": "Fundamentos de la ciberseguridad",
+      "issuer": "Google - Coursera",
+      "date": "2024-03",
+      "credentialId": "R8EHIJJW97RG",
+      "url": "https://www.coursera.org/account/accomplishments/verify/R8EHIJJW97RG"
+    },
+    {
+      "id": "cert-5",
+      "name": "Aspectos básicos del diseño de la experiencia del usuario",
+      "issuer": "Google - Coursera",
+      "date": "2023-11",
+      "credentialId": "373dcf09bbd0767a669f674fb5df3867",
+      "url": "https://coursera.org/share/373dcf09bbd0767a669f674fb5df3867"
+    },
+    {
+      "id": "cert-6",
+      "name": "Fundamentos profesionales del desarrollo de software",
+      "issuer": "Microsoft y LinkedIn",
+      "date": "2023-09",
+      "credentialId": "facaac07b9f1fee81d057e72780fb183e4bf0aed60fc9a0ee41aa4e8b1cd1308",
+      "url": "https://www.linkedin.com/learning/certificates/facaac07b9f1fee81d057e72780fb183e4bf0aed60fc9a0ee41aa4e8b1cd1308"
+    },
+    {
+      "id": "cert-7",
+      "name": "Introducción a las habilidades profesionales en el desarrollo de software",
+      "issuer": "LinkedIn Learning",
+      "date": "2023-08",
+      "credentialId": "6d4e7a7150dbadf62e3e162cfb806cee2fc9b61a533829ff86703ab0538a2f60",
+      "url": "https://www.linkedin.com/learning/certificates/6d4e7a7150dbadf62e3e162cfb806cee2fc9b61a533829ff86703ab0538a2f60"
+    },
+    {
+      "id": "cert-8",
+      "name": "English B2",
+      "issuer": "EF International Language Centers",
+      "date": "2023-05",
+      "credentialId": "39pVHn",
+      "url": "https://www.efset.org/cert/39pVHn"
+    },
+    {
+      "id": "cert-9",
+      "name": "Responsive Web Design",
+      "issuer": "freeCodeCamp",
+      "date": "2022-11",
+      "credentialId": "fcc30c0b829-855b-4fd6-900f-c07c38ed9560",
+      "url": "https://www.freecodecamp.org/espanol/certification/fcc30c0b829-855b-4fd6-900f-c07c38ed9560/responsive-web-design"
     }
   ],
 
   "projects": [
     {
       "id": "proj-1",
-      "title": "E-Commerce Platform",
-      "description": "Plataforma de comercio electrónico completa con carrito de compras, pasarela de pago, gestión de inventario y panel de administración.",
-      "longDescription": "Desarrollé una plataforma de e-commerce de nivel empresarial que maneja más de 10,000 productos y procesa miles de transacciones diarias. La aplicación incluye características avanzadas como búsqueda en tiempo real, recomendaciones personalizadas, y un sistema de gestión de contenido headless.",
-      "tech": ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL", "Redis", "Vercel"],
-      "link": "https://ecommerce-demo.emmanuelberrio.dev",
-      "github": "https://github.com/emmanuelberrio/ecommerce-platform",
-      "image": "/projects/ecommerce.jpg",
+      "title": "CRM Portada Inmobiliaria",
+      "description": "Sistema CRM personalizado para gestión inmobiliaria con módulos especiales para administración de propiedades, clientes y generación de documentos.",
+      "longDescription": "Desarrollo de secciones especiales para el CRM propio de Portada Inmobiliaria. Implementación de funcionalidades para gestión de propiedades, automatización de procesos internos y generación de documentos PDF. Sistema completo con backend en PHP y frontend en React/Vue.js.",
+      "tech": ["PHP", "React", "Vue.js", "MySQL", "Sass", "Mpdf", "JavaScript"],
+      "link": "",
+      "github": "",
+      "image": "/projects/crm-inmobiliaria.jpg",
       "featured": true
     },
     {
       "id": "proj-2",
-      "title": "Task Management SaaS",
-      "description": "Aplicación SaaS para gestión de tareas y proyectos con colaboración en tiempo real, similar a Trello/Asana.",
-      "longDescription": "Aplicación de gestión de proyectos con funcionalidades de colaboración en tiempo real usando WebSockets. Incluye tableros Kanban, gráficos de Gantt, notificaciones push, y integración con servicios de terceros.",
-      "tech": ["React", "Node.js", "Socket.io", "MongoDB", "AWS S3", "Docker"],
-      "link": "https://taskmanager-demo.emmanuelberrio.dev",
-      "github": "https://github.com/emmanuelberrio/task-manager-saas",
-      "image": "/projects/taskmanager.jpg",
+      "title": "Sistema de Automatización Muv-u",
+      "description": "Herramientas de automatización de procesos internos para empresa de estudios en el extranjero, integrado con Microsoft 365 y CRM Ontraport.",
+      "longDescription": "Desarrollo de aplicaciones para automatización de procesos internos en Muv-u Estudios en el Exterior. Integración con Microsoft 365 y soporte del CRM Ontraport. Implementación de soluciones con React.js y Tailwind CSS para mejorar la eficiencia operativa.",
+      "tech": ["React", "Tailwind CSS", "PHP", "MySQL", "Microsoft 365", "Ontraport"],
+      "link": "",
+      "github": "",
+      "image": "/projects/muvu-automation.jpg",
       "featured": true
     },
     {
       "id": "proj-3",
-      "title": "AI Content Generator",
-      "description": "Herramienta que utiliza IA para generar contenido de marketing, artículos de blog, y copy publicitario.",
-      "longDescription": "Aplicación web que integra modelos de lenguaje de OpenAI para generar contenido de alta calidad. Incluye plantillas personalizables, optimización SEO, y exportación en múltiples formatos.",
-      "tech": ["Next.js", "OpenAI API", "Tailwind CSS", "Supabase", "Vercel AI SDK"],
-      "link": "https://ai-content.emmanuelberrio.dev",
-      "github": "https://github.com/emmanuelberrio/ai-content-generator",
-      "image": "/projects/ai-content.jpg",
+      "title": "Portal Web Inmobiliario",
+      "description": "Portal web para visualización y búsqueda de propiedades inmobiliarias con sistema de gestión de contenido.",
+      "longDescription": "Desarrollo de portal web inmobiliario con funcionalidades de búsqueda avanzada, filtros por características, visualización de propiedades con galería de imágenes, y panel de administración. Implementado con tecnologías modernas para garantizar rendimiento y experiencia de usuario óptima.",
+      "tech": ["React", "PHP", "MySQL", "JavaScript", "CSS", "Sass"],
+      "link": "",
+      "github": "",
+      "image": "/projects/portal-inmobiliario.jpg",
       "featured": true
     },
     {
       "id": "proj-4",
-      "title": "Real Estate Portal",
-      "description": "Portal inmobiliario con búsqueda avanzada, mapas interactivos, tours virtuales 360° y sistema de citas.",
-      "longDescription": "Plataforma inmobiliaria completa con integración de mapas de Google, búsqueda geolocalizada, filtros avanzados, y sistema de mensajería entre agentes y clientes. Incluye panel de administración para gestión de propiedades.",
-      "tech": ["Next.js", "TypeScript", "Google Maps API", "Prisma", "MySQL", "Cloudinary"],
-      "link": "https://realestate-demo.emmanuelberrio.dev",
-      "github": "https://github.com/emmanuelberrio/real-estate-portal",
-      "image": "/projects/realestate.jpg",
+      "title": "Dashboard Analítico Empresarial",
+      "description": "Dashboard interactivo para visualización de métricas y KPIs empresariales con gráficos en tiempo real.",
+      "longDescription": "Sistema de visualización de datos empresariales con dashboards interactivos, gráficos dinámicos y reportes automatizados. Implementación de conexión con bases de datos MySQL para extracción y procesamiento de información en tiempo real.",
+      "tech": ["Vue.js", "Node.js", "MySQL", "Chart.js", "JavaScript"],
+      "link": "",
+      "github": "",
+      "image": "/projects/dashboard-analytics.jpg",
       "featured": false
     },
     {
       "id": "proj-5",
-      "title": "Healthcare Dashboard",
-      "description": "Dashboard para clínicas con gestión de pacientes, citas, historiales médicos y telemedicina.",
-      "longDescription": "Sistema de gestión hospitalaria con módulos para citas, expedientes médicos electrónicos, facturación, y videoconsultas. Cumple con estándares HIPAA de privacidad de datos médicos.",
-      "tech": ["React", "Node.js", "WebRTC", "PostgreSQL", "Redis", "Chart.js"],
-      "link": "https://healthcare-demo.emmanuelberrio.dev",
-      "github": "https://github.com/emmanuelberrio/healthcare-dashboard",
-      "image": "/projects/healthcare.jpg",
+      "title": "Sistema de Gestión de Inventarios",
+      "description": "Aplicación web para control de inventarios con funcionalidades de entrada/salida, alertas de stock y reportes.",
+      "longDescription": "Sistema completo de gestión de inventarios con control de entrada y salida de productos, alertas automáticas de stock bajo, generación de reportes en PDF, y panel de administración. Arquitectura MVC con PHP y base de datos MySQL.",
+      "tech": ["PHP", "MySQL", "JavaScript", "Bootstrap", "Mpdf"],
+      "link": "",
+      "github": "",
+      "image": "/projects/inventario.jpg",
       "featured": false
     },
     {
       "id": "proj-6",
-      "title": "Social Media Analytics",
-      "description": "Herramienta de análisis de redes sociales con métricas en tiempo real, reportes automáticos y visualización de datos.",
-      "longDescription": "Plataforma de analítica para redes sociales que agrega datos de múltiples fuentes (Twitter, Instagram, Facebook, LinkedIn) y presenta insights accionables mediante dashboards interactivos y reportes automatizados.",
-      "tech": ["Vue.js", "Python", "FastAPI", "MongoDB", "D3.js", "Docker"],
-      "link": "https://analytics-demo.emmanuelberrio.dev",
-      "github": "https://github.com/emmanuelberrio/social-analytics",
-      "image": "/projects/analytics.jpg",
+      "title": "Portfolio Profesional Interactivo",
+      "description": "Portfolio web personal con diseño moderno, animaciones fluidas y secciones interactivas para mostrar proyectos y habilidades.",
+      "longDescription": "Desarrollo de portfolio profesional con Next.js, TypeScript y Tailwind CSS. Implementación de i18n (español/inglés), animaciones con Framer Motion, formulario de contacto validado, y sistema de generación de CV en PDF. Testing completo con Jest y React Testing Library.",
+      "tech": ["Next.js", "TypeScript", "React", "Tailwind CSS", "Framer Motion", "Jest"],
+      "link": "https://emmanuelberrio.dev",
+      "github": "https://github.com/Emmanuelxs13/portafolio_profesional",
+      "image": "/projects/portfolio.jpg",
       "featured": false
     }
   ],
 
   "skills": {
     "frontend": [
-      { "name": "React", "level": 95 },
-      { "name": "Next.js", "level": 90 },
-      { "name": "TypeScript", "level": 90 },
+      { "name": "React", "level": 90 },
+      { "name": "Vue.js", "level": 90 },
+      { "name": "Angular", "level": 75 },
       { "name": "JavaScript", "level": 95 },
-      { "name": "HTML5/CSS3", "level": 95 },
+      { "name": "TypeScript", "level": 85 },
+      { "name": "HTML5", "level": 95 },
+      { "name": "CSS3", "level": 95 },
+      { "name": "Sass", "level": 90 },
       { "name": "Tailwind CSS", "level": 90 },
-      { "name": "Vue.js", "level": 75 },
-      { "name": "Redux", "level": 85 }
+      { "name": "Bootstrap", "level": 85 }
     ],
     "backend": [
-      { "name": "Node.js", "level": 90 },
-      { "name": "Express", "level": 85 },
-      { "name": "NestJS", "level": 80 },
+      { "name": "Node.js", "level": 85 },
+      { "name": "PHP", "level": 90 },
+      { "name": "C#", "level": 80 },
+      { "name": "ASP.NET", "level": 80 },
       { "name": "Python", "level": 75 },
-      { "name": "FastAPI", "level": 70 },
-      { "name": "GraphQL", "level": 80 },
       { "name": "REST APIs", "level": 90 }
     ],
     "database": [
+      { "name": "MySQL", "level": 90 },
       { "name": "PostgreSQL", "level": 85 },
-      { "name": "MongoDB", "level": 85 },
-      { "name": "MySQL", "level": 80 },
-      { "name": "Redis", "level": 75 },
-      { "name": "Prisma", "level": 85 }
+      { "name": "SQL", "level": 90 },
+      { "name": "MongoDB", "level": 75 }
     ],
     "tools": [
       { "name": "Git", "level": 90 },
-      { "name": "Docker", "level": 85 },
-      { "name": "AWS", "level": 80 },
-      { "name": "Vercel", "level": 90 },
-      { "name": "Jest", "level": 85 },
-      { "name": "Webpack", "level": 75 }
+      { "name": "Linux", "level": 80 },
+      { "name": "XAMPP", "level": 90 },
+      { "name": "Laragon", "level": 90 },
+      { "name": "Microsoft 365", "level": 85 },
+      { "name": "SCRUM", "level": 85 },
+      { "name": "MVC", "level": 90 }
     ]
   },
 
   "languages": [
     { "name": "Español", "level": "Nativo" },
-    { "name": "Inglés", "level": "Avanzado (C1)" },
-    { "name": "Portugués", "level": "Básico (A2)" }
+    { "name": "Inglés", "level": "Intermedio-Avanzado (B2)" }
   ],
 
   "social": {
-    "linkedin": "https://www.linkedin.com/in/emmanuelberrio",
-    "github": "https://github.com/emmanuelberrio",
-    "twitter": "https://twitter.com/emmanuelberrio",
-    "dev": "https://dev.to/emmanuelberrio"
+    "linkedin": "https://www.linkedin.com/in/emmanuel-berrio-jimenez/",
+    "github": "https://github.com/Emmanuelxs13"
   }
 }
