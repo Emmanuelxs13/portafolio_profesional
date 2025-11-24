@@ -83,7 +83,7 @@ export default function ProjectsGrid({ t, projects }: Readonly<ProjectsGridProps
               >
                 {/* Efecto de brillo superior */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-purple-500/0 to-transparent group-hover:from-blue-500/10 group-hover:via-purple-500/5 transition-all duration-500" />
-                
+
                 {/* Indicador decorativo en esquina */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl group-hover:bg-blue-500/10 transition-all duration-500" />
 
@@ -138,7 +138,9 @@ export default function ProjectsGrid({ t, projects }: Readonly<ProjectsGridProps
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{project.description}</p>
+                  <p className="text-gray-400 text-sm mb-4 line-clamp-2 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                    {project.description}
+                  </p>
 
                   {/* Tecnologías mejoradas */}
                   <div className="flex flex-wrap gap-2">

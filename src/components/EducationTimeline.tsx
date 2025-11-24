@@ -43,14 +43,27 @@ export default function EducationTimeline({ t, education }: Readonly<EducationTi
     if (date === 'present') return t('education.present');
     const [year, month] = date.split('-');
     const months = [
-      'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-      'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+      'Enero',
+      'Febrero',
+      'Marzo',
+      'Abril',
+      'Mayo',
+      'Junio',
+      'Julio',
+      'Agosto',
+      'Septiembre',
+      'Octubre',
+      'Noviembre',
+      'Diciembre',
     ];
     return `${months[Number.parseInt(month, 10) - 1]} ${year}`;
   };
 
   return (
-    <section id="education" className="relative py-20 md:py-32 bg-gradient-to-b from-gray-900 via-black to-gray-900">
+    <section
+      id="education"
+      className="relative py-20 md:py-32 bg-gradient-to-b from-gray-900 via-black to-gray-900"
+    >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div

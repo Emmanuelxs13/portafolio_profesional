@@ -317,12 +317,33 @@
   "references": [
     {
       "id": "ref-1",
-      "name": "Disponible bajo solicitud",
-      "title": "Referencias Profesionales",
-      "company": "",
-      "email": "",
-      "phone": "",
-      "relationship": "Las referencias profesionales están disponibles bajo solicitud directa."
+      "name": "Tatiana Díaz",
+      "title": "Comunicadora y Mercadóloga",
+      "company": "Muv-u Estudios en el Exterior",
+      "relationship": "Compañera de trabajo (distintos equipos)",
+      "date": "2024-06",
+      "linkedin": "https://www.linkedin.com/in/tatiana-diaz/",
+      "recommendation": "Emmanuel es un profesional con grandes habilidades técnicas y blandas, destaco su actitud de servicio y colaboración en todo momento, pues evidencia su capacidad de trabajo en equipo y conocimientos para dar soluciones y aportar desde su rol. Asimismo, su disposición para aprender es muy valiosa, dado que afrontaba retos laborales con gran éxito. Finalmente, su integridad profesional, responsabilidad y respeto hacia otros hace de Emmanuel un gran colaborador."
+    },
+    {
+      "id": "ref-2",
+      "name": "Sebastián López Osorno",
+      "title": "Desarrollador Backend CRM",
+      "company": "Muv-u Estudios en el Exterior",
+      "relationship": "Compañero de equipo",
+      "date": "2024-03",
+      "linkedin": "https://www.linkedin.com/in/sebastian-lopez-osorno/",
+      "recommendation": "Es un placer recomendar a Emmanuel como un gran desarrollador de software. Durante nuestro tiempo juntos en MUV-U, pude apreciar su gran capacidad de aprendizaje, autonomía y su deseo constante de crecimiento profesional. Su actitud proactiva y su disposición para trabajar en equipo lo convierten en un miembro valioso para cualquier proyecto o empresa. Estoy seguro de que Emmanuel continuará destacándose."
+    },
+    {
+      "id": "ref-3",
+      "name": "Laura Alejandra García",
+      "title": "Especialista en Marketing Digital",
+      "company": "Muv-u Estudios en el Exterior",
+      "relationship": "Compañera de equipo",
+      "date": "2023-12",
+      "linkedin": "https://www.linkedin.com/in/laura-alejandra-garcia/",
+      "recommendation": "Emmanuel destaca como un joven sumamente responsable y comprometido, con una destacada habilidad para gestionar eficientemente sus tareas. Su destreza en el trabajo en equipo es notable, y siempre aporta propuestas innovadoras que enriquecen los procesos llevados a cabo en diversas áreas de la empresa. Demuestra eficientemente sus habilidades de programación en diversos lenguajes y tiene gran disposición para seguir creciendo como profesional."
     }
   ],
 

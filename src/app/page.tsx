@@ -13,6 +13,7 @@ import ExperienceTimeline from '@/components/ExperienceTimeline';
 import EducationTimeline from '@/components/EducationTimeline';
 import ProjectsGrid from '@/components/ProjectsGrid';
 import CertificateList from '@/components/CertificateList';
+import ReferencesSection from '@/components/ReferencesSection';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import { useI18n } from '@/hooks/useI18n';
@@ -94,6 +95,9 @@ export default function Home() {
 
         {/* Certificates Section */}
         <CertificateList t={t} certificates={profile.certificates} locale={locale} />
+
+        {/* References Section */}
+        <ReferencesSection t={t} references={profile.references} />
 
         {/* Contact Section */}
         <ContactForm t={t} />
