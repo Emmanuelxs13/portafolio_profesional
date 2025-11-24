@@ -115,6 +115,7 @@ npm run build
 ```
 
 Configura en Netlify:
+
 - Build command: `npm run build`
 - Publish directory: `.next`
 
@@ -172,6 +173,7 @@ export default function RootLayout({ children }) {
 ### 3. Setup SEO
 
 Verifica:
+
 - [ ] Sitemap.xml generado
 - [ ] robots.txt configurado
 - [ ] Meta tags correctos
@@ -181,6 +183,7 @@ Verifica:
 ### 4. Monitoreo
 
 Configura alertas para:
+
 - Errores de servidor (500)
 - Caída del servicio
 - Tiempo de respuesta lento
@@ -204,21 +207,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          
+
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Lint
         run: npm run lint
-        
+
       - name: Build
         run: npm run build
-        
+
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
         with:
@@ -260,6 +263,7 @@ npm run build
 ### Error de Build en Vercel
 
 Verifica que:
+
 - Node version coincida (18.x)
 - Todas las dependencias estén en `dependencies` (no `devDependencies`)
 - Variables de entorno estén configuradas
@@ -267,6 +271,7 @@ Verifica que:
 ### Imágenes no se cargan
 
 Verifica:
+
 - Rutas sean relativas a `public/`
 - Usa `next/image` para optimización
 - Configura `domains` en `next.config.js` si usas imágenes externas
@@ -298,15 +303,15 @@ Recomendaciones:
 const securityHeaders = [
   {
     key: 'X-DNS-Prefetch-Control',
-    value: 'on'
+    value: 'on',
   },
   {
     key: 'X-Frame-Options',
-    value: 'SAMEORIGIN'
+    value: 'SAMEORIGIN',
   },
   {
     key: 'X-Content-Type-Options',
-    value: 'nosniff'
+    value: 'nosniff',
   },
 ];
 

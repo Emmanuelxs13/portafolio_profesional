@@ -6,10 +6,10 @@
 /**
  * Combina clases de CSS de manera condicional
  * Útil para aplicar clases dinámicas en componentes
- * 
+ *
  * @param classes - Lista de clases CSS o condiciones
  * @returns String con las clases combinadas
- * 
+ *
  * @example
  * cn('bg-blue-500', isActive && 'text-white', 'hover:bg-blue-600')
  * // Si isActive es true: 'bg-blue-500 text-white hover:bg-blue-600'
@@ -21,11 +21,11 @@ export function cn(...classes: (string | boolean | undefined | null)[]): string 
 
 /**
  * Formatea una fecha en formato localizado
- * 
+ *
  * @param date - String de fecha en formato YYYY-MM o "present"
  * @param locale - Código de idioma (es, en)
  * @returns Fecha formateada o "Actualidad"/"Present"
- * 
+ *
  * @example
  * formatDate('2023-06', 'es') // 'Jun 2023'
  * formatDate('present', 'es') // 'Actualidad'
@@ -46,7 +46,7 @@ export function formatDate(date: string, locale: string = 'es'): string {
 
 /**
  * Calcula el tiempo transcurrido entre dos fechas
- * 
+ *
  * @param from - Fecha inicial en formato YYYY-MM
  * @param to - Fecha final en formato YYYY-MM o "present"
  * @param locale - Código de idioma (es, en)
@@ -54,7 +54,7 @@ export function formatDate(date: string, locale: string = 'es'): string {
  */
 export function calculateDuration(from: string, to: string, locale: string = 'es'): string {
   const [yearFrom, monthFrom] = from.split('-').map(Number);
-  
+
   let yearTo, monthTo;
   if (to === 'present') {
     const now = new Date();
@@ -84,7 +84,7 @@ export function calculateDuration(from: string, to: string, locale: string = 'es
 
 /**
  * Trunca un texto a un número específico de palabras
- * 
+ *
  * @param text - Texto a truncar
  * @param words - Número máximo de palabras
  * @returns Texto truncado con "..." si fue recortado
@@ -97,10 +97,10 @@ export function truncateText(text: string, words: number = 20): string {
 
 /**
  * Sanitiza un string para usarlo como ID HTML válido
- * 
+ *
  * @param text - Texto a convertir
  * @returns String válido para usar como ID
- * 
+ *
  * @example
  * slugify('Hello World!') // 'hello-world'
  */
@@ -115,10 +115,10 @@ export function slugify(text: string): string {
 
 /**
  * Delay asíncrono para testing o UX
- * 
+ *
  * @param ms - Milisegundos de espera
  * @returns Promise que se resuelve después del delay
- * 
+ *
  * @example
  * await delay(1000); // Espera 1 segundo
  */
@@ -128,7 +128,7 @@ export function delay(ms: number): Promise<void> {
 
 /**
  * Valida si un email tiene formato válido
- * 
+ *
  * @param email - Email a validar
  * @returns true si el email es válido
  */
@@ -139,10 +139,10 @@ export function isValidEmail(email: string): boolean {
 
 /**
  * Obtiene las iniciales de un nombre
- * 
+ *
  * @param name - Nombre completo
  * @returns Iniciales (máximo 2 letras)
- * 
+ *
  * @example
  * getInitials('Emmanuel Berrio Jiménez') // 'EB'
  */

@@ -1,6 +1,6 @@
 /**
  * Componente Hero (Sección Principal)
- * 
+ *
  * Sección de bienvenida con:
  * - Animación de entrada con Framer Motion
  * - Nombre y título profesional

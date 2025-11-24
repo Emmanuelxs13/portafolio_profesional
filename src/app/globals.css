@@ -3,7 +3,7 @@
  * Incluye configuración de Tailwind CSS y estilos personalizados
  */
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Variables CSS para temas */
 :root {
@@ -43,17 +43,23 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    var(--font-geist-sans),
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
 }
 
 /* Utilidades personalizadas */
 @layer utilities {
   /* Grid decorativo */
   .bg-grid-white\/\[0\.02\] {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   }
-  
+
   /* Text clamp para truncar texto */
   .line-clamp-2 {
     display: -webkit-box;
@@ -74,4 +80,3 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
-

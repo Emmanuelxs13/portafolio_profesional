@@ -1,6 +1,6 @@
 /**
  * Componente About (Sobre Mí)
- * 
+ *
  * Sección que muestra:
  * - Foto profesional o avatar
  * - Descripción detallada del perfil
@@ -12,7 +12,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowDownTrayIcon, BriefcaseIcon, AcademicCapIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
+import {
+  ArrowDownTrayIcon,
+  BriefcaseIcon,
+  AcademicCapIcon,
+  CodeBracketIcon,
+} from '@heroicons/react/24/outline';
 
 interface AboutProps {
   /** Diccionario de traducciones */
@@ -86,7 +91,7 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
   const handleDownloadCV = () => {
     // La ruta apuntará al endpoint que genera el PDF
     const cvUrl = `/api/cv?lang=${locale}`;
-    
+
     // Crear un enlace temporal y hacer clic programáticamente
     const link = document.createElement('a');
     link.href = cvUrl;
@@ -97,10 +102,7 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
   };
 
   return (
-    <section
-      id="about"
-      className="relative py-20 md:py-32 bg-black overflow-hidden"
-    >
+    <section id="about" className="relative py-20 md:py-32 bg-black overflow-hidden">
       {/* Efectos de fondo decorativos */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -120,12 +122,8 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
           variants={fadeInUp}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            {t('about.title')}
-          </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            {t('about.subtitle')}
-          </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">{t('about.title')}</h2>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">{t('about.subtitle')}</p>
         </motion.div>
 
         {/* Contenido principal */}
@@ -141,7 +139,7 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
             <div className="relative aspect-square max-w-lg mx-auto">
               {/* Fondo decorativo con gradiente */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl transform rotate-6 opacity-20"></div>
-              
+
               {/* Container de imagen/avatar */}
               <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden border-2 border-gray-700 shadow-2xl">
                 {/* Placeholder - Reemplazar con imagen real */}
@@ -172,16 +170,11 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
           >
             {/* Descripción */}
             <motion.div variants={fadeInUp}>
-              <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                {summary}
-              </p>
+              <p className="text-lg text-gray-300 leading-relaxed mb-6">{summary}</p>
             </motion.div>
 
             {/* Estadísticas */}
-            <motion.div
-              variants={fadeInUp}
-              className="grid grid-cols-2 sm:grid-cols-3 gap-6"
-            >
+            <motion.div variants={fadeInUp} className="grid grid-cols-2 sm:grid-cols-3 gap-6">
               {statisticsData.map((stat) => (
                 <motion.div
                   key={stat.label}
@@ -190,7 +183,8 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
                 >
                   <stat.icon className="h-8 w-8 text-blue-500 mb-3" />
                   <div className="text-3xl font-bold text-white mb-1">
-                    {stat.value}{stat.suffix}
+                    {stat.value}
+                    {stat.suffix}
                   </div>
                   <div className="text-sm text-gray-400">{stat.label}</div>
                 </motion.div>

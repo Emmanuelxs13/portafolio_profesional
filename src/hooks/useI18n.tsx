@@ -71,7 +71,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'nav.projects': 'Projects',
     'nav.certificates': 'Certificates',
     'nav.contact': 'Contact',
-    'hero.greeting': 'Hi, I\'m',
+    'hero.greeting': "Hi, I'm",
     'hero.title': 'Full-Stack Developer',
     'hero.subtitle': 'Building exceptional web experiences',
     'hero.cta': 'View my work',
@@ -93,7 +93,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'certificates.subtitle': 'Completed certifications and courses',
     'certificates.viewCredential': 'View credential',
     'contact.title': 'Contact',
-    'contact.subtitle': 'Have a project in mind? Let\'s talk!',
+    'contact.subtitle': "Have a project in mind? Let's talk!",
     'contact.form.name': 'Name',
     'contact.form.namePlaceholder': 'Your full name',
     'contact.form.email': 'Email',
@@ -105,7 +105,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'contact.form.consent': 'I accept the privacy policy',
     'contact.form.submit': 'Send message',
     'contact.form.sending': 'Sending...',
-    'contact.success.message': 'Message sent! I\'ll get back to you soon.',
+    'contact.success.message': "Message sent! I'll get back to you soon.",
     'contact.error.message': 'Error sending. Please try again.',
     'footer.rights': 'All rights reserved',
     'footer.privacy': 'Privacy policy',
@@ -130,11 +130,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     [locale]
   );
 
-  return (
-    <I18nContext.Provider value={{ locale, setLocale, t }}>
-      {children}
-    </I18nContext.Provider>
-  );
+  return <I18nContext.Provider value={{ locale, setLocale, t }}>{children}</I18nContext.Provider>;
 }
 
 export function useI18n() {

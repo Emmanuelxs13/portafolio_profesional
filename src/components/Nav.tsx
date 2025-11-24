@@ -1,6 +1,6 @@
 /**
  * Componente de Navegación Principal
- * 
+ *
  * Barra de navegación responsive con:
  * - Logo/nombre
  * - Enlaces de navegación
@@ -76,19 +76,17 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
       transition={{ duration: 0.5 }}
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'bg-gray-900/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
+        isScrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       )}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
         {/* Logo/Nombre */}
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <motion.span
-              whileHover={{ scale: 1.05 }}
-              className="text-xl font-bold text-white"
-            >
+            <motion.span whileHover={{ scale: 1.05 }} className="text-xl font-bold text-white">
               EB<span className="text-blue-500">.</span>
             </motion.span>
           </Link>

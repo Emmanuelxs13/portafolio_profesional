@@ -14,4 +14,4 @@ module.exports = {
   },
   // Recargar en desarrollo para ver cambios en traducciones
   reloadOnPrerender: process.env.NODE_ENV === 'development',
-}
+};

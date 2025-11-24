@@ -66,7 +66,10 @@ export default function ContactForm({ t }: Readonly<ContactFormProps>) {
   };
 
   return (
-    <section id="contact" className="relative py-20 md:py-32 bg-gradient-to-b from-black to-gray-900">
+    <section
+      id="contact"
+      className="relative py-20 md:py-32 bg-gradient-to-b from-black to-gray-900"
+    >
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -127,19 +130,25 @@ export default function ContactForm({ t }: Readonly<ContactFormProps>) {
               className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 outline-none transition"
               placeholder={t('contact.form.subjectPlaceholder')}
             />
-            {errors.subject && <p className="text-red-400 text-sm mt-1">{errors.subject.message}</p>}
+            {errors.subject && (
+              <p className="text-red-400 text-sm mt-1">{errors.subject.message}</p>
+            )}
           </div>
 
           {/* Message */}
           <div className="mb-6">
-            <label className="block text-gray-300 font-medium mb-2">{t('contact.form.message')}</label>
+            <label className="block text-gray-300 font-medium mb-2">
+              {t('contact.form.message')}
+            </label>
             <textarea
               {...register('message')}
               rows={5}
               className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 outline-none transition resize-none"
               placeholder={t('contact.form.messagePlaceholder')}
             />
-            {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>}
+            {errors.message && (
+              <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
+            )}
           </div>
 
           {/* Consent */}
@@ -148,7 +157,9 @@ export default function ContactForm({ t }: Readonly<ContactFormProps>) {
               <input {...register('consent')} type="checkbox" className="mt-1" />
               <span className="text-sm text-gray-400">{t('contact.form.consent')}</span>
             </label>
-            {errors.consent && <p className="text-red-400 text-sm mt-1">{errors.consent.message}</p>}
+            {errors.consent && (
+              <p className="text-red-400 text-sm mt-1">{errors.consent.message}</p>
+            )}
           </div>
 
           {/* Submit Button */}

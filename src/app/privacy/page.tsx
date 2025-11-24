@@ -80,10 +80,10 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h3 className="text-xl font-semibold mb-3">4. Cookies y tecnologías de seguimiento</h3>
-              <p className="text-gray-300">
-                Este sitio web utiliza localStorage para:
-              </p>
+              <h3 className="text-xl font-semibold mb-3">
+                4. Cookies y tecnologías de seguimiento
+              </h3>
+              <p className="text-gray-300">Este sitio web utiliza localStorage para:</p>
               <ul className="list-disc list-inside text-gray-300 ml-4">
                 <li>Guardar preferencia de idioma (español/inglés)</li>
               </ul>

@@ -16,8 +16,17 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Emmanuel Berrio Jiménez | Full-Stack Developer',
-  description: 'Portafolio profesional de Emmanuel Berrio Jiménez - Desarrollador Full-Stack especializado en React, Next.js, TypeScript y Node.js',
-  keywords: ['Emmanuel Berrio', 'Full-Stack Developer', 'React', 'Next.js', 'TypeScript', 'Node.js', 'Portfolio'],
+  description:
+    'Portafolio profesional de Emmanuel Berrio Jiménez - Desarrollador Full-Stack especializado en React, Next.js, TypeScript y Node.js',
+  keywords: [
+    'Emmanuel Berrio',
+    'Full-Stack Developer',
+    'React',
+    'Next.js',
+    'TypeScript',
+    'Node.js',
+    'Portfolio',
+  ],
   authors: [{ name: 'Emmanuel Berrio Jiménez' }],
   creator: 'Emmanuel Berrio Jiménez',
   openGraph: {
@@ -51,4 +60,3 @@ export default function RootLayout({
     </html>
   );
 }
-

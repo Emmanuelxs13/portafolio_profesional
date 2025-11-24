@@ -1,6 +1,6 @@
 /**
  * Componente ProjectsGrid
- * 
+ *
  * Grid de proyectos con:
  * - Tarjetas de proyecto con hover effects
  * - Filtro de proyectos destacados/todos
@@ -24,9 +24,9 @@ interface ProjectsGridProps {
 
 export default function ProjectsGrid({ t, projects }: Readonly<ProjectsGridProps>) {
   const [showAll, setShowAll] = useState(false);
-  
+
   // Filtrar proyectos a mostrar
-  const displayedProjects = showAll ? projects : projects.filter(p => p.featured);
+  const displayedProjects = showAll ? projects : projects.filter((p) => p.featured);
 
   return (
     <section id="projects" className="relative py-20 md:py-32 bg-black">
@@ -38,13 +38,9 @@ export default function ProjectsGrid({ t, projects }: Readonly<ProjectsGridProps
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            {t('projects.title')}
-          </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
-            {t('projects.subtitle')}
-          </p>
-          
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">{t('projects.title')}</h2>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">{t('projects.subtitle')}</p>
+
           {/* Toggle de filtro */}
           <div className="inline-flex rounded-lg bg-gray-800 p-1">
             <button
@@ -99,7 +95,7 @@ export default function ProjectsGrid({ t, projects }: Readonly<ProjectsGridProps
                       <CodeBracketIcon className="h-20 w-20 text-gray-600" />
                     </div>
                   )}
-                  
+
                   {/* Overlay con enlaces */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                     {project.link && (
@@ -132,9 +128,7 @@ export default function ProjectsGrid({ t, projects }: Readonly<ProjectsGridProps
                   <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
-                    {project.description}
-                  </p>
+                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">{project.description}</p>
 
                   {/* Tecnologías */}
                   <div className="flex flex-wrap gap-2">

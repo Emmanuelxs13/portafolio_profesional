@@ -15,7 +15,11 @@ interface CertificateListProps {
   locale: string;
 }
 
-export default function CertificateList({ t, certificates, locale }: Readonly<CertificateListProps>) {
+export default function CertificateList({
+  t,
+  certificates,
+  locale,
+}: Readonly<CertificateListProps>) {
   return (
     <section id="certificates" className="py-20 md:py-32 bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
@@ -25,7 +29,9 @@ export default function CertificateList({ t, certificates, locale }: Readonly<Ce
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">{t('certificates.title')}</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            {t('certificates.title')}
+          </h2>
           <p className="text-lg text-gray-400">{t('certificates.subtitle')}</p>
         </motion.div>
 

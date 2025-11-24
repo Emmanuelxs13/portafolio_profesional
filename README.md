@@ -22,25 +22,30 @@ Portfolio web profesional desarrollado con las últimas tecnologías y mejores p
 ## 🛠️ Tecnologías
 
 ### Core
+
 - **[Next.js 16](https://nextjs.org/)** - Framework React con App Router
 - **[TypeScript 5](https://www.typescriptlang.org/)** - Tipado estático
 - **[React 19](https://react.dev/)** - Biblioteca UI
 
 ### Estilos y UI
+
 - **[Tailwind CSS 4](https://tailwindcss.com/)** - Framework CSS utility-first
 - **[Framer Motion 12](https://www.framer.com/motion/)** - Animaciones fluidas
 - **[Headless UI](https://headlessui.dev/)** - Componentes accesibles
 - **[Heroicons](https://heroicons.com/)** - Iconos SVG
 
 ### Formularios y Validación
+
 - **[React Hook Form](https://react-hook-form.com/)** - Gestión de formularios
 - **[Zod](https://zod.dev/)** - Validación de esquemas
 
 ### Testing
+
 - **[Jest](https://jestjs.io/)** - Framework de testing
 - **[React Testing Library](https://testing-library.com/)** - Testing de componentes
 
 ### Desarrollo
+
 - **[ESLint](https://eslint.org/)** - Linting de código
 - **[Prettier](https://prettier.io/)** - Formateo de código
 
@@ -52,17 +57,20 @@ Portfolio web profesional desarrollado con las últimas tecnologías y mejores p
 ## 🚀 Instalación
 
 1. **Clonar el repositorio**
+
 ```bash
 git clone https://github.com/tu-usuario/portafolio-profesional.git
 cd portafolio-profesional
 ```
 
 2. **Instalar dependencias**
+
 ```bash
 npm install
 ```
 
 3. **Configurar variables de entorno**
+
 ```bash
 # Copiar el archivo de ejemplo
 cp .env.example .env.local
@@ -77,6 +85,7 @@ EMAIL_TO=destino@ejemplo.com
 ```
 
 4. **Iniciar el servidor de desarrollo**
+
 ```bash
 npm run dev
 ```
@@ -218,6 +227,7 @@ describe('Hero Component', () => {
 El formulario de contacto utiliza Nodemailer para enviar emails. Configura las variables de entorno:
 
 1. **Gmail** (recomendado para desarrollo):
+
 ```env
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
@@ -291,6 +301,7 @@ Este proyecto está bajo la Licencia MIT. Ver [LICENSE](LICENSE) para más detal
 ## 👤 Autor
 
 **Emmanuel Berrio Jiménez**
+
 - LinkedIn: [Emmanuel Berrio](https://linkedin.com/in/emmanuel-berrio)
 - GitHub: [@emmanuelberrio](https://github.com/emmanuelberrio)
 - Email: contact@emmanuelberrio.com

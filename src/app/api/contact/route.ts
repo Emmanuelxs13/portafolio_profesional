@@ -90,10 +90,7 @@ export async function POST(request: NextRequest) {
 
     // Error genérico
     console.error('Error processing contact form:', error);
-    return NextResponse.json(
-      { success: false, error: 'Internal server error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 });
   }
 }
 

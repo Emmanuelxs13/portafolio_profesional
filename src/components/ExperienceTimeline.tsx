@@ -1,6 +1,6 @@
 /**
  * Componente ExperienceTimeline
- * 
+ *
  * Timeline visual de la experiencia laboral con:
  * - Línea de tiempo vertical
  * - Tarjetas de experiencia con información detallada
@@ -59,9 +59,7 @@ export default function ExperienceTimeline({
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             {t('experience.title')}
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            {t('experience.subtitle')}
-          </p>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">{t('experience.subtitle')}</p>
         </motion.div>
 
         {/* Timeline */}

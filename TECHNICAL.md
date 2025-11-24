@@ -7,6 +7,7 @@ Portafolio profesional moderno construido con las tecnologías más actuales de 
 ## 🏗️ Arquitectura
 
 ### Stack Principal
+
 - **Framework**: Next.js 16 (App Router)
 - **Lenguaje**: TypeScript 5 (Strict Mode)
 - **Estilos**: Tailwind CSS 4
@@ -29,17 +30,17 @@ interface Profile {
   name: string;
   title: string;
   summary: string;
-  
+
   // Contacto
   email: string;
   location: string;
   social: Social;
-  
+
   // Experiencia profesional
   experience: Experience[];
   education: Education[];
   certificates: Certificate[];
-  
+
   // Proyectos y habilidades
   projects: Project[];
   skills: Skills;
@@ -50,25 +51,29 @@ interface Profile {
 ## 🎨 Sistema de Diseño
 
 ### Colores
+
 - **Primario**: Blue-600 (#2563EB)
 - **Secundario**: Purple-600 (#9333EA)
 - **Fondo**: Black (#000000)
 - **Texto**: White (#FFFFFF), Gray-300/400
 
 ### Tipografía
+
 - **Fuente**: Inter (Google Fonts)
-- **Escalas**: 
+- **Escalas**:
   - Móvil: Base 16px
   - Desktop: Base 16px
   - Headings: 2xl - 8xl
 
 ### Espaciado
+
 - Sistema de 8px base
 - Breakpoints: sm(640px), md(768px), lg(1024px), xl(1280px), 2xl(1536px)
 
 ## 🔧 Optimizaciones Implementadas
 
 ### Performance
+
 1. **Code Splitting**: Automático con App Router
 2. **Image Optimization**: next/image para lazy loading
 3. **Dynamic Imports**: Para componentes pesados
@@ -76,6 +81,7 @@ interface Profile {
 5. **Font Optimization**: next/font
 
 ### SEO
+
 1. **Metadata API**: Configuración en layout.tsx
 2. **Semantic HTML**: Tags correctos (header, main, section, article)
 3. **Open Graph**: Meta tags para redes sociales
@@ -83,6 +89,7 @@ interface Profile {
 5. **Structured Data**: Schema.org (futuro)
 
 ### Accesibilidad (WCAG 2.1 AA)
+
 1. **Keyboard Navigation**: Tab index correctos
 2. **ARIA Labels**: Para lectores de pantalla
 3. **Color Contrast**: Ratio 4.5:1 mínimo
@@ -100,6 +107,7 @@ interface Profile {
 ## 🧪 Testing
 
 ### Estrategia de Testing
+
 ```
 Unit Tests (Jest + RTL)
 ├── Components individuales
@@ -115,6 +123,7 @@ E2E Tests (Futuro)
 ```
 
 ### Coverage Objetivo
+
 - Componentes críticos: 80%+
 - Utilidades: 90%+
 - API Routes: 70%+
@@ -122,6 +131,7 @@ E2E Tests (Futuro)
 ## 📦 Build y Deploy
 
 ### Build Process
+
 ```bash
 npm run build
 # 1. TypeScript compilation
@@ -131,12 +141,13 @@ npm run build
 ```
 
 ### Deploy Strategy
+
 - **Platform**: Vercel (recomendado)
 - **CI/CD**: GitHub Actions
-- **Branches**: 
+- **Branches**:
   - main → Production
   - develop → Preview
-  - feature/* → Preview
+  - feature/\* → Preview
 
 ## 🔄 Flujo de Desarrollo
 
@@ -161,16 +172,19 @@ npm run build
 ## 📈 Métricas de Calidad
 
 ### Lighthouse Score (Objetivo)
+
 - Performance: 95+
 - Accessibility: 100
 - Best Practices: 100
 - SEO: 100
 
 ### Bundle Size (Actual)
+
 - First Load JS: ~85KB
 - Route (/) JS: ~5KB
 
 ### Core Web Vitals
+
 - LCP: < 2.5s
 - FID: < 100ms
 - CLS: < 0.1
@@ -178,16 +192,19 @@ npm run build
 ## 🌐 Internacionalización
 
 ### Implementación
+
 - Hook personalizado `useI18n`
 - Context API para estado global
 - LocalStorage para persistencia
 - Detección automática de idioma del navegador
 
 ### Idiomas Soportados
+
 - Español (es) - Default
 - Inglés (en)
 
 ### Formato de Traducciones
+
 ```json
 {
   "namespace.key": "Valor traducido"
@@ -197,27 +214,32 @@ npm run build
 ## 🗂️ Gestión de Estado
 
 ### Estado Local
+
 - `useState` para componentes individuales
 - `useEffect` para side effects
 - `useCallback` para funciones memorizadas
 
 ### Estado Global
+
 - Context API para i18n
 - Props drilling para datos del perfil
 
 ### Estado del Servidor
+
 - JSON estático (`data/profile.json`)
 - Sin caché complejo (simplicidad > complejidad)
 
 ## 🔌 Integraciones
 
 ### Actuales
+
 - **Framer Motion**: Animaciones
 - **React Hook Form**: Gestión de formularios
 - **Zod**: Validación de schemas
 - **Headless UI**: Componentes accesibles
 
 ### Futuras (Opcionales)
+
 - **Nodemailer**: Email transaccional
 - **Google Analytics**: Métricas
 - **Vercel Analytics**: Performance
