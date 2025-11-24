@@ -23,7 +23,17 @@
         "Gestión de bases de datos MySQL y PostgreSQL",
         "Colaboración efectiva en equipo usando metodologías ágiles"
       ],
-      "technologies": ["React", "Vue.js", "Node.js", "PHP", "MySQL", "PostgreSQL", "JavaScript", "HTML", "CSS"]
+      "technologies": [
+        "React",
+        "Vue.js",
+        "Node.js",
+        "PHP",
+        "MySQL",
+        "PostgreSQL",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ]
     },
     {
       "id": "exp-2",
@@ -38,7 +48,16 @@
         "Soporte en el CRM Ontraport",
         "Implementación de soluciones con React.js y Tailwind CSS"
       ],
-      "technologies": ["React", "Tailwind CSS", "PHP", "MySQL", "Microsoft 365", "Laragon", "XAMPP", "SCRUM"]
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "PHP",
+        "MySQL",
+        "Microsoft 365",
+        "Laragon",
+        "XAMPP",
+        "SCRUM"
+      ]
     },
     {
       "id": "exp-3",
@@ -54,7 +73,18 @@
         "Manejo de servidor de datos a nivel local",
         "Implementación de librerías como Mpdf para generación de documentos"
       ],
-      "technologies": ["PHP", "React", "Vue.js", "Node.js", "MySQL", "JavaScript", "Sass", "XAMPP", "SCRUM", "MVC"]
+      "technologies": [
+        "PHP",
+        "React",
+        "Vue.js",
+        "Node.js",
+        "MySQL",
+        "JavaScript",
+        "Sass",
+        "XAMPP",
+        "SCRUM",
+        "MVC"
+      ]
     }
   ],
 
