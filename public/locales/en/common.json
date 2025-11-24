@@ -1,0 +1,135 @@
+{
+  "common": {
+    "siteTitle": "Emmanuel Berrio Jiménez",
+    "siteDescription": "Emmanuel Berrio Jiménez's Professional Portfolio - Full-Stack Developer",
+    "readMore": "Read more",
+    "viewProject": "View project",
+    "downloadCV": "Download CV",
+    "contactMe": "Contact me",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "education": "Education",
+    "certificates": "Certificates",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "title": "Full-Stack Developer",
+    "subtitle": "Building exceptional web experiences",
+    "cta": "View my work",
+    "ctaSecondary": "Contact me"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Learn more about my background",
+    "downloadCV": "Download CV",
+    "yearsExperience": "Years of experience",
+    "projectsCompleted": "Projects completed",
+    "happyClients": "Happy clients"
+  },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "My professional journey",
+    "present": "Present",
+    "achievements": "Key achievements",
+    "technologies": "Technologies used"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Some of my featured work",
+    "featured": "Featured",
+    "all": "All projects",
+    "viewLive": "View live",
+    "viewCode": "View code",
+    "technologies": "Technologies"
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "Academic background"
+  },
+  "certificates": {
+    "title": "Certifications",
+    "subtitle": "Completed certifications and courses",
+    "viewCredential": "View credential",
+    "issuedBy": "Issued by"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "My technical competencies",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Databases",
+    "tools": "Tools & DevOps"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a project in mind? Let's talk!",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "How can I help you?",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project...",
+      "consent": "I accept the privacy policy and the processing of my data",
+      "submit": "Send message",
+      "sending": "Sending..."
+    },
+    "success": {
+      "title": "Message sent!",
+      "message": "Thank you for contacting me. I'll get back to you as soon as possible."
+    },
+    "error": {
+      "title": "Error sending",
+      "message": "There was a problem sending your message. Please try again."
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "nameMin": "Name must be at least 2 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email",
+      "subjectRequired": "Subject is required",
+      "subjectMin": "Subject must be at least 5 characters",
+      "messageRequired": "Message is required",
+      "messageMin": "Message must be at least 10 characters",
+      "consentRequired": "You must accept the privacy policy"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "builtWith": "Built with",
+    "and": "and",
+    "privacy": "Privacy policy",
+    "terms": "Terms of use"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated",
+    "intro": "This privacy policy describes how personal information you provide through the contact form is collected, used, and protected.",
+    "dataCollection": {
+      "title": "Data collection",
+      "content": "We only collect information you voluntarily provide through the contact form: name, email, subject, and message."
+    },
+    "dataUsage": {
+      "title": "Data usage",
+      "content": "The collected information is used exclusively to respond to your inquiry or request. We do not share your information with third parties."
+    },
+    "dataProtection": {
+      "title": "Data protection",
+      "content": "We implement appropriate security measures to protect your personal information from unauthorized access, alteration, or destruction."
+    },
+    "rights": {
+      "title": "Your rights",
+      "content": "You have the right to access, rectify, or delete your personal data at any time by contacting me directly."
+    }
+  }
+}

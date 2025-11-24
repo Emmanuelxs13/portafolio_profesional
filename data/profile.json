@@ -1,0 +1,222 @@
+{
+  "name": "Emmanuel Berrio Jiménez",
+  "title": "Desarrollador Full-Stack",
+  "summary": "Desarrollador Full-Stack apasionado por crear soluciones web modernas, escalables y accesibles. Especializado en React, Next.js, TypeScript y Node.js. Comprometido con las mejores prácticas de desarrollo y la experiencia de usuario.",
+  "location": "Medellin, Colombia",
+  "email": "emmanuel.berrio@example.com",
+  "phone": "+51 999 999 999",
+  "linkedin": "https://www.linkedin.com/in/emmanuelberrio",
+  "github": "https://github.com/emmanuelberrio",
+  "website": "https://emmanuelberrio.dev",
+  
+  "experience": [
+    {
+      "id": "exp-1",
+      "company": "Tech Solutions Inc.",
+      "title": "Senior Full-Stack Developer",
+      "from": "2022-03",
+      "to": "present",
+      "description": "Lideré el desarrollo de aplicaciones web empresariales utilizando React, Next.js y Node.js. Implementé arquitecturas escalables y mejoras de rendimiento que resultaron en un 40% de reducción en tiempos de carga.",
+      "achievements": [
+        "Reducción del 40% en tiempos de carga mediante optimizaciones de rendimiento",
+        "Implementación de arquitectura de micro-frontends para mejorar la escalabilidad",
+        "Mentoría a 5 desarrolladores junior en mejores prácticas de React y TypeScript"
+      ],
+      "technologies": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "AWS"]
+    },
+    {
+      "id": "exp-2",
+      "company": "Digital Agency Co.",
+      "title": "Full-Stack Developer",
+      "from": "2020-06",
+      "to": "2022-02",
+      "description": "Desarrollé aplicaciones web responsivas y progresivas para clientes internacionales. Colaboré con equipos de diseño y producto para entregar soluciones de alta calidad.",
+      "achievements": [
+        "Desarrollo de 12+ proyectos web para clientes Fortune 500",
+        "Implementación de CI/CD reduciendo el tiempo de despliegue en 60%",
+        "Mejora de accesibilidad alcanzando conformidad WCAG 2.1 AA"
+      ],
+      "technologies": ["React", "Vue.js", "Express", "MongoDB", "Docker", "Azure"]
+    },
+    {
+      "id": "exp-3",
+      "company": "StartupXYZ",
+      "title": "Frontend Developer",
+      "from": "2019-01",
+      "to": "2020-05",
+      "description": "Construí interfaces de usuario interactivas y responsivas. Trabajé en estrecha colaboración con el equipo de UX para implementar diseños pixel-perfect.",
+      "achievements": [
+        "Creación del sistema de diseño de la empresa desde cero",
+        "Mejora del rendimiento de la aplicación principal en un 35%",
+        "Implementación de testing automatizado aumentando la cobertura al 85%"
+      ],
+      "technologies": ["React", "JavaScript", "SASS", "Jest", "Webpack"]
+    }
+  ],
+
+  "education": [
+    {
+      "id": "edu-1",
+      "institution": "Universidad Nacional Mayor de San Marcos",
+      "degree": "Ingeniería de Software",
+      "field": "Ciencias de la Computación",
+      "from": "2015-03",
+      "to": "2019-12",
+      "description": "Graduado con honores. Especialización en Desarrollo Web y Arquitectura de Software."
+    }
+  ],
+
+  "certificates": [
+    {
+      "id": "cert-1",
+      "name": "AWS Certified Solutions Architect - Associate",
+      "issuer": "Amazon Web Services",
+      "date": "2023-06",
+      "credentialId": "AWS-SAA-12345",
+      "url": "https://aws.amazon.com/certification/"
+    },
+    {
+      "id": "cert-2",
+      "name": "Professional Scrum Master I",
+      "issuer": "Scrum.org",
+      "date": "2023-03",
+      "credentialId": "PSM-67890",
+      "url": "https://www.scrum.org/certificates"
+    },
+    {
+      "id": "cert-3",
+      "name": "Meta Front-End Developer Professional Certificate",
+      "issuer": "Meta (Facebook)",
+      "date": "2022-11",
+      "credentialId": "META-FE-54321",
+      "url": "https://www.coursera.org/professional-certificates/meta-front-end-developer"
+    },
+    {
+      "id": "cert-4",
+      "name": "Advanced React and Redux",
+      "issuer": "Udemy",
+      "date": "2022-08",
+      "credentialId": "UC-REACT-11223",
+      "url": "https://www.udemy.com/certificate/UC-REACT-11223"
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "E-Commerce Platform",
+      "description": "Plataforma de comercio electrónico completa con carrito de compras, pasarela de pago, gestión de inventario y panel de administración.",
+      "longDescription": "Desarrollé una plataforma de e-commerce de nivel empresarial que maneja más de 10,000 productos y procesa miles de transacciones diarias. La aplicación incluye características avanzadas como búsqueda en tiempo real, recomendaciones personalizadas, y un sistema de gestión de contenido headless.",
+      "tech": ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL", "Redis", "Vercel"],
+      "link": "https://ecommerce-demo.emmanuelberrio.dev",
+      "github": "https://github.com/emmanuelberrio/ecommerce-platform",
+      "image": "/projects/ecommerce.jpg",
+      "featured": true
+    },
+    {
+      "id": "proj-2",
+      "title": "Task Management SaaS",
+      "description": "Aplicación SaaS para gestión de tareas y proyectos con colaboración en tiempo real, similar a Trello/Asana.",
+      "longDescription": "Aplicación de gestión de proyectos con funcionalidades de colaboración en tiempo real usando WebSockets. Incluye tableros Kanban, gráficos de Gantt, notificaciones push, y integración con servicios de terceros.",
+      "tech": ["React", "Node.js", "Socket.io", "MongoDB", "AWS S3", "Docker"],
+      "link": "https://taskmanager-demo.emmanuelberrio.dev",
+      "github": "https://github.com/emmanuelberrio/task-manager-saas",
+      "image": "/projects/taskmanager.jpg",
+      "featured": true
+    },
+    {
+      "id": "proj-3",
+      "title": "AI Content Generator",
+      "description": "Herramienta que utiliza IA para generar contenido de marketing, artículos de blog, y copy publicitario.",
+      "longDescription": "Aplicación web que integra modelos de lenguaje de OpenAI para generar contenido de alta calidad. Incluye plantillas personalizables, optimización SEO, y exportación en múltiples formatos.",
+      "tech": ["Next.js", "OpenAI API", "Tailwind CSS", "Supabase", "Vercel AI SDK"],
+      "link": "https://ai-content.emmanuelberrio.dev",
+      "github": "https://github.com/emmanuelberrio/ai-content-generator",
+      "image": "/projects/ai-content.jpg",
+      "featured": true
+    },
+    {
+      "id": "proj-4",
+      "title": "Real Estate Portal",
+      "description": "Portal inmobiliario con búsqueda avanzada, mapas interactivos, tours virtuales 360° y sistema de citas.",
+      "longDescription": "Plataforma inmobiliaria completa con integración de mapas de Google, búsqueda geolocalizada, filtros avanzados, y sistema de mensajería entre agentes y clientes. Incluye panel de administración para gestión de propiedades.",
+      "tech": ["Next.js", "TypeScript", "Google Maps API", "Prisma", "MySQL", "Cloudinary"],
+      "link": "https://realestate-demo.emmanuelberrio.dev",
+      "github": "https://github.com/emmanuelberrio/real-estate-portal",
+      "image": "/projects/realestate.jpg",
+      "featured": false
+    },
+    {
+      "id": "proj-5",
+      "title": "Healthcare Dashboard",
+      "description": "Dashboard para clínicas con gestión de pacientes, citas, historiales médicos y telemedicina.",
+      "longDescription": "Sistema de gestión hospitalaria con módulos para citas, expedientes médicos electrónicos, facturación, y videoconsultas. Cumple con estándares HIPAA de privacidad de datos médicos.",
+      "tech": ["React", "Node.js", "WebRTC", "PostgreSQL", "Redis", "Chart.js"],
+      "link": "https://healthcare-demo.emmanuelberrio.dev",
+      "github": "https://github.com/emmanuelberrio/healthcare-dashboard",
+      "image": "/projects/healthcare.jpg",
+      "featured": false
+    },
+    {
+      "id": "proj-6",
+      "title": "Social Media Analytics",
+      "description": "Herramienta de análisis de redes sociales con métricas en tiempo real, reportes automáticos y visualización de datos.",
+      "longDescription": "Plataforma de analítica para redes sociales que agrega datos de múltiples fuentes (Twitter, Instagram, Facebook, LinkedIn) y presenta insights accionables mediante dashboards interactivos y reportes automatizados.",
+      "tech": ["Vue.js", "Python", "FastAPI", "MongoDB", "D3.js", "Docker"],
+      "link": "https://analytics-demo.emmanuelberrio.dev",
+      "github": "https://github.com/emmanuelberrio/social-analytics",
+      "image": "/projects/analytics.jpg",
+      "featured": false
+    }
+  ],
+
+  "skills": {
+    "frontend": [
+      { "name": "React", "level": 95 },
+      { "name": "Next.js", "level": 90 },
+      { "name": "TypeScript", "level": 90 },
+      { "name": "JavaScript", "level": 95 },
+      { "name": "HTML5/CSS3", "level": 95 },
+      { "name": "Tailwind CSS", "level": 90 },
+      { "name": "Vue.js", "level": 75 },
+      { "name": "Redux", "level": 85 }
+    ],
+    "backend": [
+      { "name": "Node.js", "level": 90 },
+      { "name": "Express", "level": 85 },
+      { "name": "NestJS", "level": 80 },
+      { "name": "Python", "level": 75 },
+      { "name": "FastAPI", "level": 70 },
+      { "name": "GraphQL", "level": 80 },
+      { "name": "REST APIs", "level": 90 }
+    ],
+    "database": [
+      { "name": "PostgreSQL", "level": 85 },
+      { "name": "MongoDB", "level": 85 },
+      { "name": "MySQL", "level": 80 },
+      { "name": "Redis", "level": 75 },
+      { "name": "Prisma", "level": 85 }
+    ],
+    "tools": [
+      { "name": "Git", "level": 90 },
+      { "name": "Docker", "level": 85 },
+      { "name": "AWS", "level": 80 },
+      { "name": "Vercel", "level": 90 },
+      { "name": "Jest", "level": 85 },
+      { "name": "Webpack", "level": 75 }
+    ]
+  },
+
+  "languages": [
+    { "name": "Español", "level": "Nativo" },
+    { "name": "Inglés", "level": "Avanzado (C1)" },
+    { "name": "Portugués", "level": "Básico (A2)" }
+  ],
+
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/emmanuelberrio",
+    "github": "https://github.com/emmanuelberrio",
+    "twitter": "https://twitter.com/emmanuelberrio",
+    "dev": "https://dev.to/emmanuelberrio"
+  }
+}

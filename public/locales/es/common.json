@@ -1,0 +1,135 @@
+{
+  "common": {
+    "siteTitle": "Emmanuel Berrio Jiménez",
+    "siteDescription": "Portafolio profesional de Emmanuel Berrio Jiménez - Desarrollador Full-Stack",
+    "readMore": "Leer más",
+    "viewProject": "Ver proyecto",
+    "downloadCV": "Descargar CV",
+    "contactMe": "Contáctame",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "education": "Educación",
+    "certificates": "Certificaciones",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "title": "Desarrollador Full-Stack",
+    "subtitle": "Creando experiencias web excepcionales",
+    "cta": "Ver mi trabajo",
+    "ctaSecondary": "Contáctame"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "subtitle": "Conoce un poco más sobre mi trayectoria",
+    "downloadCV": "Descargar CV",
+    "yearsExperience": "Años de experiencia",
+    "projectsCompleted": "Proyectos completados",
+    "happyClients": "Clientes satisfechos"
+  },
+  "experience": {
+    "title": "Experiencia Laboral",
+    "subtitle": "Mi trayectoria profesional",
+    "present": "Actualidad",
+    "achievements": "Logros principales",
+    "technologies": "Tecnologías utilizadas"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Algunos de mis trabajos destacados",
+    "featured": "Destacados",
+    "all": "Todos los proyectos",
+    "viewLive": "Ver demo",
+    "viewCode": "Ver código",
+    "technologies": "Tecnologías"
+  },
+  "education": {
+    "title": "Educación",
+    "subtitle": "Formación académica"
+  },
+  "certificates": {
+    "title": "Certificaciones",
+    "subtitle": "Certificaciones y cursos completados",
+    "viewCredential": "Ver credencial",
+    "issuedBy": "Emitido por"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "subtitle": "Mis competencias técnicas",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Bases de datos",
+    "tools": "Herramientas y DevOps"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes un proyecto en mente? ¡Hablemos!",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre completo",
+      "email": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "subject": "Asunto",
+      "subjectPlaceholder": "¿En qué puedo ayudarte?",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+      "consent": "Acepto la política de privacidad y el tratamiento de mis datos",
+      "submit": "Enviar mensaje",
+      "sending": "Enviando..."
+    },
+    "success": {
+      "title": "¡Mensaje enviado!",
+      "message": "Gracias por contactarme. Te responderé lo antes posible."
+    },
+    "error": {
+      "title": "Error al enviar",
+      "message": "Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo."
+    },
+    "validation": {
+      "nameRequired": "El nombre es requerido",
+      "nameMin": "El nombre debe tener al menos 2 caracteres",
+      "emailRequired": "El email es requerido",
+      "emailInvalid": "Email inválido",
+      "subjectRequired": "El asunto es requerido",
+      "subjectMin": "El asunto debe tener al menos 5 caracteres",
+      "messageRequired": "El mensaje es requerido",
+      "messageMin": "El mensaje debe tener al menos 10 caracteres",
+      "consentRequired": "Debes aceptar la política de privacidad"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "builtWith": "Construido con",
+    "and": "y",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de uso"
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización",
+    "intro": "Esta política de privacidad describe cómo se recopila, utiliza y protege la información personal que proporciones a través del formulario de contacto.",
+    "dataCollection": {
+      "title": "Recopilación de datos",
+      "content": "Únicamente recopilamos la información que proporcionas voluntariamente a través del formulario de contacto: nombre, email, asunto y mensaje."
+    },
+    "dataUsage": {
+      "title": "Uso de datos",
+      "content": "La información recopilada se utiliza exclusivamente para responder a tu consulta o solicitud. No compartimos tu información con terceros."
+    },
+    "dataProtection": {
+      "title": "Protección de datos",
+      "content": "Implementamos medidas de seguridad adecuadas para proteger tu información personal contra acceso no autorizado, alteración o destrucción."
+    },
+    "rights": {
+      "title": "Tus derechos",
+      "content": "Tienes derecho a acceder, rectificar o eliminar tus datos personales en cualquier momento contactándome directamente."
+    }
+  }
+}
