@@ -45,6 +45,8 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // Estado para detectar scroll y aplicar background
   const [isScrolled, setIsScrolled] = useState(false);
+  // Estado para la sección activa
+  const [activeSection, setActiveSection] = useState('/');
   // Obtener la ruta actual para resaltar enlace activo
   const pathname = usePathname();
 
@@ -58,6 +60,43 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Scroll spy: detectar sección activa
+  useEffect(() => {
+    const handleScrollSpy = () => {
+      // Si no estamos en la página principal, no hacer nada
+      if (pathname !== '/') return;
+
+      const sections = navigation
+        .filter((item) => item.href.startsWith('#'))
+        .map((item) => item.href.substring(1)); // Remover el #
+
+      // Obtener posición actual del scroll
+      const scrollPosition = window.scrollY + 100; // Offset de 100px
+
+      // Si estamos al principio de la página
+      if (window.scrollY < 100) {
+        setActiveSection('/');
+        return;
+      }
+
+      // Encontrar la sección activa
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(`#${sectionId}`);
+            return;
+          }
+        }
+      }
+    };
+
+    handleScrollSpy(); // Ejecutar inmediatamente
+    window.addEventListener('scroll', handleScrollSpy);
+    return () => window.removeEventListener('scroll', handleScrollSpy);
+  }, [pathname]);
+
   // Manejar clic en enlaces internos (smooth scroll)
   const handleNavClick = (href: string) => {
     if (href.startsWith('#')) {
@@ -67,6 +106,17 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
       }
     }
     setMobileMenuOpen(false);
+  };
+
+  // Función para determinar si un enlace está activo
+  const isLinkActive = (href: string) => {
+    if (pathname !== '/') {
+      return pathname === href;
+    }
+    if (href === '/') {
+      return activeSection === '/';
+    }
+    return activeSection === href;
   };
 
   return (
@@ -80,23 +130,29 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
       )}
     >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 lg:py-6"
         aria-label="Global"
       >
-        {/* Logo/Nombre */}
+        {/* Logo/Nombre - Más grande */}
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <motion.span whileHover={{ scale: 1.05 }} className="text-xl font-bold text-white">
-              EB<span className="text-blue-500">.</span>
+            <motion.span
+              whileHover={{ scale: 1.05 }}
+              className="text-2xl lg:text-3xl font-bold text-white flex items-center gap-2"
+            >
+              <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                EB
+              </span>
+              <span className="text-blue-500 text-3xl lg:text-4xl">.</span>
             </motion.span>
           </Link>
         </div>
 
-        {/* Botón menú móvil */}
+        {/* Botón menú móvil - Más grande */}
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-300"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-3 text-gray-300 hover:bg-gray-800 transition-colors"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -104,8 +160,8 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
           </button>
         </div>
 
-        {/* Enlaces de navegación - Desktop */}
-        <div className="hidden lg:flex lg:gap-x-8">
+        {/* Enlaces de navegación - Desktop - Más grandes */}
+        <div className="hidden lg:flex lg:gap-x-10">
           {navigation.map((item) => (
             <motion.a
               key={item.name}
@@ -116,30 +172,36 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
                   handleNavClick(item.href);
                 }
               }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className={cn(
-                'text-sm font-semibold leading-6 transition-colors',
-                pathname === item.href || (item.href.startsWith('#') && pathname === '/')
-                  ? 'text-blue-500'
-                  : 'text-gray-300 hover:text-white'
+                'text-base font-semibold leading-6 transition-all duration-300 relative py-2',
+                isLinkActive(item.href) ? 'text-blue-400' : 'text-gray-300 hover:text-white'
               )}
             >
               {t(item.name)}
+              {/* Indicador activo */}
+              {isLinkActive(item.href) && (
+                <motion.div
+                  layoutId="activeNav"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
+              )}
             </motion.a>
           ))}
         </div>
 
-        {/* Selector de idioma - Desktop */}
+        {/* Selector de idioma - Desktop - Más grande y visible */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
           <motion.button
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => onLanguageChange(locale === 'es' ? 'en' : 'es')}
-            className="flex items-center gap-2 text-sm font-semibold leading-6 text-gray-300 hover:text-white transition-colors"
+            className="flex items-center gap-2 px-4 py-2 text-base font-semibold bg-gradient-to-r from-blue-500/10 to-purple-500/10 hover:from-blue-500/20 hover:to-purple-500/20 border border-blue-500/30 rounded-lg text-blue-400 hover:text-blue-300 transition-all duration-300"
           >
             <LanguageIcon className="h-5 w-5" />
-            <span className="uppercase">{locale === 'es' ? 'EN' : 'ES'}</span>
+            <span className="uppercase font-bold">{locale === 'es' ? 'EN' : 'ES'}</span>
           </motion.button>
         </div>
       </nav>
@@ -201,7 +263,7 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
                         whileHover={{ x: 5 }}
                         className={cn(
                           '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-colors',
-                          pathname === item.href
+                          isLinkActive(item.href)
                             ? 'bg-blue-500/10 text-blue-500'
                             : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                         )}
