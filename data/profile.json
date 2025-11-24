@@ -1,10 +1,10 @@
 {
-  "name": "Emmanuel Berrio Jiménez",
+  "name": "Emmanuel Berrio Jimenez",
   "title": "Desarrollador de Software FullStack",
   "summary": "Innovador Programador Fullstack con 3 años de experiencia, apasionado por la creación de aplicaciones web que transforman conceptos en experiencias digitales excepcionales. Mi destreza abarca un extenso repertorio de tecnologías, desde el diseño con HTML, CSS y Sass, hasta la implementación de frameworks como React.js, Vue.js y Angular. Mi trayectoria incluye el desarrollo eficiente con C#, ASP.NET, PHP y Node.js, gestión de bases de datos con MySQL y PostgreSQL, y la utilización efectiva de herramientas como Git. Con un enfoque proactivo, una capacidad de aprendizaje ágil y una mentalidad abierta hacia la evolución tecnológica, mi compromiso constante con el crecimiento en habilidades técnicas y blandas me posiciona como un profesional dinámico, listo para sobresalir en desafiantes entornos de desarrollo.",
   "location": "Medellín, Antioquia, Colombia",
   "email": "emmanuel.berrio@example.com",
-  "phone": "+57 999 999 999",
+  "phone": "+57 3015249169",
   "linkedin": "https://www.linkedin.com/in/emmanuel-berrio-jimenez/",
   "github": "https://github.com/Emmanuelxs13",
   "website": "https://emmanuelberrio.dev",
@@ -14,7 +14,7 @@
       "id": "exp-1",
       "company": "Botopia",
       "title": "Desarrollador de Software Fullstack",
-      "from": "2024-04",
+      "from": "2025-04",
       "to": "present",
       "description": "Desarrollo de soluciones fullstack utilizando tecnologías modernas. Implementación de aplicaciones web escalables y mantenibles con enfoque en la experiencia de usuario y rendimiento.",
       "achievements": [
@@ -312,6 +312,18 @@
   "languages": [
     { "name": "Español", "level": "Nativo" },
     { "name": "Inglés", "level": "Intermedio-Avanzado (B2)" }
+  ],
+
+  "references": [
+    {
+      "id": "ref-1",
+      "name": "Disponible bajo solicitud",
+      "title": "Referencias Profesionales",
+      "company": "",
+      "email": "",
+      "phone": "",
+      "relationship": "Las referencias profesionales están disponibles bajo solicitud directa."
+    }
   ],
 
   "social": {

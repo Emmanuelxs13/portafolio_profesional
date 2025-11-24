@@ -78,11 +78,17 @@ export default function ProjectsGrid({ t, projects }: Readonly<ProjectsGridProps
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
-                className="group relative bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-300"
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative bg-gradient-to-br from-gray-800/90 via-gray-900/90 to-gray-800/90 rounded-2xl overflow-hidden border border-gray-700/50 hover:border-blue-500/50 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 backdrop-blur-sm transition-all duration-300"
               >
+                {/* Efecto de brillo superior */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-purple-500/0 to-transparent group-hover:from-blue-500/10 group-hover:via-purple-500/5 transition-all duration-500" />
+                
+                {/* Indicador decorativo en esquina */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl group-hover:bg-blue-500/10 transition-all duration-500" />
+
                 {/* Imagen del proyecto */}
-                <div className="relative h-48 bg-gray-900 overflow-hidden">
+                <div className="relative h-52 bg-gradient-to-br from-gray-900 to-black overflow-hidden">
                   {project.image ? (
                     <Image
                       src={project.image}
@@ -92,60 +98,73 @@ export default function ProjectsGrid({ t, projects }: Readonly<ProjectsGridProps
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
-                      <CodeBracketIcon className="h-20 w-20 text-gray-600" />
+                      <CodeBracketIcon className="h-24 w-24 text-gray-600/50" />
                     </div>
                   )}
 
-                  {/* Overlay con enlaces */}
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                  {/* Overlay con enlaces mejorado */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                     {project.link && (
-                      <a
+                      <motion.a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 bg-blue-600 rounded-full hover:bg-blue-700 transition-colors"
+                        className="p-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full hover:shadow-xl hover:shadow-blue-500/50 transition-all duration-300"
+                        whileHover={{ scale: 1.15, rotate: 5 }}
+                        whileTap={{ scale: 0.95 }}
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <ArrowTopRightOnSquareIcon className="h-5 w-5 text-white" />
-                      </a>
+                        <ArrowTopRightOnSquareIcon className="h-6 w-6 text-white" />
+                      </motion.a>
                     )}
                     {project.github && (
-                      <a
+                      <motion.a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors"
+                        className="p-4 bg-gray-800/90 backdrop-blur-sm rounded-full hover:bg-gray-700 hover:shadow-xl hover:shadow-gray-500/30 transition-all duration-300"
+                        whileHover={{ scale: 1.15, rotate: -5 }}
+                        whileTap={{ scale: 0.95 }}
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <CodeBracketIcon className="h-5 w-5 text-white" />
-                      </a>
+                        <CodeBracketIcon className="h-6 w-6 text-white" />
+                      </motion.a>
                     )}
                   </div>
                 </div>
 
-                {/* Contenido */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                {/* Contenido mejorado */}
+                <div className="relative z-10 p-6">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">{project.description}</p>
+                  <p className="text-gray-400 text-sm mb-4 line-clamp-2 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{project.description}</p>
 
-                  {/* Tecnologías */}
+                  {/* Tecnologías mejoradas */}
                   <div className="flex flex-wrap gap-2">
-                    {project.tech.slice(0, 4).map((tech) => (
-                      <span
+                    {project.tech.slice(0, 4).map((tech, techIndex) => (
+                      <motion.span
                         key={tech}
-                        className="px-2 py-1 bg-gray-700/50 text-blue-400 text-xs rounded"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: techIndex * 0.05 }}
+                        whileHover={{ scale: 1.1, y: -2 }}
+                        className="px-3 py-1.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 hover:from-blue-500/30 hover:to-purple-500/30 text-blue-300 text-xs rounded-full border border-blue-500/30 backdrop-blur-sm transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-blue-500/20"
                       >
                         {tech}
-                      </span>
+                      </motion.span>
                     ))}
                     {project.tech.length > 4 && (
-                      <span className="px-2 py-1 text-gray-500 text-xs">
-                        +{project.tech.length - 4}
+                      <span className="px-3 py-1.5 text-gray-500 text-xs font-medium">
+                        +{project.tech.length - 4} más
                       </span>
                     )}
                   </div>
+                </div>
+
+                {/* Borde brillante animado en hover */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 opacity-20 blur-xl" />
                 </div>
               </motion.div>
             ))}

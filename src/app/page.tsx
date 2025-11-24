@@ -10,6 +10,7 @@ import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import ExperienceTimeline from '@/components/ExperienceTimeline';
+import EducationTimeline from '@/components/EducationTimeline';
 import ProjectsGrid from '@/components/ProjectsGrid';
 import CertificateList from '@/components/CertificateList';
 import ContactForm from '@/components/ContactForm';
@@ -84,6 +85,9 @@ export default function Home() {
 
         {/* Experience Section */}
         <ExperienceTimeline t={t} experiences={profile.experience} locale={locale} />
+
+        {/* Education Section */}
+        <EducationTimeline t={t} education={profile.education} />
 
         {/* Projects Section */}
         <ProjectsGrid t={t} projects={profile.projects} />

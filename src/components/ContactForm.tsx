@@ -86,112 +86,214 @@ export default function ContactForm({ t }: Readonly<ContactFormProps>) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           onSubmit={handleSubmit(onSubmit)}
-          className="bg-gray-800 rounded-2xl p-8 border border-gray-700 shadow-2xl"
+          className="relative bg-gradient-to-br from-gray-800/90 via-gray-900/90 to-gray-800/90 rounded-2xl p-8 lg:p-10 border border-gray-700/50 shadow-2xl backdrop-blur-sm overflow-hidden"
         >
-          {/* Name */}
-          <div className="mb-6">
-            <label className="block text-gray-300 font-medium mb-2">
-              <UserIcon className="inline h-5 w-5 mr-2" />
-              {t('contact.form.name')}
-            </label>
-            <input
-              {...register('name')}
-              type="text"
-              className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 outline-none transition"
-              placeholder={t('contact.form.namePlaceholder')}
-            />
-            {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>}
-          </div>
+          {/* Efectos decorativos */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl" />
 
-          {/* Email */}
-          <div className="mb-6">
-            <label className="block text-gray-300 font-medium mb-2">
-              <EnvelopeIcon className="inline h-5 w-5 mr-2" />
-              {t('contact.form.email')}
-            </label>
-            <input
-              {...register('email')}
-              type="email"
-              className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 outline-none transition"
-              placeholder={t('contact.form.emailPlaceholder')}
-            />
-            {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>}
-          </div>
-
-          {/* Subject */}
-          <div className="mb-6">
-            <label className="block text-gray-300 font-medium mb-2">
-              <ChatBubbleLeftRightIcon className="inline h-5 w-5 mr-2" />
-              {t('contact.form.subject')}
-            </label>
-            <input
-              {...register('subject')}
-              type="text"
-              className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 outline-none transition"
-              placeholder={t('contact.form.subjectPlaceholder')}
-            />
-            {errors.subject && (
-              <p className="text-red-400 text-sm mt-1">{errors.subject.message}</p>
-            )}
-          </div>
-
-          {/* Message */}
-          <div className="mb-6">
-            <label className="block text-gray-300 font-medium mb-2">
-              {t('contact.form.message')}
-            </label>
-            <textarea
-              {...register('message')}
-              rows={5}
-              className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 outline-none transition resize-none"
-              placeholder={t('contact.form.messagePlaceholder')}
-            />
-            {errors.message && (
-              <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
-            )}
-          </div>
-
-          {/* Consent */}
-          <div className="mb-6">
-            <label className="flex items-start gap-3 cursor-pointer">
-              <input {...register('consent')} type="checkbox" className="mt-1" />
-              <span className="text-sm text-gray-400">{t('contact.form.consent')}</span>
-            </label>
-            {errors.consent && (
-              <p className="text-red-400 text-sm mt-1">{errors.consent.message}</p>
-            )}
-          </div>
-
-          {/* Submit Button */}
-          <motion.button
-            type="submit"
-            disabled={isSubmitting}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-700 transition"
-          >
-            {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
-          </motion.button>
-
-          {/* Status Messages */}
-          {submitStatus === 'success' && (
+          <div className="relative z-10 space-y-6">
+            {/* Name */}
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-4 p-4 bg-green-500/10 border border-green-500 rounded-lg text-green-400 text-center"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1 }}
+              className="group"
             >
-              {t('contact.success.message')}
+              <label className="block text-gray-300 font-medium mb-2 transition-colors group-focus-within:text-blue-400">
+                <UserIcon className="inline h-5 w-5 mr-2 transition-transform group-focus-within:scale-110" />
+                {t('contact.form.name')}
+              </label>
+              <input
+                {...register('name')}
+                type="text"
+                className="w-full px-4 py-3.5 bg-gray-900/80 border border-gray-700/50 rounded-xl text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 focus:bg-gray-900 outline-none transition-all duration-300 hover:border-gray-600"
+                placeholder={t('contact.form.namePlaceholder')}
+              />
+              {errors.name && (
+                <motion.p
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-red-400 text-sm mt-2 flex items-center gap-1"
+                >
+                  <span>⚠</span> {errors.name.message}
+                </motion.p>
+              )}
             </motion.div>
-          )}
-          {submitStatus === 'error' && (
+
+            {/* Email */}
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-4 p-4 bg-red-500/10 border border-red-500 rounded-lg text-red-400 text-center"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="group"
             >
-              {t('contact.error.message')}
+              <label className="block text-gray-300 font-medium mb-2 transition-colors group-focus-within:text-blue-400">
+                <EnvelopeIcon className="inline h-5 w-5 mr-2 transition-transform group-focus-within:scale-110" />
+                {t('contact.form.email')}
+              </label>
+              <input
+                {...register('email')}
+                type="email"
+                className="w-full px-4 py-3.5 bg-gray-900/80 border border-gray-700/50 rounded-xl text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 focus:bg-gray-900 outline-none transition-all duration-300 hover:border-gray-600"
+                placeholder={t('contact.form.emailPlaceholder')}
+              />
+              {errors.email && (
+                <motion.p
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-red-400 text-sm mt-2 flex items-center gap-1"
+                >
+                  <span>⚠</span> {errors.email.message}
+                </motion.p>
+              )}
             </motion.div>
-          )}
+
+            {/* Subject */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+              className="group"
+            >
+              <label className="block text-gray-300 font-medium mb-2 transition-colors group-focus-within:text-blue-400">
+                <ChatBubbleLeftRightIcon className="inline h-5 w-5 mr-2 transition-transform group-focus-within:scale-110" />
+                {t('contact.form.subject')}
+              </label>
+              <input
+                {...register('subject')}
+                type="text"
+                className="w-full px-4 py-3.5 bg-gray-900/80 border border-gray-700/50 rounded-xl text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 focus:bg-gray-900 outline-none transition-all duration-300 hover:border-gray-600"
+                placeholder={t('contact.form.subjectPlaceholder')}
+              />
+              {errors.subject && (
+                <motion.p
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-red-400 text-sm mt-2 flex items-center gap-1"
+                >
+                  <span>⚠</span> {errors.subject.message}
+                </motion.p>
+              )}
+            </motion.div>
+
+            {/* Message */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+              className="group"
+            >
+              <label className="block text-gray-300 font-medium mb-2 transition-colors group-focus-within:text-blue-400">
+                {t('contact.form.message')}
+              </label>
+              <textarea
+                {...register('message')}
+                rows={5}
+                className="w-full px-4 py-3.5 bg-gray-900/80 border border-gray-700/50 rounded-xl text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 focus:bg-gray-900 outline-none transition-all duration-300 hover:border-gray-600 resize-none"
+                placeholder={t('contact.form.messagePlaceholder')}
+              />
+              {errors.message && (
+                <motion.p
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-red-400 text-sm mt-2 flex items-center gap-1"
+                >
+                  <span>⚠</span> {errors.message.message}
+                </motion.p>
+              )}
+            </motion.div>
+
+            {/* Consent */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              <label className="flex items-start gap-3 cursor-pointer group">
+                <input
+                  {...register('consent')}
+                  type="checkbox"
+                  className="mt-1 w-4 h-4 accent-blue-600 cursor-pointer"
+                />
+                <span className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+                  {t('contact.form.consent')}
+                </span>
+              </label>
+              {errors.consent && (
+                <motion.p
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-red-400 text-sm mt-2 flex items-center gap-1"
+                >
+                  <span>⚠</span> {errors.consent.message}
+                </motion.p>
+              )}
+            </motion.div>
+
+            {/* Submit Button */}
+            <motion.button
+              type="submit"
+              disabled={isSubmitting}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="group relative w-full px-8 py-4 bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 text-white rounded-xl font-semibold disabled:opacity-50 disabled:cursor-not-allowed shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 overflow-hidden"
+            >
+              {/* Efecto de brillo animado */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                animate={{
+                  x: ['-200%', '200%'],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: 'linear',
+                  repeatDelay: 1,
+                }}
+              />
+              <span className="relative flex items-center justify-center gap-2">
+                {isSubmitting ? (
+                  <>
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                      className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                    />
+                    {t('contact.form.sending')}
+                  </>
+                ) : (
+                  <>
+                    <EnvelopeIcon className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                    {t('contact.form.submit')}
+                  </>
+                )}
+              </span>
+            </motion.button>
+
+            {/* Status Messages */}
+            {submitStatus === 'success' && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="p-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/50 rounded-xl text-green-400 text-center font-medium shadow-lg"
+              >
+                ✓ {t('contact.success.message')}
+              </motion.div>
+            )}
+            {submitStatus === 'error' && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="p-4 bg-gradient-to-r from-red-500/10 to-rose-500/10 border border-red-500/50 rounded-xl text-red-400 text-center font-medium shadow-lg"
+              >
+                ✗ {t('contact.error.message')}
+              </motion.div>
+            )}
+          </div>
         </motion.form>
       </div>
     </section>

@@ -84,6 +84,19 @@ export interface Language {
 }
 
 /**
+ * Referencia profesional
+ */
+export interface Reference {
+  id: string;
+  name: string;
+  title: string;
+  company: string;
+  email: string;
+  phone: string;
+  relationship: string;
+}
+
+/**
  * Redes sociales
  */
 export interface Social {
@@ -112,5 +125,6 @@ export interface Profile {
   projects: Project[];
   skills: Skills;
   languages: Language[];
+  references: Reference[];
   social: Social;
 }
