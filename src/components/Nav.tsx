@@ -19,6 +19,7 @@ import { motion } from 'framer-motion';
 import { Dialog, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon, LanguageIcon } from '@heroicons/react/24/outline';
 import { cn } from '@/lib/utils';
+import type { Locale } from '@/hooks/useI18n';
 
 // Lista de enlaces de navegación
 const navigation = [
@@ -34,9 +35,9 @@ interface NavProps {
   /** Diccionario de traducciones */
   t: (key: string) => string;
   /** Idioma actual */
-  locale: string;
+  locale: Locale;
   /** Función para cambiar idioma */
-  onLanguageChange: (locale: string) => void;
+  onLanguageChange: (locale: Locale) => void;
 }
 
 export default function Nav({ t, locale, onLanguageChange }: NavProps) {
