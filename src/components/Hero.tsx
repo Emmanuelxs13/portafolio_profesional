@@ -74,28 +74,196 @@ export default function Hero({ t, name, title }: Readonly<HeroProps>) {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-900 via-black to-black"
     >
-      {/* Efectos de fondo decorativos sutiles */}
+      {/* Efectos de fondo decorativos mejorados y más atractivos */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Círculo degradado azul */}
+        {/* Gradientes animados principales - Más vibrantes */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 0.06, scale: 1 }}
-          transition={{ duration: 2, ease: 'easeOut' }}
-          className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500 rounded-full blur-3xl"
+          initial={{ opacity: 0, scale: 0.8, x: -100 }}
+          animate={{
+            opacity: [0.15, 0.2, 0.15],
+            scale: [0.8, 1.1, 0.8],
+            x: [-100, -50, -100],
+            y: [0, -30, 0],
+          }}
+          transition={{
+            duration: 8,
+            ease: 'easeInOut',
+            repeat: Infinity,
+            repeatType: 'reverse',
+          }}
+          className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-500 rounded-full blur-3xl"
         />
-        {/* Círculo degradado púrpura */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 0.06, scale: 1 }}
-          transition={{ duration: 2, delay: 0.3, ease: 'easeOut' }}
-          className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500 rounded-full blur-3xl"
+          initial={{ opacity: 0, scale: 0.8, x: 100 }}
+          animate={{
+            opacity: [0.15, 0.25, 0.15],
+            scale: [0.8, 1.2, 0.8],
+            x: [100, 50, 100],
+            y: [0, 30, 0],
+          }}
+          transition={{
+            duration: 10,
+            delay: 0.5,
+            ease: 'easeInOut',
+            repeat: Infinity,
+            repeatType: 'reverse',
+          }}
+          className="absolute bottom-1/4 -right-20 w-[700px] h-[700px] bg-gradient-to-tl from-purple-600 via-purple-500 to-pink-500 rounded-full blur-3xl"
         />
-        {/* Grid decorativo sutil */}
-        <div
-          className="absolute inset-0 bg-grid-white/[0.015] bg-[size:60px_60px]"
+
+        {/* Círculo adicional en el centro para más profundidad */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{
+            opacity: [0.08, 0.12, 0.08],
+            scale: [0.9, 1.3, 0.9],
+          }}
+          transition={{
+            duration: 12,
+            ease: 'easeInOut',
+            repeat: Infinity,
+            repeatType: 'reverse',
+          }}
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-500 rounded-full blur-3xl opacity-10"
+        />
+
+        {/* Partículas flotantes decorativas */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.4 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0"
+        >
+          {/* Partícula 1 */}
+          <motion.div
+            animate={{
+              y: [0, -30, 0],
+              x: [0, 20, 0],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+            className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full blur-sm"
+          />
+          {/* Partícula 2 */}
+          <motion.div
+            animate={{
+              y: [0, 40, 0],
+              x: [0, -25, 0],
+              opacity: [0.2, 0.5, 0.2],
+            }}
+            transition={{
+              duration: 8,
+              delay: 1,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+            className="absolute top-1/3 right-1/4 w-3 h-3 bg-purple-400 rounded-full blur-sm"
+          />
+          {/* Partícula 3 */}
+          <motion.div
+            animate={{
+              y: [0, -25, 0],
+              x: [0, 15, 0],
+              opacity: [0.25, 0.55, 0.25],
+            }}
+            transition={{
+              duration: 7,
+              delay: 2,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+            className="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-cyan-400 rounded-full blur-sm"
+          />
+          {/* Partícula 4 */}
+          <motion.div
+            animate={{
+              y: [0, 35, 0],
+              x: [0, -20, 0],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 9,
+              delay: 0.5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+            className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-pink-400 rounded-full blur-sm"
+          />
+        </motion.div>
+
+        {/* Grid decorativo mejorado con efecto shimmer */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0.02, 0.04, 0.02] }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]"
           style={{
             maskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent)',
           }}
+        />
+
+        {/* Líneas decorativas diagonales */}
+        <div className="absolute inset-0">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{
+              opacity: [0.03, 0.06, 0.03],
+              x: [-100, 100, -100],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+            className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"
+          />
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={{
+              opacity: [0.03, 0.06, 0.03],
+              x: [100, -100, 100],
+            }}
+            transition={{
+              duration: 20,
+              delay: 2,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+            className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent"
+          />
+        </div>
+
+        {/* Efecto de resplandor en las esquinas */}
+        <motion.div
+          animate={{
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 5,
+            delay: 1,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-purple-500/20 to-transparent rounded-full blur-3xl"
         />
       </div>
 
