@@ -1,9 +1,9 @@
 {
   "name": "Emmanuel Berrio Jimenez",
   "title": "Desarrollador de Software FullStack",
-  "summary": "Innovador Programador Fullstack con 3 años de experiencia, apasionado por la creación de aplicaciones web que transforman conceptos en experiencias digitales excepcionales. Mi destreza abarca un extenso repertorio de tecnologías, desde el diseño con HTML, CSS y Sass, hasta la implementación de frameworks como React.js, Vue.js y Angular. Mi trayectoria incluye el desarrollo eficiente con C#, ASP.NET, PHP y Node.js, gestión de bases de datos con MySQL y PostgreSQL, y la utilización efectiva de herramientas como Git. Con un enfoque proactivo, una capacidad de aprendizaje ágil y una mentalidad abierta hacia la evolución tecnológica, mi compromiso constante con el crecimiento en habilidades técnicas y blandas me posiciona como un profesional dinámico, listo para sobresalir en desafiantes entornos de desarrollo.",
+  "summary": "Programador Fullstack con 3 años de experiencia, dedicado a convertir ideas en experiencias web fluidas y memorables. Domino tecnologías como HTML, CSS, Sass, React.js, Vue.js y Angular, así como desarrollos backend en C#, ASP.NET, PHP y Node.js. Trabajo con MySQL y PostgreSQL, y manejo Git con soltura. Con iniciativa, aprendizaje rápido y una visión siempre abierta a la innovación, aporto dinamismo y claridad técnica para destacar en entornos de desarrollo exigentes.",
   "location": "Medellín, Antioquia, Colombia",
-  "email": "emmanuel.berrio@example.com",
+  "email": "emmanuelberriojimenez13@gmail.com",
   "phone": "+57 3015249169",
   "linkedin": "https://www.linkedin.com/in/emmanuel-berrio-jimenez/",
   "github": "https://github.com/Emmanuelxs13",
@@ -224,50 +224,6 @@
       "github": "",
       "image": "/projects/muvu-automation.jpg",
       "featured": true
-    },
-    {
-      "id": "proj-3",
-      "title": "Portal Web Inmobiliario",
-      "description": "Portal web para visualización y búsqueda de propiedades inmobiliarias con sistema de gestión de contenido.",
-      "longDescription": "Desarrollo de portal web inmobiliario con funcionalidades de búsqueda avanzada, filtros por características, visualización de propiedades con galería de imágenes, y panel de administración. Implementado con tecnologías modernas para garantizar rendimiento y experiencia de usuario óptima.",
-      "tech": ["React", "PHP", "MySQL", "JavaScript", "CSS", "Sass"],
-      "link": "",
-      "github": "",
-      "image": "/projects/portal-inmobiliario.jpg",
-      "featured": true
-    },
-    {
-      "id": "proj-4",
-      "title": "Dashboard Analítico Empresarial",
-      "description": "Dashboard interactivo para visualización de métricas y KPIs empresariales con gráficos en tiempo real.",
-      "longDescription": "Sistema de visualización de datos empresariales con dashboards interactivos, gráficos dinámicos y reportes automatizados. Implementación de conexión con bases de datos MySQL para extracción y procesamiento de información en tiempo real.",
-      "tech": ["Vue.js", "Node.js", "MySQL", "Chart.js", "JavaScript"],
-      "link": "",
-      "github": "",
-      "image": "/projects/dashboard-analytics.jpg",
-      "featured": false
-    },
-    {
-      "id": "proj-5",
-      "title": "Sistema de Gestión de Inventarios",
-      "description": "Aplicación web para control de inventarios con funcionalidades de entrada/salida, alertas de stock y reportes.",
-      "longDescription": "Sistema completo de gestión de inventarios con control de entrada y salida de productos, alertas automáticas de stock bajo, generación de reportes en PDF, y panel de administración. Arquitectura MVC con PHP y base de datos MySQL.",
-      "tech": ["PHP", "MySQL", "JavaScript", "Bootstrap", "Mpdf"],
-      "link": "",
-      "github": "",
-      "image": "/projects/inventario.jpg",
-      "featured": false
-    },
-    {
-      "id": "proj-6",
-      "title": "Portfolio Profesional Interactivo",
-      "description": "Portfolio web personal con diseño moderno, animaciones fluidas y secciones interactivas para mostrar proyectos y habilidades.",
-      "longDescription": "Desarrollo de portfolio profesional con Next.js, TypeScript y Tailwind CSS. Implementación de i18n (español/inglés), animaciones con Framer Motion, formulario de contacto validado, y sistema de generación de CV en PDF. Testing completo con Jest y React Testing Library.",
-      "tech": ["Next.js", "TypeScript", "React", "Tailwind CSS", "Framer Motion", "Jest"],
-      "link": "https://emmanuelberrio.dev",
-      "github": "https://github.com/Emmanuelxs13/portafolio_profesional",
-      "image": "/projects/portfolio.jpg",
-      "featured": false
     }
   ],
 

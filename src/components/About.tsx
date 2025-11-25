@@ -12,6 +12,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import {
   ArrowDownTrayIcon,
   BriefcaseIcon,
@@ -173,18 +174,19 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
 
               {/* Container de imagen/avatar con mejor diseño */}
               <div className="relative bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-3xl overflow-hidden border-2 border-gray-700/50 shadow-2xl shadow-blue-500/20 backdrop-blur-sm">
-                {/* Placeholder - Reemplazar con imagen real */}
-                <div className="aspect-square flex items-center justify-center bg-gradient-to-br from-blue-600/90 via-purple-600/90 to-blue-700/90 relative overflow-hidden">
-                  {/* Patrón de fondo sutil */}
-                  <div
-                    className="absolute inset-0 opacity-10"
-                    style={{
-                      backgroundImage:
-                        'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-                      backgroundSize: '40px 40px',
-                    }}
+                {/* Imagen de perfil */}
+                <div className="aspect-square relative overflow-hidden">
+                  <Image
+                    src="/img/about/fotoPerfil.JPG"
+                    alt="Emmanuel Berrio - Software Developer"
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px"
                   />
-                  <span className="text-9xl font-bold text-white opacity-40 relative z-10">EB</span>
+                  {/* Overlay muy sutil para mejor contraste sin opacar la imagen */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent" />
+
                   {/* Efecto de brillo */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent"

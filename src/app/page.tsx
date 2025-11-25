@@ -6,6 +6,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -100,7 +101,25 @@ export default function Home() {
         <ReferencesSection t={t} references={profile.references} />
 
         {/* Contact Section */}
-        <ContactForm t={t} />
+        <section
+          id="contact"
+          className="relative py-20 md:py-32 bg-linear-to-b from-black to-gray-900"
+        >
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                {t('contact.title')}
+              </h2>
+              <p className="text-lg text-gray-400">{t('contact.subtitle')}</p>
+            </motion.div>
+            <ContactForm />
+          </div>
+        </section>
       </main>
 
       {/* Footer */}

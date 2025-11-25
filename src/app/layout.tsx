@@ -7,6 +7,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { I18nProvider } from '@/hooks/useI18n';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -55,7 +56,10 @@ export default function RootLayout({
   return (
     <html lang="es" className={inter.variable}>
       <body className="antialiased">
-        <I18nProvider>{children}</I18nProvider>
+        <I18nProvider>
+          {children}
+          <WhatsAppButton />
+        </I18nProvider>
       </body>
     </html>
   );
