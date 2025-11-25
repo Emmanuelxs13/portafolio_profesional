@@ -65,6 +65,25 @@ const translations: Record<Locale, Record<string, string>> = {
     'contact.form.sending': 'Enviando...',
     'contact.success.message': '¡Mensaje enviado! Te responderé pronto.',
     'contact.error.message': 'Error al enviar. Intenta de nuevo.',
+    'contact.email': 'Email',
+    'contact.phone': 'Teléfono',
+    'contact.linkedin': 'LinkedIn',
+    'contact.github': 'GitHub',
+    'whatsapp.tooltip': '¡Hablemos por WhatsApp! 💬',
+    'whatsapp.message':
+      'Hola Emmanuel, vi tu portafolio web y me gustaría conversar sobre una oportunidad laboral. ¿Tienes disponibilidad para una charla?',
+    'months.january': 'Enero',
+    'months.february': 'Febrero',
+    'months.march': 'Marzo',
+    'months.april': 'Abril',
+    'months.may': 'Mayo',
+    'months.june': 'Junio',
+    'months.july': 'Julio',
+    'months.august': 'Agosto',
+    'months.september': 'Septiembre',
+    'months.october': 'Octubre',
+    'months.november': 'Noviembre',
+    'months.december': 'Diciembre',
     'footer.rights': 'Todos los derechos reservados',
     'footer.privacy': 'Política de privacidad',
   },
@@ -115,13 +134,39 @@ const translations: Record<Locale, Record<string, string>> = {
     'contact.form.sending': 'Sending...',
     'contact.success.message': "Message sent! I'll get back to you soon.",
     'contact.error.message': 'Error sending. Please try again.',
+    'contact.email': 'Email',
+    'contact.phone': 'Phone',
+    'contact.linkedin': 'LinkedIn',
+    'contact.github': 'GitHub',
+    'whatsapp.tooltip': "Let's talk on WhatsApp! 💬",
+    'whatsapp.message':
+      'Hello Emmanuel, I saw your web portfolio and I would like to talk about a job opportunity. Do you have time for a chat?',
+    'months.january': 'January',
+    'months.february': 'February',
+    'months.march': 'March',
+    'months.april': 'April',
+    'months.may': 'May',
+    'months.june': 'June',
+    'months.july': 'July',
+    'months.august': 'August',
+    'months.september': 'September',
+    'months.october': 'October',
+    'months.november': 'November',
+    'months.december': 'December',
     'footer.rights': 'All rights reserved',
     'footer.privacy': 'Privacy policy',
   },
 };
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>('es');
+  // Cargar idioma desde localStorage al inicio (solo en cliente)
+  const [locale, setLocaleState] = useState<Locale>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('locale');
+      return (saved as Locale) || 'es';
+    }
+    return 'es';
+  });
 
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale);

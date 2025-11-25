@@ -7,9 +7,11 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useI18n } from '@/hooks/useI18n';
 
 export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useI18n();
 
   // Mostrar el botón después de un pequeño scroll
   useEffect(() => {
@@ -26,9 +28,7 @@ export default function WhatsAppButton() {
   }, []);
 
   // Mensaje predeterminado de WhatsApp
-  const whatsappMessage = encodeURIComponent(
-    'Hola Emmanuel, vi tu portafolio web y me gustaría conversar sobre una oportunidad laboral. ¿Tienes disponibilidad para una charla?'
-  );
+  const whatsappMessage = encodeURIComponent(t('whatsapp.message'));
   const whatsappUrl = `https://wa.me/573015249169?text=${whatsappMessage}`;
 
   return (
@@ -61,7 +61,7 @@ export default function WhatsAppButton() {
 
           {/* Tooltip */}
           <span className="absolute right-full mr-3 px-3 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
-            ¡Hablemos por WhatsApp! 💬
+            {t('whatsapp.tooltip')}
           </span>
         </motion.a>
       )}

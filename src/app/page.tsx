@@ -32,11 +32,15 @@ export default function Home() {
   });
   const [loading, setLoading] = useState(true);
 
-  // Cargar datos del perfil al montar el componente
+  // Cargar datos del perfil cuando cambie el idioma
   useEffect(() => {
     const loadData = async () => {
+      setLoading(true);
       try {
-        const [profileData, statsData] = await Promise.all([getProfile(), getStats()]);
+        const [profileData, statsData] = await Promise.all([
+          getProfile(locale as 'es' | 'en'),
+          getStats(locale as 'es' | 'en'),
+        ]);
         setProfile(profileData);
         setStats(statsData);
       } catch (error) {
@@ -47,9 +51,9 @@ export default function Home() {
     };
 
     loadData();
-  }, []);
+  }, [locale]); // Recargar cuando cambie el idioma
 
-  // Detectar idioma del navegador al cargar
+  // Detectar idioma del navegador al cargar (solo una vez)
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const savedLocale = localStorage.getItem('locale') as 'es' | 'en';
@@ -58,7 +62,7 @@ export default function Home() {
       } else {
         const browserLang = navigator.language.split('-')[0];
         if (browserLang === 'en' || browserLang === 'es') {
-          setLocale(browserLang);
+          setLocale(browserLang as 'es' | 'en');
         }
       }
     }

@@ -43,18 +43,18 @@ export default function EducationTimeline({ t, education }: Readonly<EducationTi
     if (date === 'present') return t('education.present');
     const [year, month] = date.split('-');
     const months = [
-      'Enero',
-      'Febrero',
-      'Marzo',
-      'Abril',
-      'Mayo',
-      'Junio',
-      'Julio',
-      'Agosto',
-      'Septiembre',
-      'Octubre',
-      'Noviembre',
-      'Diciembre',
+      t('months.january'),
+      t('months.february'),
+      t('months.march'),
+      t('months.april'),
+      t('months.may'),
+      t('months.june'),
+      t('months.july'),
+      t('months.august'),
+      t('months.september'),
+      t('months.october'),
+      t('months.november'),
+      t('months.december'),
     ];
     return `${months[Number.parseInt(month, 10) - 1]} ${year}`;
   };

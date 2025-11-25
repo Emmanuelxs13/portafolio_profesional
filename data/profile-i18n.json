@@ -1,0 +1,230 @@
+{
+  "es": {
+    "name": "Emmanuel Berrio Jimenez",
+    "title": "Desarrollador de Software FullStack",
+    "summary": "Programador Fullstack con 3 años de experiencia, dedicado a convertir ideas en experiencias web fluidas y memorables. Domino tecnologías como HTML, CSS, Sass, React.js, Vue.js y Angular, así como desarrollos backend en C#, ASP.NET, PHP y Node.js. Trabajo con MySQL y PostgreSQL, y manejo Git con soltura. Con iniciativa, aprendizaje rápido y una visión siempre abierta a la innovación, aporto dinamismo y claridad técnica para destacar en entornos de desarrollo exigentes.",
+    "experience": [
+      {
+        "id": "exp-1",
+        "company": "Botopia",
+        "title": "Desarrollador de Software Fullstack",
+        "description": "Desarrollo de soluciones fullstack utilizando tecnologías modernas. Implementación de aplicaciones web escalables y mantenibles con enfoque en la experiencia de usuario y rendimiento.",
+        "achievements": [
+          "Desarrollo de aplicaciones web con React.js y Vue.js",
+          "Implementación de APIs RESTful con Node.js y PHP",
+          "Gestión de bases de datos MySQL y PostgreSQL",
+          "Colaboración efectiva en equipo usando metodologías ágiles"
+        ]
+      },
+      {
+        "id": "exp-2",
+        "company": "Muv-u Estudios en el Exterior",
+        "title": "Programador de Sistemas",
+        "description": "MUV-U es una empresa líder dedicada a programas de estudios en el extranjero. Automatización de procesos internos mediante desarrollo de aplicaciones y herramientas de Microsoft 365.",
+        "achievements": [
+          "Automatización de procesos internos mediante desarrollo de aplicaciones",
+          "Soporte tecnológico en Hardware y Software a colaboradores",
+          "Soporte en el CRM Ontraport",
+          "Implementación de soluciones con React.js y Tailwind CSS"
+        ]
+      },
+      {
+        "id": "exp-3",
+        "company": "Portada Inmobiliaria S.A.S",
+        "title": "Programador Full Stack",
+        "description": "Portada Inmobiliaria es una agencia dedicada al proceso de compra, venta o alquiler de propiedades. Desarrollo y programación de secciones especiales para el CRM propio de la empresa.",
+        "achievements": [
+          "Creación y programación de secciones especiales para el CRM propio",
+          "Soporte tecnológico de software a los colaboradores",
+          "Mejora y automatización de procesos internos",
+          "Manejo de servidor de datos a nivel local",
+          "Implementación de librerías como Mpdf para generación de documentos"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": "edu-1",
+        "institution": "I.U Pascual Bravo",
+        "degree": "Ingeniería en Desarrollo de Software",
+        "field": "Ingeniería de Software",
+        "description": "Formación en ingeniería de software con enfoque en desarrollo full stack y mejores prácticas de programación."
+      },
+      {
+        "id": "edu-2",
+        "institution": "Institución Universitaria Salazar y Herrera - IUSH",
+        "degree": "Técnico en Programación de Software",
+        "field": "Programación de Software",
+        "description": "Formación técnica en programación de software con énfasis en desarrollo web y bases de datos."
+      },
+      {
+        "id": "edu-3",
+        "institution": "SENA",
+        "degree": "Técnico en Programación de Software",
+        "field": "Programación de Software",
+        "description": "Programa técnico del SENA enfocado en fundamentos de programación y desarrollo de aplicaciones."
+      },
+      {
+        "id": "edu-4",
+        "institution": "Universidad de Antioquia",
+        "degree": "Certificado de Inglés B2",
+        "field": "Idiomas",
+        "description": "Programa de formación en inglés alcanzando nivel B2 (intermedio-avanzado)."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-1",
+        "title": "CRM Portada Inmobiliaria",
+        "description": "Sistema CRM personalizado para gestión inmobiliaria con módulos especiales para administración de propiedades, clientes y generación de documentos.",
+        "longDescription": "Desarrollo de secciones especiales para el CRM propio de Portada Inmobiliaria. Implementación de funcionalidades para gestión de propiedades, automatización de procesos internos y generación de documentos PDF. Sistema completo con backend en PHP y frontend en React/Vue.js."
+      },
+      {
+        "id": "proj-2",
+        "title": "Sistema de Automatización Muv-u",
+        "description": "Herramientas de automatización de procesos internos para empresa de estudios en el extranjero, integrado con Microsoft 365 y CRM Ontraport.",
+        "longDescription": "Desarrollo de aplicaciones para automatización de procesos internos en Muv-u Estudios en el Exterior. Integración con Microsoft 365 y soporte del CRM Ontraport. Implementación de soluciones con React.js y Tailwind CSS para mejorar la eficiencia operativa."
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-1",
+        "name": "Tatiana Díaz",
+        "title": "Comunicadora y Mercadóloga",
+        "company": "Muv-u Estudios en el Exterior",
+        "relationship": "Compañera de trabajo (distintos equipos)",
+        "recommendation": "Emmanuel es un profesional con grandes habilidades técnicas y blandas, destaco su actitud de servicio y colaboración en todo momento, pues evidencia su capacidad de trabajo en equipo y conocimientos para dar soluciones y aportar desde su rol. Asimismo, su disposición para aprender es muy valiosa, dado que afrontaba retos laborales con gran éxito. Finalmente, su integridad profesional, responsabilidad y respeto hacia otros hace de Emmanuel un gran colaborador."
+      },
+      {
+        "id": "ref-2",
+        "name": "Sebastián López Osorno",
+        "title": "Desarrollador Backend CRM",
+        "company": "Muv-u Estudios en el Exterior",
+        "relationship": "Compañero de equipo",
+        "recommendation": "Es un placer recomendar a Emmanuel como un gran desarrollador de software. Durante nuestro tiempo juntos en MUV-U, pude apreciar su gran capacidad de aprendizaje, autonomía y su deseo constante de crecimiento profesional. Su actitud proactiva y su disposición para trabajar en equipo lo convierten en un miembro valioso para cualquier proyecto o empresa. Estoy seguro de que Emmanuel continuará destacándose."
+      },
+      {
+        "id": "ref-3",
+        "name": "Laura Alejandra García",
+        "title": "Especialista en Marketing Digital",
+        "company": "Muv-u Estudios en el Exterior",
+        "relationship": "Compañera de equipo",
+        "recommendation": "Emmanuel destaca como un joven sumamente responsable y comprometido, con una destacada habilidad para gestionar eficientemente sus tareas. Su destreza en el trabajo en equipo es notable, y siempre aporta propuestas innovadoras que enriquecen los procesos llevados a cabo en diversas áreas de la empresa. Demuestra eficientemente sus habilidades de programación en diversos lenguajes y tiene gran disposición para seguir creciendo como profesional."
+      }
+    ]
+  },
+  "en": {
+    "name": "Emmanuel Berrio Jimenez",
+    "title": "FullStack Software Developer",
+    "summary": "Fullstack programmer with 3 years of experience, dedicated to transforming ideas into fluid and memorable web experiences. I master technologies such as HTML, CSS, Sass, React.js, Vue.js and Angular, as well as backend development in C#, ASP.NET, PHP and Node.js. I work with MySQL and PostgreSQL, and handle Git fluently. With initiative, fast learning and a vision always open to innovation, I bring dynamism and technical clarity to excel in demanding development environments.",
+    "experience": [
+      {
+        "id": "exp-1",
+        "company": "Botopia",
+        "title": "Fullstack Software Developer",
+        "description": "Development of fullstack solutions using modern technologies. Implementation of scalable and maintainable web applications with a focus on user experience and performance.",
+        "achievements": [
+          "Development of web applications with React.js and Vue.js",
+          "Implementation of RESTful APIs with Node.js and PHP",
+          "Management of MySQL and PostgreSQL databases",
+          "Effective team collaboration using agile methodologies"
+        ]
+      },
+      {
+        "id": "exp-2",
+        "company": "Muv-u Study Abroad",
+        "title": "Systems Programmer",
+        "description": "MUV-U is a leading company dedicated to study abroad programs. Automation of internal processes through application development and Microsoft 365 tools.",
+        "achievements": [
+          "Automation of internal processes through application development",
+          "Hardware and Software technical support to collaborators",
+          "Support in the Ontraport CRM",
+          "Implementation of solutions with React.js and Tailwind CSS"
+        ]
+      },
+      {
+        "id": "exp-3",
+        "company": "Portada Real Estate S.A.S",
+        "title": "Full Stack Programmer",
+        "description": "Portada Real Estate is an agency dedicated to the process of buying, selling or renting properties. Development and programming of special sections for the company's own CRM.",
+        "achievements": [
+          "Creation and programming of special sections for the proprietary CRM",
+          "Software technical support to collaborators",
+          "Improvement and automation of internal processes",
+          "Management of local data server",
+          "Implementation of libraries such as Mpdf for document generation"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": "edu-1",
+        "institution": "I.U Pascual Bravo",
+        "degree": "Software Development Engineering",
+        "field": "Software Engineering",
+        "description": "Training in software engineering with a focus on full stack development and programming best practices."
+      },
+      {
+        "id": "edu-2",
+        "institution": "Salazar y Herrera University Institution - IUSH",
+        "degree": "Software Programming Technician",
+        "field": "Software Programming",
+        "description": "Technical training in software programming with emphasis on web development and databases."
+      },
+      {
+        "id": "edu-3",
+        "institution": "SENA",
+        "degree": "Software Programming Technician",
+        "field": "Software Programming",
+        "description": "SENA technical program focused on programming fundamentals and application development."
+      },
+      {
+        "id": "edu-4",
+        "institution": "University of Antioquia",
+        "degree": "English B2 Certificate",
+        "field": "Languages",
+        "description": "English language training program achieving B2 level (upper-intermediate)."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-1",
+        "title": "Portada Real Estate CRM",
+        "description": "Custom CRM system for real estate management with special modules for property administration, customer management and document generation.",
+        "longDescription": "Development of special sections for Portada Real Estate's own CRM. Implementation of functionalities for property management, automation of internal processes and PDF document generation. Complete system with PHP backend and React/Vue.js frontend."
+      },
+      {
+        "id": "proj-2",
+        "title": "Muv-u Automation System",
+        "description": "Internal process automation tools for study abroad company, integrated with Microsoft 365 and Ontraport CRM.",
+        "longDescription": "Development of applications for automation of internal processes at Muv-u Study Abroad. Integration with Microsoft 365 and support of Ontraport CRM. Implementation of solutions with React.js and Tailwind CSS to improve operational efficiency."
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-1",
+        "name": "Tatiana Díaz",
+        "title": "Communicator and Marketer",
+        "company": "Muv-u Study Abroad",
+        "relationship": "Coworker (different teams)",
+        "recommendation": "Emmanuel is a professional with great technical and soft skills. I highlight his attitude of service and collaboration at all times, as he demonstrates his ability to work in a team and his knowledge to provide solutions and contribute from his role. Likewise, his willingness to learn is very valuable, as he faced work challenges with great success. Finally, his professional integrity, responsibility and respect for others make Emmanuel a great collaborator."
+      },
+      {
+        "id": "ref-2",
+        "name": "Sebastián López Osorno",
+        "title": "CRM Backend Developer",
+        "company": "Muv-u Study Abroad",
+        "relationship": "Teammate",
+        "recommendation": "It is a pleasure to recommend Emmanuel as a great software developer. During our time together at MUV-U, I was able to appreciate his great learning capacity, autonomy and his constant desire for professional growth. His proactive attitude and willingness to work as a team make him a valuable member for any project or company. I am sure that Emmanuel will continue to stand out."
+      },
+      {
+        "id": "ref-3",
+        "name": "Laura Alejandra García",
+        "title": "Digital Marketing Specialist",
+        "company": "Muv-u Study Abroad",
+        "relationship": "Teammate",
+        "recommendation": "Emmanuel stands out as an extremely responsible and committed young man, with a remarkable ability to efficiently manage his tasks. His skill in teamwork is notable, and he always contributes innovative proposals that enrich the processes carried out in various areas of the company. He efficiently demonstrates his programming skills in various languages and has a great willingness to continue growing as a professional."
+      }
+    ]
+  }
+}
