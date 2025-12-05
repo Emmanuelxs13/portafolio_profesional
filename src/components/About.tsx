@@ -87,19 +87,20 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
   ];
 
   /**
-   * Maneja la descarga del CV en el idioma seleccionado
+   * Maneja la descarga del CV
    */
   const handleDownloadCV = () => {
-    // La ruta apuntará al endpoint que genera el PDF
-    const cvUrl = `/api/cv?lang=${locale}`;
+    // Ruta directa al archivo PDF en la carpeta data
+    const cvUrl = '/CV-Emmanuel_Berrio.pdf';
 
     // Crear un enlace temporal y hacer clic programáticamente
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = `Emmanuel-Berrio-CV-${locale.toUpperCase()}.pdf`;
+    link.download = 'CV-Emmanuel_Berrio.pdf';
+    link.target = '_blank'; // Abre en nueva pestaña si falla la descarga
     document.body.appendChild(link);
     link.click();
-    link.remove();
+    document.body.removeChild(link);
   };
 
   return (
