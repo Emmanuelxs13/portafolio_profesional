@@ -51,6 +51,11 @@ body {
     sans-serif;
 }
 
+.deferred-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
+}
+
 /* Utilidades personalizadas */
 @layer utilities {
   /* Grid decorativo */

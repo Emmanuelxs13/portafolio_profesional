@@ -3,11 +3,11 @@
  * Envuelve todas las páginas con providers y metadata global
  */
 
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { I18nProvider } from '@/hooks/useI18n';
-import WhatsAppButton from '@/components/WhatsAppButton';
+import ClientWhatsAppButton from '@/components/ClientWhatsAppButton';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -44,7 +44,11 @@ export const metadata: Metadata = {
     title: 'Emmanuel Berrio Jiménez | Full-Stack Developer',
     description: 'Portafolio profesional de Emmanuel Berrio Jiménez',
   },
-  viewport: 'width=device-width, initial-scale=1',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
   themeColor: '#000000',
 };
 
@@ -58,7 +62,7 @@ export default function RootLayout({
       <body className="antialiased">
         <I18nProvider>
           {children}
-          <WhatsAppButton />
+          <ClientWhatsAppButton />
         </I18nProvider>
       </body>
     </html>

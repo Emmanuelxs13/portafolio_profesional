@@ -92,11 +92,12 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
   const handleDownloadCV = () => {
     // Ruta directa al archivo PDF en la carpeta data
     const cvUrl = '/CV-Emmanuel_Berrio.pdf';
+    const downloadName = locale === 'en' ? 'CV-Emmanuel_Berrio_EN.pdf' : 'CV-Emmanuel_Berrio.pdf';
 
     // Crear un enlace temporal y hacer clic programáticamente
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = 'CV-Emmanuel_Berrio.pdf';
+    link.download = downloadName;
     link.target = '_blank'; // Abre en nueva pestaña si falla la descarga
     document.body.appendChild(link);
     link.click();
@@ -106,7 +107,7 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
   return (
     <section
       id="about"
-      className="relative py-20 md:py-32 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden"
+      className="relative py-20 md:py-32 bg-linear-to-b from-black via-gray-900 to-black overflow-hidden"
     >
       {/* Efectos de fondo decorativos mejorados */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -124,7 +125,7 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
         />
         {/* Grid pattern sutil */}
         <div
-          className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]"
+          className="absolute inset-0 bg-grid-white/[0.02] bg-size-[50px_50px]"
           style={{
             maskImage: 'radial-gradient(ellipse 80% 60% at 50% 50%, black, transparent)',
           }}
@@ -140,7 +141,7 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
           variants={fadeInUp}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-linear-to-r from-white via-blue-100 to-white">
             {t('about.title')}
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
@@ -160,21 +161,10 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
           >
             <div className="relative aspect-square max-w-md mx-auto">
               {/* Fondo decorativo con gradiente animado */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-blue-600 rounded-3xl transform rotate-6 opacity-20"
-                animate={{
-                  rotate: [6, -6, 6],
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              />
+              <div className="absolute inset-0 bg-linear-to-br from-blue-500 via-purple-500 to-blue-600 rounded-3xl transform rotate-6 opacity-20" />
 
               {/* Container de imagen/avatar con mejor diseño */}
-              <div className="relative bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-3xl overflow-hidden border-2 border-gray-700/50 shadow-2xl shadow-blue-500/20 backdrop-blur-sm">
+              <div className="relative bg-linear-to-br from-gray-800 via-gray-900 to-black rounded-3xl overflow-hidden border-2 border-gray-700/50 shadow-2xl shadow-blue-500/20 backdrop-blur-sm">
                 {/* Imagen de perfil */}
                 <div className="aspect-square relative overflow-hidden">
                   <Image
@@ -186,21 +176,9 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px"
                   />
                   {/* Overlay muy sutil para mejor contraste sin opacar la imagen */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/5 via-transparent to-transparent" />
 
-                  {/* Efecto de brillo */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent"
-                    animate={{
-                      x: ['-100%', '100%'],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: 'linear',
-                      repeatDelay: 2,
-                    }}
-                  />
+                  <div className="absolute inset-0 bg-linear-to-tr from-transparent via-white/5 to-transparent" />
                 </div>
               </div>
 
@@ -210,7 +188,7 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
                 whileInView={{ scale: 1, rotate: 0 }}
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
-                className="absolute -bottom-4 -right-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full shadow-xl shadow-green-500/50 font-semibold text-sm flex items-center gap-2 border-2 border-white/20"
+                className="absolute -bottom-4 -right-4 bg-linear-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full shadow-xl shadow-green-500/50 font-semibold text-sm flex items-center gap-2 border-2 border-white/20"
               >
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
@@ -241,13 +219,13 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
                   key={stat.label}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ type: 'spring', stiffness: 300 }}
-                  className="group relative bg-gradient-to-br from-gray-800/80 via-gray-900/80 to-gray-800/80 p-6 rounded-2xl border border-gray-700/50 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 backdrop-blur-sm transition-all duration-300"
+                  className="group relative bg-linear-to-br from-gray-800/80 via-gray-900/80 to-gray-800/80 p-6 rounded-2xl border border-gray-700/50 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 backdrop-blur-sm transition-all duration-300"
                   style={{
                     transitionDelay: `${index * 50}ms`,
                   }}
                 >
                   {/* Efecto de brillo en hover */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-300" />
+                  <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-300" />
 
                   <stat.icon className="h-8 w-8 text-blue-400 mb-3 group-hover:text-blue-300 transition-colors duration-300 relative z-10" />
                   <div className="text-3xl md:text-4xl font-bold text-white mb-1 relative z-10">
@@ -270,11 +248,11 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleDownloadCV}
-                className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 text-white rounded-xl font-semibold overflow-hidden shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300"
+                className="group relative px-8 py-4 bg-linear-to-r from-blue-600 via-blue-500 to-purple-600 text-white rounded-xl font-semibold overflow-hidden shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300"
               >
                 {/* Efecto de brillo animado */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent"
                   animate={{
                     x: ['-200%', '200%'],
                   }}

@@ -5,53 +5,28 @@
 
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo } from 'react';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import ExperienceTimeline from '@/components/ExperienceTimeline';
-import EducationTimeline from '@/components/EducationTimeline';
-import ProjectsGrid from '@/components/ProjectsGrid';
-import CertificateList from '@/components/CertificateList';
-import ReferencesSection from '@/components/ReferencesSection';
-import ContactForm from '@/components/ContactForm';
-import Footer from '@/components/Footer';
 import { useI18n } from '@/hooks/useI18n';
-import { Profile } from '@/types/profile';
-import { getProfile, getStats } from '@/lib/api';
+import { getProfileSync, getStatsSync } from '@/lib/api';
+
+const ExperienceTimeline = dynamic(() => import('@/components/ExperienceTimeline'));
+const EducationTimeline = dynamic(() => import('@/components/EducationTimeline'));
+const ProjectsGrid = dynamic(() => import('@/components/ProjectsGrid'));
+const CertificateList = dynamic(() => import('@/components/CertificateList'));
+const ReferencesSection = dynamic(() => import('@/components/ReferencesSection'));
+const ContactForm = dynamic(() => import('@/components/ContactForm'));
+const Footer = dynamic(() => import('@/components/Footer'));
 
 export default function Home() {
   const { locale, setLocale, t } = useI18n();
-  const [profile, setProfile] = useState<Profile | null>(null);
-  const [stats, setStats] = useState({
-    yearsOfExperience: 0,
-    projectsCompleted: 0,
-    certificatesEarned: 0,
-    technologiesUsed: 0,
-  });
-  const [loading, setLoading] = useState(true);
 
-  // Cargar datos del perfil cuando cambie el idioma
-  useEffect(() => {
-    const loadData = async () => {
-      setLoading(true);
-      try {
-        const [profileData, statsData] = await Promise.all([
-          getProfile(locale as 'es' | 'en'),
-          getStats(locale as 'es' | 'en'),
-        ]);
-        setProfile(profileData);
-        setStats(statsData);
-      } catch (error) {
-        console.error('Error loading profile:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadData();
-  }, [locale]); // Recargar cuando cambie el idioma
+  const profile = useMemo(() => getProfileSync(locale), [locale]);
+  const stats = useMemo(() => getStatsSync(locale), [locale]);
 
   // Detectar idioma del navegador al cargar (solo una vez)
   useEffect(() => {
@@ -68,14 +43,6 @@ export default function Home() {
     }
   }, [setLocale]);
 
-  if (loading || !profile) {
-    return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
-        <div className="text-white text-2xl">Loading...</div>
-      </div>
-    );
-  }
-
   return (
     <>
       {/* Navegación */}
@@ -90,44 +57,58 @@ export default function Home() {
         <About t={t} summary={profile.summary} stats={stats} locale={locale} />
 
         {/* Experience Section */}
-        <ExperienceTimeline t={t} experiences={profile.experience} locale={locale} />
+        <div className="deferred-section">
+          <ExperienceTimeline t={t} experiences={profile.experience} locale={locale} />
+        </div>
 
         {/* Education Section */}
-        <EducationTimeline t={t} education={profile.education} />
+        <div className="deferred-section">
+          <EducationTimeline t={t} education={profile.education} />
+        </div>
 
         {/* Projects Section */}
-        <ProjectsGrid t={t} projects={profile.projects} />
+        <div className="deferred-section">
+          <ProjectsGrid t={t} projects={profile.projects} />
+        </div>
 
         {/* Certificates Section */}
-        <CertificateList t={t} certificates={profile.certificates} locale={locale} />
+        <div className="deferred-section">
+          <CertificateList t={t} certificates={profile.certificates} locale={locale} />
+        </div>
 
         {/* References Section */}
-        <ReferencesSection t={t} references={profile.references} />
+        <div className="deferred-section">
+          <ReferencesSection t={t} references={profile.references} />
+        </div>
 
         {/* Contact Section */}
-        <section
-          id="contact"
-          className="relative py-20 md:py-32 bg-linear-to-b from-black to-gray-900"
-        >
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                {t('contact.title')}
-              </h2>
-              <p className="text-lg text-gray-400">{t('contact.subtitle')}</p>
-            </motion.div>
-            <ContactForm />
-          </div>
-        </section>
+        <div className="deferred-section">
+          <section
+            id="contact"
+            className="relative py-20 md:py-32 bg-linear-to-b from-black to-gray-900"
+          >
+            <div className="max-w-7xl mx-auto px-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                  {t('contact.title')}
+                </h2>
+                <p className="text-lg text-gray-400">{t('contact.subtitle')}</p>
+              </motion.div>
+              <ContactForm />
+            </div>
+          </section>
+        </div>
       </main>
 
       {/* Footer */}
-      <Footer t={t} social={profile.social} />
+      <div className="deferred-section">
+        <Footer t={t} social={profile.social} />
+      </div>
     </>
   );
 }

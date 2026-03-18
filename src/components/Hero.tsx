@@ -72,199 +72,23 @@ export default function Hero({ t, name, title }: Readonly<HeroProps>) {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-900 via-black to-black"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-b from-gray-900 via-black to-black"
     >
       {/* Efectos de fondo decorativos mejorados y más atractivos */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Gradientes animados principales - Más vibrantes */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, x: -100 }}
-          animate={{
-            opacity: [0.15, 0.2, 0.15],
-            scale: [0.8, 1.1, 0.8],
-            x: [-100, -50, -100],
-            y: [0, -30, 0],
-          }}
-          transition={{
-            duration: 8,
-            ease: 'easeInOut',
-            repeat: Infinity,
-            repeatType: 'reverse',
-          }}
-          className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-500 rounded-full blur-3xl"
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, x: 100 }}
-          animate={{
-            opacity: [0.15, 0.25, 0.15],
-            scale: [0.8, 1.2, 0.8],
-            x: [100, 50, 100],
-            y: [0, 30, 0],
-          }}
-          transition={{
-            duration: 10,
-            delay: 0.5,
-            ease: 'easeInOut',
-            repeat: Infinity,
-            repeatType: 'reverse',
-          }}
-          className="absolute bottom-1/4 -right-20 w-[700px] h-[700px] bg-gradient-to-tl from-purple-600 via-purple-500 to-pink-500 rounded-full blur-3xl"
-        />
+        <div className="absolute top-1/4 -left-20 w-[520px] h-[520px] bg-linear-to-br from-blue-500/20 via-blue-600/20 to-cyan-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-20 w-[560px] h-[560px] bg-linear-to-tl from-purple-600/20 via-purple-500/20 to-pink-500/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[640px] h-[640px] bg-linear-to-r from-indigo-500/10 via-purple-500/10 to-blue-500/10 rounded-full blur-3xl" />
 
-        {/* Círculo adicional en el centro para más profundidad */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{
-            opacity: [0.08, 0.12, 0.08],
-            scale: [0.9, 1.3, 0.9],
-          }}
-          transition={{
-            duration: 12,
-            ease: 'easeInOut',
-            repeat: Infinity,
-            repeatType: 'reverse',
-          }}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-500 rounded-full blur-3xl opacity-10"
-        />
-
-        {/* Partículas flotantes decorativas */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.4 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0"
-        >
-          {/* Partícula 1 */}
-          <motion.div
-            animate={{
-              y: [0, -30, 0],
-              x: [0, 20, 0],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-            className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full blur-sm"
-          />
-          {/* Partícula 2 */}
-          <motion.div
-            animate={{
-              y: [0, 40, 0],
-              x: [0, -25, 0],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: 8,
-              delay: 1,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-            className="absolute top-1/3 right-1/4 w-3 h-3 bg-purple-400 rounded-full blur-sm"
-          />
-          {/* Partícula 3 */}
-          <motion.div
-            animate={{
-              y: [0, -25, 0],
-              x: [0, 15, 0],
-              opacity: [0.25, 0.55, 0.25],
-            }}
-            transition={{
-              duration: 7,
-              delay: 2,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-            className="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-cyan-400 rounded-full blur-sm"
-          />
-          {/* Partícula 4 */}
-          <motion.div
-            animate={{
-              y: [0, 35, 0],
-              x: [0, -20, 0],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{
-              duration: 9,
-              delay: 0.5,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-            className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-pink-400 rounded-full blur-sm"
-          />
-        </motion.div>
-
-        {/* Grid decorativo mejorado con efecto shimmer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0.02, 0.04, 0.02] }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]"
+        <div
+          className="absolute inset-0 bg-grid-white/[0.02] bg-size-[60px_60px]"
           style={{
             maskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent)',
           }}
         />
 
-        {/* Líneas decorativas diagonales */}
-        <div className="absolute inset-0">
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            animate={{
-              opacity: [0.03, 0.06, 0.03],
-              x: [-100, 100, -100],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-            className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"
-          />
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={{
-              opacity: [0.03, 0.06, 0.03],
-              x: [100, -100, 100],
-            }}
-            transition={{
-              duration: 20,
-              delay: 2,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-            className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent"
-          />
-        </div>
-
-        {/* Efecto de resplandor en las esquinas */}
-        <motion.div
-          animate={{
-            opacity: [0.1, 0.2, 0.1],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            opacity: [0.1, 0.2, 0.1],
-          }}
-          transition={{
-            duration: 5,
-            delay: 1,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-purple-500/20 to-transparent rounded-full blur-3xl"
-        />
+        <div className="absolute top-1/4 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-400/20 to-transparent" />
+        <div className="absolute bottom-1/3 left-0 w-full h-px bg-linear-to-r from-transparent via-purple-400/20 to-transparent" />
       </div>
 
       {/* Contenido principal - Layout optimizado para laptop/desktop */}
@@ -287,7 +111,7 @@ export default function Hero({ t, name, title }: Readonly<HeroProps>) {
           variants={itemVariants}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
         >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-50 to-white">
+          <span className="bg-clip-text text-transparent bg-linear-to-r from-white via-blue-50 to-white">
             {name}
           </span>
         </motion.h1>
@@ -318,7 +142,7 @@ export default function Hero({ t, name, title }: Readonly<HeroProps>) {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => scrollToSection('#projects')}
-            className="group relative px-8 py-3.5 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-lg font-semibold overflow-hidden shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300"
+            className="group relative px-8 py-3.5 bg-linear-to-r from-blue-600 to-blue-500 text-white rounded-lg font-semibold overflow-hidden shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300"
           >
             <span className="relative flex items-center gap-2">
               {t('hero.cta')}
@@ -342,13 +166,7 @@ export default function Hero({ t, name, title }: Readonly<HeroProps>) {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 0.5, y: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 1.2,
-            repeat: Infinity,
-            repeatType: 'reverse',
-            ease: 'easeInOut',
-          }}
+          transition={{ duration: 0.8, delay: 1.2, ease: 'easeInOut' }}
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:block"
         >
           <ArrowDownIcon className="h-5 w-5 text-gray-500" />

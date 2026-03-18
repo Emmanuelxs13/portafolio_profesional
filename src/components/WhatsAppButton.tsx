@@ -6,24 +6,38 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useI18n } from '@/hooks/useI18n';
 
 export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
+  const isVisibleRef = useRef(false);
   const { t } = useI18n();
 
   // Mostrar el botón después de un pequeño scroll
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
+    let ticking = false;
+
+    const updateVisibility = () => {
+      const nextVisible = window.scrollY > 300;
+      if (nextVisible !== isVisibleRef.current) {
+        isVisibleRef.current = nextVisible;
+        setIsVisible(nextVisible);
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
+    const toggleVisibility = () => {
+      if (!ticking) {
+        ticking = true;
+        globalThis.requestAnimationFrame(() => {
+          updateVisibility();
+          ticking = false;
+        });
+      }
+    };
+
+    updateVisibility();
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
