@@ -176,24 +176,23 @@ export default function Hero({
           </div>
           <div className="border border-[color:var(--color-line)] bg-[color:var(--color-panel)] p-8">
             <div className="text-[color:var(--color-muted)] text-xs uppercase tracking-[0.4em] mb-6">
-              {t('hero.title')}
+              {t('Informacion')}
             </div>
             <div className="text-4xl leading-tight text-[color:var(--color-ink)] font-semibold">
               FULL-STACK
               <br />
-              PRODUCT
+              DEVELOPER
               <br />
-              ENGINEER
             </div>
             <div className="mt-8 h-px bg-[color:var(--color-line)]" />
             <div className="mt-6 text-sm text-[color:var(--color-muted)]">
-              Crafted interfaces, resilient systems, measurable impact.
+              Interfaces elaboradas, sistemas resilientes, impacto medible.
             </div>
 
             <div className="mt-8 grid gap-4 text-xs uppercase tracking-[0.2em] text-[color:var(--color-muted)]">
               {location && (
                 <div className="flex items-center justify-between border-b border-[color:var(--color-line)] pb-3">
-                  <span>Location</span>
+                  <span>Ubicación</span>
                   <span className="text-[color:var(--color-ink)] normal-case tracking-normal">
                     {location}
                   </span>
@@ -216,7 +215,7 @@ export default function Hero({
                     href={linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border border-[color:var(--color-line)] px-3 py-2 text-[color:var(--color-ink)] hover:border-[color:var(--color-accent)] transition-colors"
+                    className="border border-(--color-line) px-3 py-2 text-(--color-ink) hover:border-(--color-accent) transition-colors"
                   >
                     LinkedIn
                   </a>
@@ -226,21 +225,12 @@ export default function Hero({
                     href={github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border border-[color:var(--color-line)] px-3 py-2 text-[color:var(--color-ink)] hover:border-[color:var(--color-accent)] transition-colors"
+                    className="border border-(--color-line) px-3 py-2 text-(--color-ink) hover:border-(--color-accent) transition-colors"
                   >
                     GitHub
                   </a>
                 )}
-                {website && (
-                  <a
-                    href={website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border border-[color:var(--color-line)] px-3 py-2 text-[color:var(--color-ink)] hover:border-[color:var(--color-accent)] transition-colors"
-                  >
-                    Portfolio
-                  </a>
-                )}
+                
               </div>
             </div>
           </div>
