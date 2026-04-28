@@ -59,7 +59,7 @@ export default function ReferencesSection({ t, references }: Readonly<References
   };
 
   return (
-    <section id="references" className="relative py-24 md:py-36 bg-[color:var(--color-bg)]">
+    <section id="references" className="relative py-24 md:py-36 bg-(--color-bg)">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -73,14 +73,14 @@ export default function ReferencesSection({ t, references }: Readonly<References
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ type: 'spring', stiffness: 200 }}
-            className="inline-flex items-center justify-center w-16 h-16 bg-[color:var(--color-accent)] rounded-2xl mb-6 shadow-xl shadow-black/40"
+            className="inline-flex items-center justify-center w-16 h-16 bg-(--color-accent) rounded-2xl mb-6 shadow-xl shadow-black/40"
           >
             <UserGroupIcon className="h-8 w-8 text-white" />
           </motion.div>
-          <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-[color:var(--color-ink)]">
+          <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-(--color-ink)">
             {t('references.title')}
           </h2>
-          <p className="text-lg text-[color:var(--color-muted)] max-w-2xl mx-auto">
+          <p className="text-lg text-(--color-muted) max-w-2xl mx-auto">
             {t('references.subtitle')}
           </p>
         </motion.div>
@@ -98,78 +98,59 @@ export default function ReferencesSection({ t, references }: Readonly<References
               key={ref.id}
               variants={cardVariants}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group relative bg-[color:var(--color-panel)] rounded-2xl p-8 border border-[color:var(--color-line)] shadow-xl hover:shadow-2xl hover:shadow-black/40 backdrop-blur-sm transition-all duration-300"
+              className="group relative bg-(--color-panel) rounded-2xl p-8 border border-(--color-line) shadow-xl hover:shadow-2xl hover:shadow-black/40 backdrop-blur-sm transition-all duration-300"
             >
               {/* Efectos decorativos */}
-              <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-[color:var(--color-accent)]/0 via-[color:var(--color-accent-2)]/0 to-transparent group-hover:from-[color:var(--color-accent)]/10 group-hover:via-[color:var(--color-accent-2)]/5 transition-all duration-500" />
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[color:var(--color-accent)]/10 rounded-full blur-3xl group-hover:bg-[color:var(--color-accent)]/20 transition-all duration-500" />
+              <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-(--color-accent)/0 via-(--color-accent-2)/0 to-transparent group-hover:from-(--color-accent)/10 group-hover:via-(--color-accent-2)/5 transition-all duration-500" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-(--color-accent)/10 rounded-full blur-3xl group-hover:bg-(--color-accent)/20 transition-all duration-500" />
 
               {/* Icono de comillas */}
               <motion.div
                 initial={{ scale: 0, rotate: -45 }}
                 whileInView={{ scale: 1, rotate: 0 }}
                 transition={{ delay: 0.2, type: 'spring' }}
-                className="absolute top-6 right-6 w-12 h-12 bg-[color:var(--color-panel-2)] rounded-full flex items-center justify-center"
+                className="absolute top-6 right-6 w-12 h-12 bg-(--color-panel-2) rounded-full flex items-center justify-center"
               >
-                <ChatBubbleLeftRightIcon className="h-6 w-6 text-[color:var(--color-accent)]" />
+                <ChatBubbleLeftRightIcon className="h-6 w-6 text-(--color-accent)" />
               </motion.div>
 
               <div className="relative z-10">
                 {/* Avatar placeholder */}
-                <div className="w-16 h-16 bg-[color:var(--color-panel-2)] rounded-full flex items-center justify-center border border-[color:var(--color-line)] mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl font-semibold text-[color:var(--color-accent)]">
+                <div className="w-16 h-16 bg-(--color-panel-2) rounded-full flex items-center justify-center border border-(--color-line) mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl font-semibold text-(--color-accent)">
                     {ref.name.charAt(0)}
                   </span>
                 </div>
 
                 {/* Nombre y título */}
-                <h3 className="text-xl font-semibold text-[color:var(--color-ink)] mb-1 group-hover:text-[color:var(--color-accent-2)] transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-(--color-ink) mb-1 group-hover:text-(--color-accent-2) transition-colors duration-300">
                   {ref.name}
                 </h3>
-                <p className="text-[color:var(--color-accent-2)] text-sm font-medium mb-2">
-                  {ref.title}
-                </p>
+                <p className="text-(--color-accent-2) text-sm font-medium mb-2">{ref.title}</p>
 
                 {/* Empresa y relación */}
-                <div className="flex items-center gap-2 mb-4 pb-4 border-b border-[color:var(--color-line)]">
-                  <BriefcaseIcon className="h-4 w-4 text-[color:var(--color-muted)] shrink-0" />
-                  <div className="text-sm text-[color:var(--color-muted)]">
+                <div className="flex items-center gap-2 mb-4 pb-4 border-b border-(--color-line)">
+                  <BriefcaseIcon className="h-4 w-4 text-(--color-muted) shrink-0" />
+                  <div className="text-sm text-(--color-muted)">
                     <div>{ref.company}</div>
-                    <div className="text-xs text-[color:var(--color-line)]">{ref.relationship}</div>
+                    <div className="text-xs text-(--color-line)">{ref.relationship}</div>
                   </div>
                 </div>
 
                 {/* Recomendación */}
-                <p className="text-[color:var(--color-muted)] text-sm leading-relaxed mb-4 group-hover:text-[color:var(--color-ink)] transition-colors duration-300 line-clamp-6">
+                <p className="text-(--color-muted) text-sm leading-relaxed mb-4 group-hover:text-(--color-ink) transition-colors duration-300 line-clamp-6">
                   {ref.recommendation}
                 </p>
 
                 {/* Footer con fecha y LinkedIn */}
-                <div className="flex items-center justify-between pt-4 border-t border-[color:var(--color-line)]">
-                  <span className="text-xs text-[color:var(--color-muted)]">
-                    {formatDate(ref.date)}
-                  </span>
-                  {ref.linkedin && (
-                    <motion.a
-                      href={ref.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="text-xs text-[color:var(--color-accent)] hover:text-[color:var(--color-accent-2)] font-medium flex items-center gap-1 transition-colors"
-                    >
-                      Ver perfil
-                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                      </svg>
-                    </motion.a>
-                  )}
+                <div className="flex items-center justify-between pt-4 border-t border-(--color-line)">
+                  <span className="text-xs text-(--color-muted)">{formatDate(ref.date)}</span>
                 </div>
               </div>
 
               {/* Borde brillante animado en hover */}
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-[color:var(--color-accent)] via-[color:var(--color-accent-2)] to-[color:var(--color-accent)] opacity-20 blur-xl" />
+                <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-(--color-accent) via-(--color-accent-2) to-(--color-accent) opacity-20 blur-xl" />
               </div>
             </motion.div>
           ))}

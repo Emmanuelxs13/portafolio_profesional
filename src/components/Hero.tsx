@@ -96,10 +96,10 @@ export default function Hero({
     >
       {/* Fondo editorial */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-24 left-0 w-[520px] h-[520px] bg-[color:var(--color-accent-2)]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-[520px] h-[520px] bg-[color:var(--color-accent)]/12 rounded-full blur-3xl" />
-        <div className="absolute top-28 left-0 w-full h-px bg-linear-to-r from-transparent via-[color:var(--color-line)] to-transparent" />
-        <div className="absolute bottom-24 left-0 w-full h-px bg-linear-to-r from-transparent via-[color:var(--color-line)] to-transparent" />
+        <div className="absolute -top-24 left-0 w-[520px] h-[520px] bg-(--color-accent-2)/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[520px] h-[520px] bg-(--color-accent)/12 rounded-full blur-3xl" />
+        <div className="absolute top-28 left-0 w-full h-px bg-linear-to-r from-transparent via-(--color-line) to-transparent" />
+        <div className="absolute bottom-24 left-0 w-full h-px bg-linear-to-r from-transparent via-(--color-line) to-transparent" />
       </div>
 
       {/* Contenido principal */}
@@ -111,29 +111,29 @@ export default function Hero({
       >
         <div className="text-left">
           <motion.div variants={itemVariants} className="flex items-center gap-4 mb-6">
-            <span className="text-xs uppercase tracking-[0.4em] text-[color:var(--color-muted)]">
+            <span className="text-xs uppercase tracking-[0.4em] text-(--color-muted)">
               {t('hero.greeting')}
             </span>
-            <span className="h-px w-16 bg-[color:var(--color-line)]" />
+            <span className="h-px w-16 bg-(--color-line)" />
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-tight text-[color:var(--color-ink)]"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-tight text-(--color-ink)"
           >
             {name}
           </motion.h1>
 
           <motion.h2
             variants={itemVariants}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl italic text-[color:var(--color-muted)] mt-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl italic text-(--color-muted) mt-4"
           >
             {title}
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
-            className="text-base sm:text-lg md:text-xl text-[color:var(--color-muted)] max-w-xl mt-8 leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-(--color-muted) max-w-xl mt-8 leading-relaxed"
           >
             {t('hero.subtitle')}
           </motion.p>
@@ -141,7 +141,7 @@ export default function Hero({
           {summary && (
             <motion.p
               variants={itemVariants}
-              className="text-sm sm:text-base text-[color:var(--color-muted)] max-w-xl mt-6 leading-relaxed line-clamp-2"
+              className="text-sm sm:text-base text-(--color-muted) max-w-xl mt-6 leading-relaxed line-clamp-2"
             >
               {summary}
             </motion.p>
@@ -152,7 +152,7 @@ export default function Hero({
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('#projects')}
-              className="group inline-flex items-center gap-3 px-7 py-3.5 bg-[color:var(--color-accent)] text-[color:var(--color-ink)] font-semibold uppercase tracking-[0.25em] text-xs shadow-[0_20px_40px_rgba(227,59,46,0.25)]"
+              className="group inline-flex items-center gap-3 px-7 py-3.5 bg-(--color-accent) text-(--color-ink) font-semibold uppercase tracking-[0.25em] text-xs shadow-[0_20px_40px_rgba(227,59,46,0.25)]"
             >
               {t('hero.cta')}
               <ArrowDownIcon className="h-4 w-4 group-hover:translate-y-0.5 transition-transform duration-300" />
@@ -162,7 +162,7 @@ export default function Hero({
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('#contact')}
-              className="inline-flex items-center gap-2 px-7 py-3.5 border border-[color:var(--color-line)] text-[color:var(--color-ink)] uppercase tracking-[0.25em] text-xs"
+              className="inline-flex items-center gap-2 px-7 py-3.5 border border-(--color-line) text-(--color-ink) uppercase tracking-[0.25em] text-xs"
             >
               <EnvelopeIcon className="h-4 w-4" />
               {t('hero.ctaSecondary')}
@@ -171,39 +171,37 @@ export default function Hero({
         </div>
 
         <motion.div variants={itemVariants} className="relative">
-          <div className="absolute -top-6 right-0 text-[color:var(--color-line)] text-8xl font-semibold">
+          <div className="absolute -top-6 right-0 text-(--color-line) text-8xl font-semibold">
             01
           </div>
-          <div className="border border-[color:var(--color-line)] bg-[color:var(--color-panel)] p-8">
-            <div className="text-[color:var(--color-muted)] text-xs uppercase tracking-[0.4em] mb-6">
+          <div className="border border-(--color-line) bg-(--color-panel) p-8">
+            <div className="text-(--color-muted) text-xs uppercase tracking-[0.4em] mb-6">
               {t('Informacion')}
             </div>
-            <div className="text-4xl leading-tight text-[color:var(--color-ink)] font-semibold">
+            <div className="text-4xl leading-tight text-(--color-ink) font-semibold">
               FULL-STACK
               <br />
               DEVELOPER
               <br />
             </div>
-            <div className="mt-8 h-px bg-[color:var(--color-line)]" />
-            <div className="mt-6 text-sm text-[color:var(--color-muted)]">
+            <div className="mt-8 h-px bg-(--color-line)" />
+            <div className="mt-6 text-sm text-(--color-muted)">
               Interfaces elaboradas, sistemas resilientes, impacto medible.
             </div>
 
-            <div className="mt-8 grid gap-4 text-xs uppercase tracking-[0.2em] text-[color:var(--color-muted)]">
+            <div className="mt-8 grid gap-4 text-xs uppercase tracking-[0.2em] text-(--color-muted)">
               {location && (
-                <div className="flex items-center justify-between border-b border-[color:var(--color-line)] pb-3">
+                <div className="flex items-center justify-between border-b border-(--color-line) pb-3">
                   <span>Ubicación</span>
-                  <span className="text-[color:var(--color-ink)] normal-case tracking-normal">
-                    {location}
-                  </span>
+                  <span className="text-(--color-ink) normal-case tracking-normal">{location}</span>
                 </div>
               )}
               {email && (
-                <div className="flex items-center justify-between border-b border-[color:var(--color-line)] pb-3">
+                <div className="flex items-center justify-between border-b border-(--color-line) pb-3">
                   <span>Email</span>
                   <a
                     href={`mailto:${email}`}
-                    className="text-[color:var(--color-ink)] normal-case tracking-normal hover:text-[color:var(--color-accent)] transition-colors"
+                    className="text-(--color-ink) normal-case tracking-normal hover:text-(--color-accent) transition-colors"
                   >
                     {email}
                   </a>
@@ -230,7 +228,16 @@ export default function Hero({
                     GitHub
                   </a>
                 )}
-                
+                {website && (
+                  <a
+                    href={website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-(--color-line) px-3 py-2 text-(--color-ink) hover:border-(--color-accent) transition-colors"
+                  >
+                    Portfolio
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -243,10 +250,8 @@ export default function Hero({
         transition={{ duration: 0.8, delay: 1.2, ease: 'easeInOut' }}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:flex flex-col items-center gap-3"
       >
-        <span className="text-xs uppercase tracking-[0.4em] text-[color:var(--color-muted)]">
-          Scroll
-        </span>
-        <ArrowDownIcon className="h-5 w-5 text-[color:var(--color-muted)]" />
+        <span className="text-xs uppercase tracking-[0.4em] text-(--color-muted)">Scroll</span>
+        <ArrowDownIcon className="h-5 w-5 text-(--color-muted)" />
       </motion.div>
     </section>
   );

@@ -52,7 +52,7 @@ export default function WhatsAppButton() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed right-6 bottom-6 z-50 flex items-center justify-center w-16 h-16 bg-[color:var(--color-accent)] rounded-full shadow-2xl shadow-black/50 hover:shadow-black/70 transition-all group"
+          className="fixed right-6 bottom-6 z-50 flex items-center justify-center w-16 h-16 bg-(--color-accent) rounded-full shadow-2xl shadow-black/50 hover:shadow-black/70 transition-all group"
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0, opacity: 0 }}
@@ -71,10 +71,10 @@ export default function WhatsAppButton() {
           </svg>
 
           {/* Pulse Animation */}
-          <span className="absolute inset-0 rounded-full bg-[color:var(--color-accent)] animate-ping opacity-75" />
+          <span className="absolute inset-0 rounded-full bg-(--color-accent) animate-ping opacity-75" />
 
           {/* Tooltip */}
-          <span className="absolute right-full mr-3 px-3 py-2 bg-[color:var(--color-panel)] text-[color:var(--color-ink)] text-xs uppercase tracking-[0.2em] font-medium rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
+          <span className="absolute right-full mr-3 px-3 py-2 bg-(--color-panel) text-(--color-ink) text-xs uppercase tracking-[0.2em] font-medium rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
             {t('whatsapp.tooltip')}
           </span>
         </motion.a>

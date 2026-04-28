@@ -105,23 +105,20 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
   };
 
   return (
-    <section
-      id="about"
-      className="relative py-24 md:py-36 bg-[color:var(--color-bg)] overflow-hidden"
-    >
+    <section id="about" className="relative py-24 md:py-36 bg-(--color-bg) overflow-hidden">
       {/* Efectos de fondo decorativos mejorados */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 0.08, scale: 1 }}
           transition={{ duration: 2 }}
-          className="absolute top-0 left-1/4 w-96 h-96 bg-[color:var(--color-accent-2)] rounded-full blur-3xl"
+          className="absolute top-0 left-1/4 w-96 h-96 bg-(--color-accent-2) rounded-full blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 0.08, scale: 1 }}
           transition={{ duration: 2, delay: 0.3 }}
-          className="absolute bottom-0 right-1/4 w-96 h-96 bg-[color:var(--color-accent)] rounded-full blur-3xl"
+          className="absolute bottom-0 right-1/4 w-96 h-96 bg-(--color-accent) rounded-full blur-3xl"
         />
         {/* Grid pattern sutil */}
         <div
@@ -141,10 +138,10 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
           variants={fadeInUp}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 text-[color:var(--color-ink)]">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 text-(--color-ink)">
             {t('about.title')}
           </h2>
-          <p className="text-lg md:text-xl text-[color:var(--color-muted)] max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-(--color-muted) max-w-2xl mx-auto">
             {t('about.subtitle')}
           </p>
         </motion.div>
@@ -161,10 +158,10 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
           >
             <div className="relative aspect-square max-w-md mx-auto">
               {/* Fondo decorativo con gradiente animado */}
-              <div className="absolute inset-0 bg-linear-to-br from-[color:var(--color-accent)]/20 via-[color:var(--color-accent-2)]/20 to-[color:var(--color-accent)]/20 rounded-3xl transform rotate-6" />
+              <div className="absolute inset-0 bg-linear-to-br from-(--color-accent)/20 via-(--color-accent-2)/20 to-(--color-accent)/20 rounded-3xl transform rotate-6" />
 
               {/* Container de imagen/avatar con mejor diseño */}
-              <div className="relative bg-[color:var(--color-panel)] rounded-3xl overflow-hidden border border-[color:var(--color-line)] shadow-2xl shadow-black/40 backdrop-blur-sm">
+              <div className="relative bg-(--color-panel) rounded-3xl overflow-hidden border border-(--color-line) shadow-2xl shadow-black/40 backdrop-blur-sm">
                 {/* Imagen de perfil */}
                 <div className="aspect-square relative overflow-hidden">
                   <Image
@@ -187,7 +184,7 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
                 whileInView={{ scale: 1, rotate: 0 }}
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
-                className="absolute -bottom-4 -right-4 bg-[color:var(--color-accent)] text-[color:var(--color-ink)] px-6 py-3 rounded-full shadow-xl shadow-black/40 font-semibold text-xs uppercase tracking-[0.3em] flex items-center gap-2 border border-[color:var(--color-line)]"
+                className="absolute -bottom-4 -right-4 bg-(--color-accent) text-(--color-ink) px-6 py-3 rounded-full shadow-xl shadow-black/40 font-semibold text-xs uppercase tracking-[0.3em] flex items-center gap-2 border border-(--color-line)"
               >
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white/80 opacity-70"></span>
@@ -208,9 +205,7 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
           >
             {/* Descripción con mejor tipografía */}
             <motion.div variants={fadeInUp}>
-              <p className="text-lg md:text-xl text-[color:var(--color-muted)] leading-relaxed">
-                {summary}
-              </p>
+              <p className="text-lg md:text-xl text-(--color-muted) leading-relaxed">{summary}</p>
             </motion.div>
 
             {/* Estadísticas con diseño mejorado */}
@@ -220,25 +215,25 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
                   key={stat.label}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ type: 'spring', stiffness: 300 }}
-                  className="group relative bg-[color:var(--color-panel)] p-6 rounded-2xl border border-[color:var(--color-line)] shadow-lg hover:shadow-2xl hover:shadow-black/40 backdrop-blur-sm transition-all duration-300"
+                  className="group relative bg-(--color-panel) p-6 rounded-2xl border border-(--color-line) shadow-lg hover:shadow-2xl hover:shadow-black/40 backdrop-blur-sm transition-all duration-300"
                   style={{
                     transitionDelay: `${index * 50}ms`,
                   }}
                 >
                   {/* Efecto de brillo en hover */}
-                  <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-[color:var(--color-accent)]/0 to-[color:var(--color-accent-2)]/0 group-hover:from-[color:var(--color-accent)]/10 group-hover:to-[color:var(--color-accent-2)]/10 transition-all duration-300" />
+                  <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-(--color-accent)/0 to-(--color-accent-2)/0 group-hover:from-(--color-accent)/10 group-hover:to-(--color-accent-2)/10 transition-all duration-300" />
 
-                  <stat.icon className="h-8 w-8 text-[color:var(--color-accent)] mb-3 group-hover:text-[color:var(--color-accent-2)] transition-colors duration-300 relative z-10" />
-                  <div className="text-3xl md:text-4xl font-semibold text-[color:var(--color-ink)] mb-1 relative z-10">
+                  <stat.icon className="h-8 w-8 text-(--color-accent) mb-3 group-hover:text-(--color-accent-2) transition-colors duration-300 relative z-10" />
+                  <div className="text-3xl md:text-4xl font-semibold text-(--color-ink) mb-1 relative z-10">
                     {stat.value}
                     {stat.suffix}
                   </div>
-                  <div className="text-xs uppercase tracking-[0.2em] text-[color:var(--color-muted)] group-hover:text-[color:var(--color-ink)] transition-colors duration-300 relative z-10">
+                  <div className="text-xs uppercase tracking-[0.2em] text-(--color-muted) group-hover:text-(--color-ink) transition-colors duration-300 relative z-10">
                     {stat.label}
                   </div>
 
                   {/* Indicador decorativo */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-[color:var(--color-accent)]/10 rounded-full blur-2xl group-hover:bg-[color:var(--color-accent)]/20 transition-all duration-300" />
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-(--color-accent)/10 rounded-full blur-2xl group-hover:bg-(--color-accent)/20 transition-all duration-300" />
                 </motion.div>
               ))}
             </motion.div>
@@ -249,7 +244,7 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleDownloadCV}
-                className="group relative px-8 py-4 bg-[color:var(--color-accent)] text-[color:var(--color-ink)] uppercase tracking-[0.25em] text-xs font-semibold overflow-hidden shadow-xl shadow-black/40 transition-all duration-300"
+                className="group relative px-8 py-4 bg-(--color-accent) text-(--color-ink) uppercase tracking-[0.25em] text-xs font-semibold overflow-hidden shadow-xl shadow-black/40 transition-all duration-300"
               >
                 {/* Efecto de brillo animado */}
                 <motion.div
