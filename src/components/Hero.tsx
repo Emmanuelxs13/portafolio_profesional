@@ -178,12 +178,7 @@ export default function Hero({
             <div className="text-(--color-muted) text-xs uppercase tracking-[0.4em] mb-6">
               {t('Informacion')}
             </div>
-            <div className="text-4xl leading-tight text-(--color-ink) font-semibold">
-              FULL-STACK
-              <br />
-              DEVELOPER
-              <br />
-            </div>
+            
             <div className="mt-8 h-px bg-(--color-line)" />
             <div className="mt-6 text-sm text-(--color-muted)">
               Interfaces elaboradas, sistemas resilientes, impacto medible.
