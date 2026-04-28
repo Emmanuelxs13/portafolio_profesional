@@ -22,8 +22,18 @@ interface HeroProps {
   name: string;
   /** Título profesional */
   title: string;
-  /** Descripción breve no se usa aquí para evitar saturación */
+  /** Descripción breve */
   summary?: string;
+  /** Ubicación */
+  location?: string;
+  /** Email de contacto */
+  email?: string;
+  /** Enlace a LinkedIn */
+  linkedin?: string;
+  /** Enlace a GitHub */
+  github?: string;
+  /** Sitio personal */
+  website?: string;
 }
 
 /**
@@ -57,7 +67,17 @@ const itemVariants = {
   },
 };
 
-export default function Hero({ t, name, title }: Readonly<HeroProps>) {
+export default function Hero({
+  t,
+  name,
+  title,
+  summary,
+  location,
+  email,
+  linkedin,
+  github,
+  website,
+}: Readonly<HeroProps>) {
   /**
    * Maneja el scroll suave hacia una sección específica
    * @param sectionId - ID de la sección destino
@@ -72,115 +92,162 @@ export default function Hero({ t, name, title }: Readonly<HeroProps>) {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-b from-gray-900 via-black to-black"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Efectos de fondo decorativos mejorados y más atractivos */}
+      {/* Fondo editorial */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-20 w-[520px] h-[520px] bg-linear-to-br from-blue-500/20 via-blue-600/20 to-cyan-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 -right-20 w-[560px] h-[560px] bg-linear-to-tl from-purple-600/20 via-purple-500/20 to-pink-500/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[640px] h-[640px] bg-linear-to-r from-indigo-500/10 via-purple-500/10 to-blue-500/10 rounded-full blur-3xl" />
-
-        <div
-          className="absolute inset-0 bg-grid-white/[0.02] bg-size-[60px_60px]"
-          style={{
-            maskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent)',
-          }}
-        />
-
-        <div className="absolute top-1/4 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-400/20 to-transparent" />
-        <div className="absolute bottom-1/3 left-0 w-full h-px bg-linear-to-r from-transparent via-purple-400/20 to-transparent" />
+        <div className="absolute -top-24 left-0 w-[520px] h-[520px] bg-(--color-accent-2)/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[520px] h-[520px] bg-(--color-accent)/12 rounded-full blur-3xl" />
+        <div className="absolute top-28 left-0 w-full h-px bg-linear-to-r from-transparent via-(--color-line) to-transparent" />
+        <div className="absolute bottom-24 left-0 w-full h-px bg-linear-to-r from-transparent via-(--color-line) to-transparent" />
       </div>
 
-      {/* Contenido principal - Layout optimizado para laptop/desktop */}
+      {/* Contenido principal */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 max-w-5xl mx-auto px-6 text-center"
+        className="relative z-10 max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center"
       >
-        {/* Saludo minimalista */}
-        <motion.p
-          variants={itemVariants}
-          className="text-base md:text-lg text-blue-400/90 font-medium mb-6 tracking-wide"
-        >
-          {t('hero.greeting')}
-        </motion.p>
+        <div className="text-left">
+          <motion.div variants={itemVariants} className="flex items-center gap-4 mb-6">
+            <span className="text-xs uppercase tracking-[0.4em] text-(--color-muted)">
+              {t('hero.greeting')}
+            </span>
+            <span className="h-px w-16 bg-(--color-line)" />
+          </motion.div>
 
-        {/* Nombre - Elemento principal con mayor peso visual */}
-        <motion.h1
-          variants={itemVariants}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
-        >
-          <span className="bg-clip-text text-transparent bg-linear-to-r from-white via-blue-50 to-white">
-            {name}
-          </span>
-        </motion.h1>
-
-        {/* Título profesional - Jerarquía clara */}
-        <motion.h2
-          variants={itemVariants}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-300/95 mb-8 leading-tight"
-        >
-          {title}
-        </motion.h2>
-
-        {/* Frase de impacto - Breve, clara y atractiva */}
-        <motion.p
-          variants={itemVariants}
-          className="text-base sm:text-lg md:text-xl text-gray-400/90 max-w-2xl mx-auto mb-12 leading-relaxed"
-        >
-          {t('hero.subtitle')}
-        </motion.p>
-
-        {/* Botones CTA - Diseño limpio y profesional */}
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-        >
-          {/* Botón primario - Ver proyectos */}
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() => scrollToSection('#projects')}
-            className="group relative px-8 py-3.5 bg-linear-to-r from-blue-600 to-blue-500 text-white rounded-lg font-semibold overflow-hidden shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300"
+          <motion.h1
+            variants={itemVariants}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-tight text-(--color-ink)"
           >
-            <span className="relative flex items-center gap-2">
+            {name}
+          </motion.h1>
+
+          <motion.h2
+            variants={itemVariants}
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl italic text-(--color-muted) mt-4"
+          >
+            {title}
+          </motion.h2>
+
+          <motion.p
+            variants={itemVariants}
+            className="text-base sm:text-lg md:text-xl text-(--color-muted) max-w-xl mt-8 leading-relaxed"
+          >
+            {t('hero.subtitle')}
+          </motion.p>
+
+          {summary && (
+            <motion.p
+              variants={itemVariants}
+              className="text-sm sm:text-base text-(--color-muted) max-w-xl mt-6 leading-relaxed line-clamp-2"
+            >
+              {summary}
+            </motion.p>
+          )}
+
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mt-10">
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => scrollToSection('#projects')}
+              className="group inline-flex items-center gap-3 px-7 py-3.5 bg-(--color-accent) text-(--color-ink) font-semibold uppercase tracking-[0.25em] text-xs shadow-[0_20px_40px_rgba(227,59,46,0.25)]"
+            >
               {t('hero.cta')}
               <ArrowDownIcon className="h-4 w-4 group-hover:translate-y-0.5 transition-transform duration-300" />
-            </span>
-          </motion.button>
+            </motion.button>
 
-          {/* Botón secundario - Contacto */}
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() => scrollToSection('#contact')}
-            className="px-8 py-3.5 bg-transparent text-gray-300 rounded-lg font-semibold border-2 border-gray-700/80 hover:border-blue-500/60 hover:bg-gray-800/50 transition-all duration-300 flex items-center gap-2"
-          >
-            <EnvelopeIcon className="h-4 w-4" />
-            {t('hero.ctaSecondary')}
-          </motion.button>
-        </motion.div>
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => scrollToSection('#contact')}
+              className="inline-flex items-center gap-2 px-7 py-3.5 border border-(--color-line) text-(--color-ink) uppercase tracking-[0.25em] text-xs"
+            >
+              <EnvelopeIcon className="h-4 w-4" />
+              {t('hero.ctaSecondary')}
+            </motion.button>
+          </motion.div>
+        </div>
 
-        {/* Indicador de scroll animado - Sutil y elegante */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 0.5, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2, ease: 'easeInOut' }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:block"
-        >
-          <ArrowDownIcon className="h-5 w-5 text-gray-500" />
+        <motion.div variants={itemVariants} className="relative">
+          <div className="absolute -top-6 right-0 text-(--color-line) text-8xl font-semibold">
+            01
+          </div>
+          <div className="border border-(--color-line) bg-(--color-panel) p-8">
+            <div className="text-(--color-muted) text-xs uppercase tracking-[0.4em] mb-6">
+              {t('Informacion')}
+            </div>
+            
+            <div className="mt-8 h-px bg-(--color-line)" />
+            <div className="mt-6 text-sm text-(--color-muted)">
+              Interfaces elaboradas, sistemas resilientes, impacto medible.
+            </div>
+
+            <div className="mt-8 grid gap-4 text-xs uppercase tracking-[0.2em] text-(--color-muted)">
+              {location && (
+                <div className="flex items-center justify-between border-b border-(--color-line) pb-3">
+                  <span>Ubicación</span>
+                  <span className="text-(--color-ink) normal-case tracking-normal">{location}</span>
+                </div>
+              )}
+              {email && (
+                <div className="flex items-center justify-between border-b border-(--color-line) pb-3">
+                  <span>Email</span>
+                  <a
+                    href={`mailto:${email}`}
+                    className="text-(--color-ink) normal-case tracking-normal hover:text-(--color-accent) transition-colors"
+                  >
+                    {email}
+                  </a>
+                </div>
+              )}
+              <div className="flex flex-wrap gap-3">
+                {linkedin && (
+                  <a
+                    href={linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-(--color-line) px-3 py-2 text-(--color-ink) hover:border-(--color-accent) transition-colors"
+                  >
+                    LinkedIn
+                  </a>
+                )}
+                {github && (
+                  <a
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-(--color-line) px-3 py-2 text-(--color-ink) hover:border-(--color-accent) transition-colors"
+                  >
+                    GitHub
+                  </a>
+                )}
+                {website && (
+                  <a
+                    href={website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-(--color-line) px-3 py-2 text-(--color-ink) hover:border-(--color-accent) transition-colors"
+                  >
+                    Portfolio
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
         </motion.div>
       </motion.div>
 
-      {/* Vignette sutil para profundidad */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 100% 80% at 50% 50%, transparent 0%, rgba(0,0,0,0.3) 100%)',
-        }}
-      />
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 0.6, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.2, ease: 'easeInOut' }}
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:flex flex-col items-center gap-3"
+      >
+        <span className="text-xs uppercase tracking-[0.4em] text-(--color-muted)">Scroll</span>
+        <ArrowDownIcon className="h-5 w-5 text-(--color-muted)" />
+      </motion.div>
     </section>
   );
 }

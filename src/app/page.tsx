@@ -51,7 +51,17 @@ export default function Home() {
       {/* Contenido principal */}
       <main>
         {/* Hero Section */}
-        <Hero t={t} name={profile.name} title={profile.title} />
+        <Hero
+          t={t}
+          name={profile.name}
+          title={profile.title}
+          summary={profile.summary}
+          location={profile.location}
+          email={profile.email}
+          linkedin={profile.linkedin || profile.social?.linkedin}
+          github={profile.github || profile.social?.github}
+          website={profile.website}
+        />
 
         {/* About Section */}
         <About t={t} summary={profile.summary} stats={stats} locale={locale} />
@@ -67,7 +77,7 @@ export default function Home() {
         </div>
 
         {/* Projects Section */}
-      {/*   <div className="deferred-section">
+        {/*   <div className="deferred-section">
           <ProjectsGrid t={t} projects={profile.projects} />
         </div> */}
 
@@ -83,10 +93,7 @@ export default function Home() {
 
         {/* Contact Section */}
         <div className="deferred-section">
-          <section
-            id="contact"
-            className="relative py-20 md:py-32 bg-linear-to-b from-black to-gray-900"
-          >
+          <section id="contact" className="relative py-24 md:py-36 bg-(--color-bg)">
             <div className="max-w-7xl mx-auto px-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -94,10 +101,10 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                <h2 className="text-3xl md:text-5xl font-semibold text-(--color-ink) mb-4">
                   {t('contact.title')}
                 </h2>
-                <p className="text-lg text-gray-400">{t('contact.subtitle')}</p>
+                <p className="text-lg text-(--color-muted)">{t('contact.subtitle')}</p>
               </motion.div>
               <ContactForm />
             </div>

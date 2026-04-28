@@ -4,14 +4,20 @@
  */
 
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Bodoni_Moda, Work_Sans } from 'next/font/google';
 import './globals.css';
 import { I18nProvider } from '@/hooks/useI18n';
 import ClientWhatsAppButton from '@/components/ClientWhatsAppButton';
 
-const inter = Inter({
+const bodoni = Bodoni_Moda({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-display',
+  display: 'swap',
+});
+
+const workSans = Work_Sans({
+  subsets: ['latin'],
+  variable: '--font-body',
   display: 'swap',
 });
 
@@ -58,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={inter.variable}>
+    <html lang="es" className={`${bodoni.variable} ${workSans.variable}`}>
       <body className="antialiased">
         <I18nProvider>
           {children}
