@@ -16,7 +16,7 @@ import { getProfileSync, getStatsSync } from '@/lib/api';
 
 const ExperienceTimeline = dynamic(() => import('@/components/ExperienceTimeline'));
 const EducationTimeline = dynamic(() => import('@/components/EducationTimeline'));
-const ProjectsGrid = dynamic(() => import('@/components/ProjectsGrid'));
+/* const ProjectsGrid = dynamic(() => import('@/components/ProjectsGrid')); */
 const CertificateList = dynamic(() => import('@/components/CertificateList'));
 const ReferencesSection = dynamic(() => import('@/components/ReferencesSection'));
 const ContactForm = dynamic(() => import('@/components/ContactForm'));
@@ -67,9 +67,9 @@ export default function Home() {
         </div>
 
         {/* Projects Section */}
-        <div className="deferred-section">
+      {/*   <div className="deferred-section">
           <ProjectsGrid t={t} projects={profile.projects} />
-        </div>
+        </div> */}
 
         {/* Certificates Section */}
         <div className="deferred-section">
