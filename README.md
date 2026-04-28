@@ -1,29 +1,25 @@
-# 🚀 Portfolio Profesional - Emmanuel Berrio Jiménez
+# Portfolio Profesional - Emmanuel Berrio Jiménez
 
-Portfolio web moderno y profesional desarrollado con Next.js, TypeScript y Tailwind CSS.
+Sitio web de portafolio profesional desarrollado con Next.js, TypeScript y Tailwind CSS.
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat&logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38bdf8?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
+## Características principales
 
-## ✨ Características
+- Diseño moderno y responsive
+- Multilenguaje (Español/Inglés)
+- Optimización para rendimiento y SEO
+- Animaciones fluidas con Framer Motion
+- Botón flotante de WhatsApp
+- Múltiples canales de contacto (Email, Teléfono, LinkedIn, GitHub)
 
-- 🎨 Diseño moderno y responsive
-- 🌐 Multilenguaje (Español/Inglés)
-- ⚡ Optimizado para rendimiento y SEO
-- 🎭 Animaciones fluidas con Framer Motion
-- � Botón flotante de WhatsApp
-- 📱 Contacto directo (Email, Teléfono, LinkedIn, GitHub)
+## Stack Tecnológico
 
-## 🛠️ Stack Tecnológico
+- **Next.js 16** – Framework React
+- **TypeScript 5** – Tipado estático
+- **Tailwind CSS 4** – Estilos utility-first
+- **Framer Motion 12** – Animaciones
+- **React Hook Form + Zod** – Validación de formularios
 
-- **Next.js 16** - Framework React
-- **TypeScript 5** - Tipado estático
-- **Tailwind CSS 4** - Estilos utility-first
-- **Framer Motion 12** - Animaciones
-- **React Hook Form + Zod** - Validación de formularios
-
-## 🚀 Inicio Rápido
+## Inicio rápido
 
 ```bash
 # Clonar repositorio
@@ -37,9 +33,9 @@ npm install
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+Accede a [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-## 📜 Scripts
+## Scripts disponibles
 
 ```bash
 npm run dev      # Servidor de desarrollo
@@ -49,21 +45,21 @@ npm run lint     # Ejecutar linter
 npm run test     # Ejecutar tests
 ```
 
-## 📁 Estructura
+## Estructura del proyecto
 
 ```
 src/
 ├── app/              # App Router (páginas y rutas)
 ├── components/       # Componentes React
-├── data/            # Datos del portfolio (profile.json)
-├── hooks/           # Custom hooks (i18n)
-├── lib/             # Utilidades
-└── types/           # Tipos TypeScript
+├── data/             # Datos del portfolio (profile.json)
+├── hooks/            # Custom hooks (i18n)
+├── lib/              # Utilidades
+└── types/            # Tipos TypeScript
 ```
 
-## 🎨 Personalización
+## Personalización
 
-Edita `src/data/profile.json` con tu información:
+Edita el archivo `src/data/profile.json` con tu información personal:
 
 ```json
 {
@@ -81,39 +77,33 @@ Edita `src/data/profile.json` con tu información:
 
 ### Vercel (Recomendado)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
-
-1. Push a GitHub
-2. Importa en [Vercel](https://vercel.com)
-3. Deploy automático ✅
+1. Sube tu repositorio a GitHub
+2. Importa el proyecto en [Vercel](https://vercel.com)
+3. El despliegue será automático
 
 También compatible con: Netlify, AWS Amplify, Cloudflare Pages
 
-## � Contacto
+## Contacto
 
-El portfolio incluye múltiples formas de contacto:
+El portafolio incluye varias formas de contacto:
 
-- 📧 Email directo
-- 📱 Llamada telefónica
-- 💬 WhatsApp (botón flotante con mensaje predeterminado)
-- � LinkedIn
-- 💻 GitHub
+- Email directo
+- Llamada telefónica
+- WhatsApp (botón flotante con mensaje predeterminado)
+- LinkedIn
+- GitHub
 
-## 👤 Autor
+## Autor
 
 **Emmanuel Berrio Jiménez**
 
-- 💼 LinkedIn: [Emmanuel Berrio Jiménez](https://www.linkedin.com/in/emmanuel-berrio-jimenez/)
-- 💻 GitHub: [@Emmanuelxs13](https://github.com/Emmanuelxs13)
-- 📧 Email: emmanuelberriojimenez13@gmail.com
-- 📱 WhatsApp: +57 301 524 9169
+- LinkedIn: [Emmanuel Berrio Jiménez](https://www.linkedin.com/in/emmanuel-berrio-jimenez/)
+- GitHub: [@Emmanuelxs13](https://github.com/Emmanuelxs13)
+- Email: emmanuelberriojimenez13@gmail.com
+- WhatsApp: +57 301 524 9169
 
-## 📝 Licencia
+## Licencia
 
-MIT License - ver [LICENSE](LICENSE) para más detalles.
+Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 ---
-
-⭐ **¡Dale una estrella si te gusta este proyecto!**
-
-Hecho con ❤️ usando Next.js y TypeScript
