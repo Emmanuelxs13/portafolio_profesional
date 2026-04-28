@@ -22,11 +22,11 @@ export default function Footer({ t, social }: Readonly<FooterProps>) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 border-t border-gray-800">
+    <footer className="bg-[color:var(--color-panel)] border-t border-[color:var(--color-line)]">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Copyright */}
-          <div className="text-gray-400 text-sm">
+          <div className="text-[color:var(--color-muted)] text-xs uppercase tracking-[0.2em]">
             © {currentYear} Emmanuel Berrio Jiménez. {t('footer.rights')}.
           </div>
 
@@ -38,7 +38,7 @@ export default function Footer({ t, social }: Readonly<FooterProps>) {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
-                className="text-gray-400 hover:text-blue-500 transition"
+                className="text-[color:var(--color-muted)] hover:text-[color:var(--color-accent)] transition"
               >
                 <span className="sr-only">LinkedIn</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -52,7 +52,7 @@ export default function Footer({ t, social }: Readonly<FooterProps>) {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
-                className="text-gray-400 hover:text-white transition"
+                className="text-[color:var(--color-muted)] hover:text-[color:var(--color-ink)] transition"
               >
                 <span className="sr-only">GitHub</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -67,8 +67,11 @@ export default function Footer({ t, social }: Readonly<FooterProps>) {
           </div>
 
           {/* Links */}
-          <div className="flex gap-6 text-sm">
-            <Link href="/privacy" className="text-gray-400 hover:text-white transition">
+          <div className="flex gap-6 text-xs uppercase tracking-[0.2em]">
+            <Link
+              href="/privacy"
+              className="text-[color:var(--color-muted)] hover:text-[color:var(--color-ink)] transition"
+            >
               {t('footer.privacy')}
             </Link>
           </div>

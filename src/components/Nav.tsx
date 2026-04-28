@@ -126,7 +126,9 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
       transition={{ duration: 0.5 }}
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        isScrolled
+          ? 'bg-[color:var(--color-panel)] backdrop-blur-md border-b border-[color:var(--color-line)]'
+          : 'bg-transparent'
       )}
     >
       <nav
@@ -138,12 +140,10 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
           <Link href="/" className="-m-1.5 p-1.5">
             <motion.span
               whileHover={{ scale: 1.05 }}
-              className="text-2xl lg:text-3xl font-bold text-white flex items-center gap-2"
+              className="text-2xl lg:text-3xl font-semibold text-[color:var(--color-ink)] flex items-center gap-2"
             >
-              <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                EB
-              </span>
-              <span className="text-blue-500 text-3xl lg:text-4xl">.</span>
+              <span className="tracking-tight">EB</span>
+              <span className="text-[color:var(--color-accent)] text-3xl lg:text-4xl">•</span>
             </motion.span>
           </Link>
         </div>
@@ -152,7 +152,7 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-3 text-gray-300 hover:bg-gray-800 transition-colors"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-3 text-[color:var(--color-muted)] hover:bg-[color:var(--color-panel)] transition-colors"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -175,8 +175,10 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className={cn(
-                'text-base font-semibold leading-6 transition-all duration-300 relative py-2',
-                isLinkActive(item.href) ? 'text-blue-400' : 'text-gray-300 hover:text-white'
+                'text-xs uppercase tracking-[0.2em] font-semibold leading-6 transition-all duration-300 relative py-2',
+                isLinkActive(item.href)
+                  ? 'text-[color:var(--color-accent)]'
+                  : 'text-[color:var(--color-muted)] hover:text-[color:var(--color-ink)]'
               )}
             >
               {t(item.name)}
@@ -184,7 +186,7 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
               {isLinkActive(item.href) && (
                 <motion.div
                   layoutId="activeNav"
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[color:var(--color-accent)]"
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                 />
               )}
@@ -198,7 +200,7 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => onLanguageChange(locale === 'es' ? 'en' : 'es')}
-            className="flex items-center gap-2 px-4 py-2 text-base font-semibold bg-gradient-to-r from-blue-500/10 to-purple-500/10 hover:from-blue-500/20 hover:to-purple-500/20 border border-blue-500/30 rounded-lg text-blue-400 hover:text-blue-300 transition-all duration-300"
+            className="flex items-center gap-2 px-4 py-2 text-xs uppercase tracking-[0.25em] font-semibold bg-[color:var(--color-panel)] border border-[color:var(--color-line)] rounded-lg text-[color:var(--color-muted)] hover:text-[color:var(--color-ink)] transition-all duration-300"
           >
             <LanguageIcon className="h-5 w-5" />
             <span className="uppercase font-bold">{locale === 'es' ? 'EN' : 'ES'}</span>
@@ -218,7 +220,7 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 z-50 bg-gray-900/80 backdrop-blur-sm" />
+            <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm" />
           </Transition.Child>
 
           <Transition.Child
@@ -230,16 +232,16 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
+            <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[color:var(--color-panel)] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-[color:var(--color-line)]">
               <div className="flex items-center justify-between">
                 <Link href="/" className="-m-1.5 p-1.5">
-                  <span className="text-xl font-bold text-white">
-                    EB<span className="text-blue-500">.</span>
+                  <span className="text-xl font-semibold text-[color:var(--color-ink)]">
+                    EB<span className="text-[color:var(--color-accent)]">•</span>
                   </span>
                 </Link>
                 <button
                   type="button"
-                  className="-m-2.5 rounded-md p-2.5 text-gray-300"
+                  className="-m-2.5 rounded-md p-2.5 text-[color:var(--color-muted)]"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="sr-only">Close menu</span>
@@ -248,7 +250,7 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
               </div>
 
               <div className="mt-6 flow-root">
-                <div className="-my-6 divide-y divide-gray-700">
+                <div className="-my-6 divide-y divide-[color:var(--color-line)]">
                   <div className="space-y-2 py-6">
                     {navigation.map((item) => (
                       <motion.a
@@ -262,10 +264,10 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
                         }}
                         whileHover={{ x: 5 }}
                         className={cn(
-                          '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-colors',
+                          '-mx-3 block rounded-lg px-3 py-2 text-sm uppercase tracking-[0.2em] font-semibold leading-7 transition-colors',
                           isLinkActive(item.href)
-                            ? 'bg-blue-500/10 text-blue-500'
-                            : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                            ? 'bg-[color:var(--color-panel-2)] text-[color:var(--color-accent)]'
+                            : 'text-[color:var(--color-muted)] hover:bg-[color:var(--color-panel-2)] hover:text-[color:var(--color-ink)]'
                         )}
                       >
                         {t(item.name)}
@@ -279,7 +281,7 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
                         onLanguageChange(locale === 'es' ? 'en' : 'es');
                         setMobileMenuOpen(false);
                       }}
-                      className="flex w-full items-center gap-2 rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                      className="flex w-full items-center gap-2 rounded-lg px-3 py-2.5 text-sm uppercase tracking-[0.2em] font-semibold leading-7 text-[color:var(--color-muted)] hover:bg-[color:var(--color-panel-2)] hover:text-[color:var(--color-ink)] transition-colors"
                     >
                       <LanguageIcon className="h-5 w-5" />
                       <span>{locale === 'es' ? 'English' : 'Español'}</span>

@@ -60,10 +60,7 @@ export default function EducationTimeline({ t, education }: Readonly<EducationTi
   };
 
   return (
-    <section
-      id="education"
-      className="relative py-20 md:py-32 bg-gradient-to-b from-gray-900 via-black to-gray-900"
-    >
+    <section id="education" className="relative py-24 md:py-36 bg-[color:var(--color-bg)]">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -77,14 +74,16 @@ export default function EducationTimeline({ t, education }: Readonly<EducationTi
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ type: 'spring', stiffness: 200 }}
-            className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 shadow-xl shadow-blue-500/30"
+            className="inline-flex items-center justify-center w-16 h-16 bg-[color:var(--color-accent)] rounded-2xl mb-6 shadow-xl shadow-black/40"
           >
             <AcademicCapIcon className="h-8 w-8 text-white" />
           </motion.div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-[color:var(--color-ink)]">
             {t('education.title')}
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">{t('education.subtitle')}</p>
+          <p className="text-lg text-[color:var(--color-muted)] max-w-2xl mx-auto">
+            {t('education.subtitle')}
+          </p>
         </motion.div>
 
         {/* Timeline */}
@@ -96,7 +95,7 @@ export default function EducationTimeline({ t, education }: Readonly<EducationTi
           className="relative"
         >
           {/* Línea vertical decorativa */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/50 via-purple-500/50 to-transparent hidden md:block" />
+          <div className="absolute left-8 top-0 bottom-0 w-px bg-linear-to-b from-[color:var(--color-line)] via-[color:var(--color-line)] to-transparent hidden md:block" />
 
           <div className="space-y-8">
             {education.map((edu) => (
@@ -106,21 +105,21 @@ export default function EducationTimeline({ t, education }: Readonly<EducationTi
                 whileHover={{ scale: 1.02, x: 10 }}
                 className="group relative"
               >
-                <div className="relative bg-gradient-to-br from-gray-800/90 via-gray-900/90 to-gray-800/90 rounded-2xl p-6 lg:p-8 border border-gray-700/50 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 backdrop-blur-sm transition-all duration-300 ml-0 md:ml-20">
+                <div className="relative bg-[color:var(--color-panel)] rounded-2xl p-6 lg:p-8 border border-[color:var(--color-line)] shadow-xl hover:shadow-2xl hover:shadow-black/40 backdrop-blur-sm transition-all duration-300 ml-0 md:ml-20">
                   {/* Punto indicador en timeline */}
-                  <div className="absolute -left-4 top-8 hidden md:flex items-center justify-center w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full shadow-lg shadow-blue-500/50 group-hover:scale-125 transition-transform duration-300">
+                  <div className="absolute -left-4 top-8 hidden md:flex items-center justify-center w-8 h-8 bg-[color:var(--color-accent)] rounded-full shadow-lg shadow-black/40 group-hover:scale-125 transition-transform duration-300">
                     <div className="w-3 h-3 bg-white rounded-full" />
                   </div>
 
                   {/* Efectos decorativos */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/0 via-purple-500/0 to-transparent group-hover:from-blue-500/10 group-hover:via-purple-500/5 transition-all duration-500" />
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl group-hover:bg-blue-500/10 transition-all duration-500" />
+                  <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-[color:var(--color-accent)]/0 via-[color:var(--color-accent-2)]/0 to-transparent group-hover:from-[color:var(--color-accent)]/10 group-hover:via-[color:var(--color-accent-2)]/5 transition-all duration-500" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[color:var(--color-accent)]/10 rounded-full blur-3xl group-hover:bg-[color:var(--color-accent)]/20 transition-all duration-500" />
 
                   <div className="relative z-10 flex flex-col md:flex-row md:items-start gap-6">
                     {/* Icono de institución */}
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl flex items-center justify-center border border-blue-500/30 group-hover:scale-110 transition-transform duration-300">
-                        <BuildingLibraryIcon className="h-8 w-8 text-blue-400" />
+                      <div className="w-16 h-16 bg-[color:var(--color-panel-2)] rounded-xl flex items-center justify-center border border-[color:var(--color-line)] group-hover:scale-110 transition-transform duration-300">
+                        <BuildingLibraryIcon className="h-8 w-8 text-[color:var(--color-accent)]" />
                       </div>
                     </div>
 
@@ -129,12 +128,14 @@ export default function EducationTimeline({ t, education }: Readonly<EducationTi
                       {/* Título y fechas */}
                       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
                         <div>
-                          <h3 className="text-xl lg:text-2xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300 mb-1">
+                          <h3 className="text-xl lg:text-2xl font-semibold text-[color:var(--color-ink)] group-hover:text-[color:var(--color-accent-2)] transition-colors duration-300 mb-1">
                             {edu.degree}
                           </h3>
-                          <p className="text-lg text-blue-400 font-medium">{edu.institution}</p>
+                          <p className="text-lg text-[color:var(--color-accent-2)] font-medium">
+                            {edu.institution}
+                          </p>
                         </div>
-                        <div className="flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                        <div className="flex items-center gap-2 text-[color:var(--color-muted)] group-hover:text-[color:var(--color-ink)] transition-colors duration-300">
                           <CalendarIcon className="h-5 w-5 flex-shrink-0" />
                           <span className="text-sm whitespace-nowrap">
                             {formatDate(edu.from)} - {formatDate(edu.to)}
@@ -143,13 +144,15 @@ export default function EducationTimeline({ t, education }: Readonly<EducationTi
                       </div>
 
                       {/* Field */}
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full border border-purple-500/30 mb-4">
-                        <span className="text-sm text-purple-300 font-medium">{edu.field}</span>
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[color:var(--color-panel-2)] rounded-full border border-[color:var(--color-line)] mb-4">
+                        <span className="text-xs uppercase tracking-[0.2em] text-[color:var(--color-muted)] font-medium">
+                          {edu.field}
+                        </span>
                       </div>
 
                       {/* Descripción */}
                       {edu.description && (
-                        <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                        <p className="text-[color:var(--color-muted)] leading-relaxed group-hover:text-[color:var(--color-ink)] transition-colors duration-300">
                           {edu.description}
                         </p>
                       )}
@@ -158,7 +161,7 @@ export default function EducationTimeline({ t, education }: Readonly<EducationTi
 
                   {/* Borde brillante animado en hover */}
                   <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 opacity-20 blur-xl" />
+                    <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-[color:var(--color-accent)] via-[color:var(--color-accent-2)] to-[color:var(--color-accent)] opacity-20 blur-xl" />
                   </div>
                 </div>
               </motion.div>
