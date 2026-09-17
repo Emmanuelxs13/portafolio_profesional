@@ -5,8 +5,9 @@
 
 @import 'tailwindcss';
 
-/* Variables CSS para temas */
+/* Variables CSS para el tema dark-premium */
 :root {
+  /* Tokens base (nombres históricos consumidos por los componentes) */
   --color-bg: #0b0a09;
   --color-panel: #151210;
   --color-panel-2: #1d1916;
@@ -15,6 +16,31 @@
   --color-line: #2a241f;
   --color-accent: #e33b2e;
   --color-accent-2: #caa35a;
+
+  /* Escala semántica dark-premium */
+  --color-accent-hover: #ff5a4d;
+  --color-surface-1: #151210;
+  --color-surface-2: #1d1916;
+  --color-surface-3: #26211b;
+  --color-border: #2a241f;
+  --color-border-strong: #3b3228;
+  --color-text-primary: #f6efe5;
+  --color-text-secondary: #b9b0a2;
+  --color-text-tertiary: #8a8074;
+  --color-focus-ring: rgba(227, 59, 46, 0.5);
+  --color-gradient-start: #e33b2e;
+  --color-gradient-mid: #caa35a;
+  --color-gradient-end: #4a3a24;
+
+  /* Radii, sombras y movimiento */
+  --radius-card: 1rem;
+  --radius-pill: 9999px;
+  --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.4);
+  --shadow-card-raised: 0 24px 48px rgba(0, 0, 0, 0.55);
+  --shadow-accent-glow: 0 20px 40px rgba(227, 59, 46, 0.25);
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-base: 300ms;
 }
 
 /* Smooth scroll */
@@ -42,7 +68,7 @@ html {
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: #c53127;
+  background: var(--color-accent-hover);
 }
 
 ::selection {
