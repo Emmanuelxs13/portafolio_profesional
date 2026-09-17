@@ -41,17 +41,17 @@ Accede a [http://localhost:3000](http://localhost:3000) en tu navegador.
 npm run dev      # Servidor de desarrollo
 npm run build    # Compilar para producción
 npm run start    # Servidor de producción
-npm run lint     # Ejecutar linter
+npx eslint .        # Ejecutar linter
 npm run test     # Ejecutar tests
 ```
 
 ## Estructura del proyecto
 
 ```
+data/                # Datos del portfolio (profile.json)
 src/
 ├── app/              # App Router (páginas y rutas)
 ├── components/       # Componentes React
-├── data/             # Datos del portfolio (profile.json)
 ├── hooks/            # Custom hooks (i18n)
 ├── lib/              # Utilidades
 └── types/            # Tipos TypeScript
@@ -59,7 +59,7 @@ src/
 
 ## Personalización
 
-Edita el archivo `src/data/profile.json` con tu información personal:
+Edita el archivo `data/profile.json` con tu información personal:
 
 ```json
 {
