@@ -1,7 +1,7 @@
 {
   "name": "Emmanuel Berrio Jimenez",
   "title": "Desarrollador de Software FullStack",
-  "summary": "Programador Fullstack con 3 años de experiencia, dedicado a convertir ideas en experiencias web fluidas y memorables. Domino tecnologías como HTML, CSS, Sass, React.js, Vue.js y Angular, así como desarrollos backend en C#, ASP.NET, PHP y Node.js. Trabajo con MySQL y PostgreSQL, y manejo Git con soltura. Con iniciativa, aprendizaje rápido y una visión siempre abierta a la innovación, aporto dinamismo y claridad técnica para destacar en entornos de desarrollo exigentes.",
+  "summary": "Programador Fullstack con más de 4 años de experiencia, dedicado a convertir ideas en experiencias web fluidas y memorables. Domino tecnologías como HTML, CSS, Sass, React.js, Vue.js y Angular, así como desarrollos backend en C#, ASP.NET, PHP y Node.js. Trabajo con MySQL y PostgreSQL, y manejo Git con soltura. Con iniciativa, aprendizaje rápido y una visión siempre abierta a la innovación, aporto dinamismo y claridad técnica para destacar en entornos de desarrollo exigentes.",
   "location": "Medellín, Antioquia, Colombia",
   "email": "emmanuelberriojimenez13@gmail.com",
   "phone": "+57 3015249169",
@@ -85,6 +85,45 @@
         "SCRUM",
         "MVC"
       ]
+    },
+    {
+      "id": "exp-4",
+      "company": "TIVENOS - Solutions for Education",
+      "title": "Programador FullStack - Zoho CRM",
+      "from": "2026-04",
+      "to": "2026-10",
+      "current": true,
+      "description": "TIVENOS es un líder EdTech que transforma el ecosistema educativo. Como Programador FullStack, desarrollo flujos automatizados entre los sistemas internos y Zoho CRM, brindo soporte de nivel 3 y administro servidores Linux garantizando estabilidad, seguridad y alta disponibilidad.",
+      "achievements": [
+        "Automatización de flujos de trabajo entre sistemas internos y Zoho CRM (Python + FastAPI)",
+        "Resolución de incidentes de soporte nivel 3 (lógica de negocio compleja y arquitectura)",
+        "Administración de servidores Linux (estabilidad, seguridad y alta disponibilidad)",
+        "Diseño de arquitecturas backend robustas y escalables"
+      ],
+      "technologies": [
+        "Python 3.10+",
+        "FastAPI",
+        "Zoho CRM API (Deluge & REST)",
+        "PostgreSQL/pgAdmin4",
+        "Docker",
+        "Linux",
+        "Git/GitHub",
+        "SCRUM",
+        "Microservices",
+        "MVC",
+        "RESTful API design"
+      ]
+    },
+    {
+      "id": "exp-5",
+      "company": "Freelance",
+      "title": "Programador FullStack",
+      "from": "2025-12",
+      "to": "2026-04",
+      "location": "Medellín, Colombia",
+      "description": "Desarrollo de soluciones web fullstack como profesional independiente, enfocado en construir productos funcionales y de calidad para cada proyecto.",
+      "achievements": [],
+      "technologies": []
     }
   ],
 
@@ -212,7 +251,8 @@
       "link": "",
       "github": "",
       "image": "/projects/crm-inmobiliaria.jpg",
-      "featured": true
+      "featured": false,
+      "category": "client"
     },
     {
       "id": "proj-2",
@@ -223,7 +263,38 @@
       "link": "",
       "github": "",
       "image": "/projects/muvu-automation.jpg",
-      "featured": true
+      "featured": false,
+      "category": "client"
+    },
+    {
+      "id": "proj-3",
+      "title": "iMagiQ",
+      "description": "Tienda autorizada oficial de Samsung Colombia. Encargado de todo el frontend de la comercializadora, construyendo una experiencia de compra fluida y moderna.",
+      "longDescription": "iMagiQ es una comercializadora autorizada oficial de Samsung Colombia. Como encargado de todo el frontend, desarrollé la interfaz completa de su tienda oficial, garantizando una experiencia de usuario fluida, moderna y alineada con la marca.",
+      "tech": [],
+      "link": "https://www.imagiq.com/",
+      "featured": true,
+      "category": "client",
+      "company": "iMagiQ",
+      "role": "Desarrollador Frontend",
+      "highlights": [
+        "Desarrollo completo del frontend de la tienda oficial de Samsung Colombia"
+      ]
+    },
+    {
+      "id": "proj-4",
+      "title": "Origination Latam",
+      "description": "Agencia BTL (Below The Line) especializada en estrategias, eventos y campañas que conectan con tu audiencia. Construcción completa del sitio web de la agencia.",
+      "longDescription": "En Origination, creamos estrategias BTL (Below The Line), eventos y campañas que conectan con tu audiencia. Como desarrollador, construí el sitio web completo de la agencia, integrando su propuesta de servicios: arquitectura efímera, branding corporativo, marketing de experiencias, eventos corporativos, comunicación estratégica y transporte y logística.",
+      "tech": [],
+      "link": "https://originationla.com/",
+      "featured": true,
+      "category": "client",
+      "company": "Origination Latam",
+      "role": "Desarrollador Web",
+      "highlights": [
+        "Construcción completa del sitio web de la agencia BTL"
+      ]
     }
   ],
 

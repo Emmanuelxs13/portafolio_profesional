@@ -7,9 +7,11 @@ export function computeProfileStats(profile: Profile): ProfileStats {
   });
   const firstExperience = sortedExperience[0];
 
-  const yearsOfExperience = Math.floor(
-    (Date.now() - new Date(firstExperience.from).getTime()) / (1000 * 60 * 60 * 24 * 365)
-  );
+  const yearsOfExperience = firstExperience
+    ? Math.floor(
+        (Date.now() - new Date(firstExperience.from).getTime()) / (1000 * 60 * 60 * 24 * 365)
+      )
+    : 0;
 
   return {
     yearsOfExperience,
