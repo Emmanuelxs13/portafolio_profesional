@@ -37,6 +37,15 @@ interface AboutProps {
 }
 
 /**
+ * Ruta de descarga del CV por idioma. `en` todavía no tiene PDF propio, por lo
+ * que reutiliza el asset en español (href existente, nunca roto).
+ */
+const CV_ROUTE_BY_LOCALE: Record<'es' | 'en', string> = {
+  es: '/api/cv?lang=es',
+  en: '/api/cv?lang=es',
+};
+
+/**
  * Variantes de animación para fade-in desde abajo
  */
 const fadeInUp = {
@@ -87,22 +96,16 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
   ];
 
   /**
-   * Maneja la descarga del CV
+   * Destino de descarga del CV: la ruta /api/cv sirve el PDF real con su
+   * nombre verdadero en Content-Disposition.
+   *
+   * Todavía no existe `CV-Emmanuel_Berrio_EN.pdf`, así que el idioma en cae al
+   * asset en español con la etiqueta veraz "(ES)" en lugar de apuntar a un
+   * archivo inexistente (href roto). Cuando el PDF en inglés se agregue, basta
+   * cambiar el href de `en` a '/api/cv?lang=en'.
    */
-  const handleDownloadCV = () => {
-    // Ruta directa al archivo PDF en la carpeta data
-    const cvUrl = '/CV-Emmanuel_Berrio.pdf';
-    const downloadName = locale === 'en' ? 'CV-Emmanuel_Berrio_EN.pdf' : 'CV-Emmanuel_Berrio.pdf';
-
-    // Crear un enlace temporal y hacer clic programáticamente
-    const link = document.createElement('a');
-    link.href = cvUrl;
-    link.download = downloadName;
-    link.target = '_blank'; // Abre en nueva pestaña si falla la descarga
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const cvHref = CV_ROUTE_BY_LOCALE[locale === 'en' ? 'en' : 'es'];
+  const cvLabel = locale === 'en' ? `${t('about.downloadCV')} (ES)` : t('about.downloadCV');
 
   return (
     <section id="about" className="relative py-24 md:py-36 bg-(--color-bg) overflow-hidden">
@@ -238,13 +241,13 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
               ))}
             </motion.div>
 
-            {/* Botón de descarga de CV mejorado */}
+            {/* Descarga de CV */}
             <motion.div variants={fadeInUp}>
-              <motion.button
+              <motion.a
+                href={cvHref}
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={handleDownloadCV}
-                className="group relative px-8 py-4 bg-(--color-accent) text-(--color-ink) uppercase tracking-[0.25em] text-xs font-semibold overflow-hidden shadow-xl shadow-black/40 transition-all duration-300"
+                className="group relative inline-block px-8 py-4 bg-(--color-accent) text-(--color-ink) uppercase tracking-[0.25em] text-xs font-semibold overflow-hidden shadow-xl shadow-black/40 transition-all duration-300"
               >
                 {/* Efecto de brillo animado */}
                 <motion.div
@@ -261,9 +264,9 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
                 />
                 <span className="relative flex items-center justify-center gap-2">
                   <ArrowDownTrayIcon className="h-5 w-5 group-hover:translate-y-1 transition-transform duration-300" />
-                  <span className="font-semibold">{t('about.downloadCV')}</span>
+                  <span className="font-semibold">{cvLabel}</span>
                 </span>
-              </motion.button>
+              </motion.a>
             </motion.div>
           </motion.div>
         </div>
