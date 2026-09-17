@@ -2,7 +2,7 @@
  * Tests para funciones de utilidad
  */
 
-import { formatDate, slugify, truncateText, isValidEmail } from '@/lib/utils';
+import { formatDate, slugify, truncateText, isValidEmail, calculateDuration } from '@/lib/utils';
 
 describe('Utils Functions', () => {
   describe('formatDate', () => {
@@ -61,6 +61,18 @@ describe('Utils Functions', () => {
 
     it('rejects email without @', () => {
       expect(isValidEmail('testexample.com')).toBe(false);
+    });
+  });
+
+  describe('calculateDuration', () => {
+    // The TIVENOS window is 2026-04 → 2026-10 (an elapsed span of 6 months).
+    // Prior copy claimed 7 months; the corrected semantics yield 6.
+    it('computes the TIVENOS window (2026-04 → 2026-10) as 6 months in Spanish', () => {
+      expect(calculateDuration('2026-04', '2026-10', 'es')).toBe('6 meses');
+    });
+
+    it('computes the TIVENOS window (2026-04 → 2026-10) as 6 months in English', () => {
+      expect(calculateDuration('2026-04', '2026-10', 'en')).toBe('6 months');
     });
   });
 });
