@@ -168,7 +168,7 @@ export default function About({ t, summary, stats, locale }: Readonly<AboutProps
                 {/* Imagen de perfil */}
                 <div className="aspect-square relative overflow-hidden">
                   <Image
-                    src="/img/about/fotoPerfil.JPG"
+                    src="/img/about/fotoPerfil.webp"
                     alt="Emmanuel Berrio - Software Developer"
                     fill
                     className="object-cover"

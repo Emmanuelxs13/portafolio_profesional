@@ -71,6 +71,13 @@ const renderAbout = (locale: Locale) =>
   );
 
 describe('About CV download control', () => {
+  it('renders the optimized webp profile photo instead of the legacy JPG', () => {
+    renderAbout('es');
+
+    const image = screen.getByRole('img', { name: 'Emmanuel Berrio - Software Developer' });
+    expect(image).toHaveAttribute('data-src', '/img/about/fotoPerfil.webp');
+  });
+
   it('renders an anchor to the existing CV asset for the es locale', () => {
     renderAbout('es');
 
