@@ -46,7 +46,7 @@ describe('GET /api/cv', () => {
     expect(response.headers.get('Content-Disposition')).toContain('attachment');
     expect(response.headers.get('Content-Disposition')).toContain('CV-Emmanuel_Berrio.pdf');
 
-    const body = response.body as Buffer;
+    const body = response.body as unknown as Buffer;
     expect(body.subarray(0, 5).toString('latin1')).toBe('%PDF-');
     expect(body.byteLength).toBeGreaterThan(1000);
   });
