@@ -138,6 +138,27 @@ h4 {
   }
 }
 
+/* Skip-link: oculto visualmente hasta recibir foco de teclado */
+.skip-link {
+  position: absolute;
+  top: -4rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-accent);
+  color: var(--color-ink);
+  font-weight: 600;
+  border-radius: var(--radius-card);
+  transition:
+    top var(--duration-fast) var(--ease-out-soft),
+    background-color var(--duration-fast) var(--ease-out-soft);
+}
+
+.skip-link:focus-visible {
+  top: 1rem;
+  background: var(--color-accent-hover);
+}
+
 /* Accesibilidad: respeta preferencia de movimiento reducido */
 @media (prefers-reduced-motion: reduce) {
   *,

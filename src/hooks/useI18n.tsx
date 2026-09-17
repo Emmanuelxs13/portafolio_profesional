@@ -108,6 +108,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'months.december': 'Diciembre',
     'footer.rights': 'Todos los derechos reservados',
     'footer.privacy': 'Política de privacidad',
+    'a11y.skipLink': 'Saltar al contenido',
   },
   en: {
     'nav.home': 'Home',
@@ -199,6 +200,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'months.december': 'December',
     'footer.rights': 'All rights reserved',
     'footer.privacy': 'Privacy policy',
+    'a11y.skipLink': 'Skip to content',
   },
 };
 
