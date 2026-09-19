@@ -12,6 +12,8 @@ export interface Experience {
   title: string;
   from: string; // Formato: YYYY-MM
   to: string; // "present" o YYYY-MM
+  current?: boolean; // Badge independiente de la fecha de fin
+  location?: string;
   description: string;
   achievements: string[];
   technologies: string[];
@@ -55,6 +57,14 @@ export interface Project {
   github?: string;
   image?: string;
   featured: boolean;
+  category: 'client' | 'personal';
+  company?: string;
+  role?: string;
+  period?: string;
+  highlights?: string[];
+  outcome?: string;
+  screenshots?: string[];
+  status?: string;
 }
 
 /**

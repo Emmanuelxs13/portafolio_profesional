@@ -1,122 +1,8 @@
 {
-  "es": {
-    "name": "Emmanuel Berrio Jimenez",
-    "title": "Desarrollador de Software FullStack",
-    "summary": "Programador Fullstack con 3 años de experiencia, dedicado a convertir ideas en experiencias web fluidas y memorables. Domino tecnologías como HTML, CSS, Sass, React.js, Vue.js y Angular, así como desarrollos backend en C#, ASP.NET, PHP y Node.js. Trabajo con MySQL y PostgreSQL, y manejo Git con soltura. Con iniciativa, aprendizaje rápido y una visión siempre abierta a la innovación, aporto dinamismo y claridad técnica para destacar en entornos de desarrollo exigentes.",
-    "experience": [
-      {
-        "id": "exp-1",
-        "company": "Botopia",
-        "title": "Desarrollador de Software Fullstack",
-        "description": "Desarrollo de soluciones fullstack utilizando tecnologías modernas. Implementación de aplicaciones web escalables y mantenibles con enfoque en la experiencia de usuario y rendimiento.",
-        "achievements": [
-          "Desarrollo de aplicaciones web con React.js y Vue.js",
-          "Implementación de APIs RESTful con Node.js y PHP",
-          "Gestión de bases de datos MySQL y PostgreSQL",
-          "Colaboración efectiva en equipo usando metodologías ágiles"
-        ]
-      },
-      {
-        "id": "exp-2",
-        "company": "Muv-u Estudios en el Exterior",
-        "title": "Programador de Sistemas",
-        "description": "MUV-U es una empresa líder dedicada a programas de estudios en el extranjero. Automatización de procesos internos mediante desarrollo de aplicaciones y herramientas de Microsoft 365.",
-        "achievements": [
-          "Automatización de procesos internos mediante desarrollo de aplicaciones",
-          "Soporte tecnológico en Hardware y Software a colaboradores",
-          "Soporte en el CRM Ontraport",
-          "Implementación de soluciones con React.js y Tailwind CSS"
-        ]
-      },
-      {
-        "id": "exp-3",
-        "company": "Portada Inmobiliaria S.A.S",
-        "title": "Programador Full Stack",
-        "description": "Portada Inmobiliaria es una agencia dedicada al proceso de compra, venta o alquiler de propiedades. Desarrollo y programación de secciones especiales para el CRM propio de la empresa.",
-        "achievements": [
-          "Creación y programación de secciones especiales para el CRM propio",
-          "Soporte tecnológico de software a los colaboradores",
-          "Mejora y automatización de procesos internos",
-          "Manejo de servidor de datos a nivel local",
-          "Implementación de librerías como Mpdf para generación de documentos"
-        ]
-      }
-    ],
-    "education": [
-      {
-        "id": "edu-1",
-        "institution": "I.U Pascual Bravo",
-        "degree": "Ingeniería en Desarrollo de Software",
-        "field": "Ingeniería de Software",
-        "description": "Formación en ingeniería de software con enfoque en desarrollo full stack y mejores prácticas de programación."
-      },
-      {
-        "id": "edu-2",
-        "institution": "Institución Universitaria Salazar y Herrera - IUSH",
-        "degree": "Técnico en Programación de Software",
-        "field": "Programación de Software",
-        "description": "Formación técnica en programación de software con énfasis en desarrollo web y bases de datos."
-      },
-      {
-        "id": "edu-3",
-        "institution": "SENA",
-        "degree": "Técnico en Programación de Software",
-        "field": "Programación de Software",
-        "description": "Programa técnico del SENA enfocado en fundamentos de programación y desarrollo de aplicaciones."
-      },
-      {
-        "id": "edu-4",
-        "institution": "Universidad de Antioquia",
-        "degree": "Certificado de Inglés B2",
-        "field": "Idiomas",
-        "description": "Programa de formación en inglés alcanzando nivel B2 (intermedio-avanzado)."
-      }
-    ],
-    "projects": [
-      {
-        "id": "proj-1",
-        "title": "CRM Portada Inmobiliaria",
-        "description": "Sistema CRM personalizado para gestión inmobiliaria con módulos especiales para administración de propiedades, clientes y generación de documentos.",
-        "longDescription": "Desarrollo de secciones especiales para el CRM propio de Portada Inmobiliaria. Implementación de funcionalidades para gestión de propiedades, automatización de procesos internos y generación de documentos PDF. Sistema completo con backend en PHP y frontend en React/Vue.js."
-      },
-      {
-        "id": "proj-2",
-        "title": "Sistema de Automatización Muv-u",
-        "description": "Herramientas de automatización de procesos internos para empresa de estudios en el extranjero, integrado con Microsoft 365 y CRM Ontraport.",
-        "longDescription": "Desarrollo de aplicaciones para automatización de procesos internos en Muv-u Estudios en el Exterior. Integración con Microsoft 365 y soporte del CRM Ontraport. Implementación de soluciones con React.js y Tailwind CSS para mejorar la eficiencia operativa."
-      }
-    ],
-    "references": [
-      {
-        "id": "ref-1",
-        "name": "Tatiana Díaz",
-        "title": "Comunicadora y Mercadóloga",
-        "company": "Muv-u Estudios en el Exterior",
-        "relationship": "Compañera de trabajo (distintos equipos)",
-        "recommendation": "Emmanuel es un profesional con grandes habilidades técnicas y blandas, destaco su actitud de servicio y colaboración en todo momento, pues evidencia su capacidad de trabajo en equipo y conocimientos para dar soluciones y aportar desde su rol. Asimismo, su disposición para aprender es muy valiosa, dado que afrontaba retos laborales con gran éxito. Finalmente, su integridad profesional, responsabilidad y respeto hacia otros hace de Emmanuel un gran colaborador."
-      },
-      {
-        "id": "ref-2",
-        "name": "Sebastián López Osorno",
-        "title": "Desarrollador Backend CRM",
-        "company": "Muv-u Estudios en el Exterior",
-        "relationship": "Compañero de equipo",
-        "recommendation": "Es un placer recomendar a Emmanuel como un gran desarrollador de software. Durante nuestro tiempo juntos en MUV-U, pude apreciar su gran capacidad de aprendizaje, autonomía y su deseo constante de crecimiento profesional. Su actitud proactiva y su disposición para trabajar en equipo lo convierten en un miembro valioso para cualquier proyecto o empresa. Estoy seguro de que Emmanuel continuará destacándose."
-      },
-      {
-        "id": "ref-3",
-        "name": "Laura Alejandra García",
-        "title": "Especialista en Marketing Digital",
-        "company": "Muv-u Estudios en el Exterior",
-        "relationship": "Compañera de equipo",
-        "recommendation": "Emmanuel destaca como un joven sumamente responsable y comprometido, con una destacada habilidad para gestionar eficientemente sus tareas. Su destreza en el trabajo en equipo es notable, y siempre aporta propuestas innovadoras que enriquecen los procesos llevados a cabo en diversas áreas de la empresa. Demuestra eficientemente sus habilidades de programación en diversos lenguajes y tiene gran disposición para seguir creciendo como profesional."
-      }
-    ]
-  },
   "en": {
     "name": "Emmanuel Berrio Jimenez",
     "title": "FullStack Software Developer",
-    "summary": "Fullstack programmer with 3 years of experience, dedicated to transforming ideas into fluid and memorable web experiences. I master technologies such as HTML, CSS, Sass, React.js, Vue.js and Angular, as well as backend development in C#, ASP.NET, PHP and Node.js. I work with MySQL and PostgreSQL, and handle Git fluently. With initiative, fast learning and a vision always open to innovation, I bring dynamism and technical clarity to excel in demanding development environments.",
+    "summary": "Fullstack programmer with more than 4 years of experience, dedicated to transforming ideas into fluid and memorable web experiences. I master technologies such as HTML, CSS, Sass, React.js, Vue.js and Angular, as well as backend development in C#, ASP.NET, PHP and Node.js. I work with MySQL and PostgreSQL, and handle Git fluently. With initiative, fast learning and a vision always open to innovation, I bring dynamism and technical clarity to excel in demanding development environments.",
     "experience": [
       {
         "id": "exp-1",
@@ -154,6 +40,24 @@
           "Management of local data server",
           "Implementation of libraries such as Mpdf for document generation"
         ]
+      },
+      {
+        "id": "exp-4",
+        "company": "TIVENOS - Solutions for Education",
+        "title": "FullStack Programmer - Zoho CRM",
+        "description": "TIVENOS is an EdTech leader that transforms the educational ecosystem. As a FullStack Programmer, I develop automated workflows between internal systems and Zoho CRM, provide level 3 support and administer Linux servers ensuring stability, security and high availability.",
+        "achievements": [
+          "Automation of workflows between internal systems and Zoho CRM (Python + FastAPI)",
+          "Resolution of level 3 support incidents (complex business logic and architecture)",
+          "Administration of Linux servers (stability, security and high availability)",
+          "Design of robust and scalable backend architectures"
+        ]
+      },
+      {
+        "id": "exp-5",
+        "company": "Freelance",
+        "title": "FullStack Programmer",
+        "description": "Development of fullstack web solutions as an independent professional, focused on building functional, high-quality products for every project."
       }
     ],
     "education": [
@@ -198,6 +102,26 @@
         "title": "Muv-u Automation System",
         "description": "Internal process automation tools for study abroad company, integrated with Microsoft 365 and Ontraport CRM.",
         "longDescription": "Development of applications for automation of internal processes at Muv-u Study Abroad. Integration with Microsoft 365 and support of Ontraport CRM. Implementation of solutions with React.js and Tailwind CSS to improve operational efficiency."
+      },
+      {
+        "id": "proj-3",
+        "title": "iMagiQ",
+        "description": "Official authorized Samsung Colombia store. In charge of the entire frontend of the e-commerce platform, delivering a fluid and modern shopping experience.",
+        "longDescription": "iMagiQ is an official authorized retailer of Samsung Colombia. As the developer in charge of the entire frontend, I built the complete interface of its official store, ensuring a fluid, modern user experience aligned with the brand.",
+        "role": "Frontend Developer",
+        "highlights": [
+          "Complete frontend development of Samsung Colombia's official store"
+        ]
+      },
+      {
+        "id": "proj-4",
+        "title": "Origination Latam",
+        "description": "BTL (Below The Line) agency specialized in strategies, events and campaigns that connect with your audience. Complete construction of the agency's website.",
+        "longDescription": "At Origination, we create BTL (Below The Line) strategies, events and campaigns that connect with your audience. As the developer, I built the agency's complete website, integrating its service offering: ephemeral architecture, corporate branding, experience marketing, corporate events, strategic communication, and transportation and logistics.",
+        "role": "Web Developer",
+        "highlights": [
+          "Complete construction of the BTL agency's website"
+        ]
       }
     ],
     "references": [
