@@ -152,7 +152,7 @@ export default function Hero({
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('#projects')}
-              className="group inline-flex items-center gap-3 px-7 py-3.5 bg-(--color-accent) text-(--color-ink) font-semibold uppercase tracking-[0.25em] text-xs shadow-[0_20px_40px_rgba(227,59,46,0.25)]"
+              className="group inline-flex items-center gap-3 px-7 py-3.5 bg-(--color-accent) text-(--color-ink) font-semibold uppercase tracking-[0.25em] text-xs shadow-(--shadow-accent-glow) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-focus-ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--color-bg)"
             >
               {t('hero.cta')}
               <ArrowDownIcon className="h-4 w-4 group-hover:translate-y-0.5 transition-transform duration-300" />
@@ -162,7 +162,7 @@ export default function Hero({
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('#contact')}
-              className="inline-flex items-center gap-2 px-7 py-3.5 border border-(--color-line) text-(--color-ink) uppercase tracking-[0.25em] text-xs"
+              className="inline-flex items-center gap-2 px-7 py-3.5 border border-(--color-line) text-(--color-ink) uppercase tracking-[0.25em] text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-focus-ring) focus-visible:ring-offset-2 focus-visible:ring-offset-(--color-bg)"
             >
               <EnvelopeIcon className="h-4 w-4" />
               {t('hero.ctaSecondary')}
@@ -176,18 +176,18 @@ export default function Hero({
           </div>
           <div className="border border-(--color-line) bg-(--color-panel) p-8">
             <div className="text-(--color-muted) text-xs uppercase tracking-[0.4em] mb-6">
-              {t('Informacion')}
+              {t('hero.info')}
             </div>
             
             <div className="mt-8 h-px bg-(--color-line)" />
             <div className="mt-6 text-sm text-(--color-muted)">
-              Interfaces elaboradas, sistemas resilientes, impacto medible.
+              {t('hero.impact')}
             </div>
 
             <div className="mt-8 grid gap-4 text-xs uppercase tracking-[0.2em] text-(--color-muted)">
               {location && (
                 <div className="flex items-center justify-between border-b border-(--color-line) pb-3">
-                  <span>Ubicación</span>
+                  <span>{t('hero.location')}</span>
                   <span className="text-(--color-ink) normal-case tracking-normal">{location}</span>
                 </div>
               )}

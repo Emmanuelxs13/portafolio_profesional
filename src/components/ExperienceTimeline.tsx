@@ -1,12 +1,14 @@
 /**
- * Componente ExperienceTimeline (Mejorado)
- * Timeline horizontal en desktop con diseño moderno y mejor UX
+ * Componente ExperienceTimeline
+ *
+ * Timeline vertical (spine + dots, cards a la derecha) que renderiza N roles
+ * desde el modelo de perfil, ordenados del más reciente al más antiguo.
+ * - Badge CURRENT localizado cuando `current` es true, junto al periodo formateado
+ *   (con fecha de fin explícita).
+ * - Sin columnas fijas: escala a N >= 1, sin solapamiento ni overflow horizontal.
+ * - Micro-interacciones CSS (respetan `prefers-reduced-motion`).
  */
 
-'use client';
-
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
 import {
   BriefcaseIcon,
   CalendarIcon,
@@ -22,234 +24,157 @@ interface ExperienceTimelineProps {
   locale: string;
 }
 
+/**
+ * Ordena los roles del más reciente al más antiguo por fecha de inicio
+ * (formato YYYY-MM, orden lexicográfico válido). Empates: id para orden estable.
+ */
+export function sortExperiencesNewestFirst(experiences: Experience[]): Experience[] {
+  return [...experiences].sort((a, b) => b.from.localeCompare(a.from) || a.id.localeCompare(b.id));
+}
+
 export default function ExperienceTimeline({
   t,
   experiences,
   locale,
 }: Readonly<ExperienceTimelineProps>) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start end', 'end start'],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const sorted = sortExperiencesNewestFirst(experiences);
 
   return (
     <section
-      ref={containerRef}
       id="experience"
+      aria-labelledby="experience-title"
       className="relative py-24 md:py-36 bg-(--color-bg) overflow-hidden"
     >
       {/* Decoración de fondo */}
-      <motion.div style={{ opacity }} className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-10 w-64 h-64 bg-(--color-accent-2)/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-10 w-80 h-80 bg-(--color-accent)/10 rounded-full blur-3xl" />
-      </motion.div>
+      <div aria-hidden className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-10 w-64 h-64 bg-(--color-gradient-start)/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-10 w-80 h-80 bg-(--color-gradient-mid)/10 rounded-full blur-3xl" />
+      </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ type: 'spring', stiffness: 200 }}
-            className="inline-flex items-center justify-center w-16 h-16 bg-(--color-accent) rounded-2xl mb-6 shadow-xl shadow-black/40"
-          >
-            <BriefcaseIcon className="h-8 w-8 text-white" />
-          </motion.div>
-          <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-(--color-ink)">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-(--color-accent) rounded-(--radius-card) mb-6 shadow-(--shadow-card)">
+            <BriefcaseIcon className="h-8 w-8 text-(--color-ink)" aria-hidden="true" />
+          </div>
+          <h2 id="experience-title" className="text-3xl md:text-5xl font-semibold mb-4 text-(--color-ink)">
             {t('experience.title')}
           </h2>
           <p className="text-lg text-(--color-muted) max-w-2xl mx-auto">
             {t('experience.subtitle')}
           </p>
-        </motion.div>
+        </div>
 
-        {/* Timeline - Horizontal en desktop, vertical en mobile */}
+        {/* Spine vertical: línea + dots, tarjetas a la derecha */}
         <div className="relative">
-          {/* Mobile: Timeline vertical */}
-          <div className="md:hidden space-y-8">
-            {experiences.map((exp, index) => (
-              <ExperienceCard key={exp.id} exp={exp} index={index} locale={locale} t={t} isMobile />
+          <div
+            aria-hidden
+            className="absolute bottom-4 left-4 top-4 w-px bg-linear-to-b from-(--color-accent)/70 via-(--color-border) to-transparent md:left-7"
+          />
+          <ol className="space-y-10">
+            {sorted.map((exp) => (
+              <ExperienceCard key={exp.id} exp={exp} locale={locale} t={t} />
             ))}
-          </div>
-
-          {/* Desktop: Timeline horizontal con grid */}
-          <div className="hidden md:block">
-            <div className="relative">
-              {/* Línea horizontal */}
-              <div className="absolute top-32 left-0 right-0 h-px bg-linear-to-r from-transparent via-(--color-line) to-transparent" />
-
-              {/* Grid horizontal */}
-              <div className="grid grid-cols-3 gap-8">
-                {experiences.map((exp, index) => (
-                  <ExperienceCard
-                    key={exp.id}
-                    exp={exp}
-                    index={index}
-                    locale={locale}
-                    t={t}
-                    isMobile={false}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+          </ol>
         </div>
       </div>
     </section>
   );
 }
 
-// Componente de tarjeta de experiencia
 interface ExperienceCardProps {
   exp: Experience;
-  index: number;
   locale: string;
   t: (key: string) => string;
-  isMobile: boolean;
 }
 
-function ExperienceCard({ exp, index, locale, t, isMobile }: ExperienceCardProps) {
-  const cardVariants = {
-    hidden: { opacity: 0, y: isMobile ? 30 : 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring' as const,
-        stiffness: 100,
-        damping: 12,
-        delay: index * 0.2,
-      },
-    },
-  };
-
+function ExperienceCard({ exp, locale, t }: ExperienceCardProps) {
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-100px' }}
-      variants={cardVariants}
-      whileHover={{ y: -8, scale: 1.02 }}
-      className="relative group"
-    >
-      {/* Indicador circular en timeline (solo desktop) */}
-      {!isMobile && (
-        <motion.div
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.2 + 0.3, type: 'spring' }}
-          className="absolute -top-2 left-1/2 transform -translate-x-1/2 z-10"
-        >
-          <div className="w-12 h-12 bg-(--color-accent) rounded-full flex items-center justify-center shadow-lg shadow-black/40 group-hover:scale-125 transition-transform duration-300">
-            <div className="w-4 h-4 bg-white rounded-full" />
-          </div>
-        </motion.div>
-      )}
+    <li className="relative">
+      {/* Indicador sobre la línea */}
+      <span aria-hidden className="absolute left-4 md:left-7 top-9 -translate-x-1/2 z-10">
+        <span className="block w-3.5 h-3.5 rounded-full bg-(--color-accent) ring-4 ring-(--color-accent)/25" />
+      </span>
 
-      {/* Tarjeta */}
-      <div
-        className={`bg-(--color-panel) rounded-2xl p-6 lg:p-8 border border-(--color-line) shadow-xl hover:shadow-2xl hover:shadow-black/40 backdrop-blur-sm transition-all duration-300 ${!isMobile ? 'mt-20' : ''}`}
-      >
-        {/* Efectos decorativos */}
-        <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-(--color-accent)/0 via-(--color-accent-2)/0 to-transparent group-hover:from-(--color-accent)/10 group-hover:via-(--color-accent-2)/5 transition-all duration-500" />
-        <div className="absolute top-0 right-0 w-32 h-32 bg-(--color-accent)/10 rounded-full blur-3xl group-hover:bg-(--color-accent)/20 transition-all duration-500" />
+      <article className="group relative ml-10 md:ml-14 rounded-(--radius-card) border border-(--color-border) bg-(--color-surface-2) p-6 lg:p-8 shadow-(--shadow-card) transition-all duration-(--duration-base) ease-(--ease-out-soft) hover:-translate-y-1 hover:border-(--color-border-strong) hover:shadow-(--shadow-card-raised)">
+        {/* Efecto decorativo en hover */}
+        <div
+          aria-hidden
+          className="absolute inset-0 rounded-(--radius-card) bg-linear-to-br from-(--color-gradient-start)/10 via-(--color-gradient-mid)/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-(--duration-base) pointer-events-none"
+        />
 
-        <div className="relative z-10">
-          {/* Header */}
-          <div className="flex items-start gap-4 mb-4">
-            <div className="shrink-0 w-12 h-12 bg-(--color-panel-2) rounded-xl flex items-center justify-center border border-(--color-line) group-hover:scale-110 transition-transform duration-300">
-              <BriefcaseIcon className="h-6 w-6 text-(--color-accent)" />
-            </div>
-            <div className="grow">
-              <h3 className="text-xl lg:text-2xl font-semibold text-(--color-ink) group-hover:text-(--color-accent-2) transition-colors duration-300 mb-1">
+        <div className="relative">
+          <header className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2 mb-4">
+            <div>
+              <h3 className="text-xl lg:text-2xl font-semibold text-(--color-ink) group-hover:text-(--color-accent-2) transition-colors duration-(--duration-base)">
                 {exp.title}
               </h3>
               <p className="text-(--color-accent-2) font-medium">{exp.company}</p>
+              {exp.location && (
+                <p className="text-sm text-(--color-text-tertiary)">{exp.location}</p>
+              )}
             </div>
-          </div>
+            {exp.current && (
+              <span className="inline-flex items-center gap-1.5 rounded-(--radius-pill) border border-(--color-accent)/25 bg-(--color-accent)/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-(--color-accent-hover)">
+                <SparklesIcon className="h-3.5 w-3.5" aria-hidden="true" />
+                {t('experience.current')}
+              </span>
+            )}
+          </header>
 
-          {/* Fechas y duración */}
-          <div className="flex items-center gap-2 text-sm text-(--color-muted) mb-4 pb-4 border-b border-(--color-line)">
-            <CalendarIcon className="h-4 w-4 shrink-0" />
-            <span>
-              {formatDate(exp.from, locale)} - {formatDate(exp.to, locale)}
+          {/* Periodo y duración */}
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-(--color-muted) mb-4 pb-4 border-b border-(--color-border)">
+            <CalendarIcon className="h-4 w-4 shrink-0" aria-hidden="true" />
+            <time dateTime={exp.from}>{formatDate(exp.from, locale)}</time>
+            <span aria-hidden>–</span>
+            <time dateTime={exp.to}>{formatDate(exp.to, locale)}</time>
+            <span className="text-(--color-border-strong)" aria-hidden>
+              •
             </span>
-            <span className="text-(--color-line)">•</span>
-            <span className="text-(--color-muted)">
-              {calculateDuration(exp.from, exp.to, locale)}
-            </span>
-          </div>
+            <span>{calculateDuration(exp.from, exp.to, locale)}</span>
+          </p>
 
           {/* Descripción */}
-          <p className="text-(--color-muted) text-sm leading-relaxed mb-4 group-hover:text-(--color-ink) transition-colors duration-300">
+          <p className="text-(--color-muted) text-sm leading-relaxed mb-5 group-hover:text-(--color-ink) transition-colors duration-(--duration-base)">
             {exp.description}
           </p>
 
-          {/* Logros */}
-          {exp.achievements && exp.achievements.length > 0 && (
-            <div className="space-y-2 mb-4">
-              <div className="flex items-center gap-2 text-sm font-medium text-(--color-ink)">
-                <SparklesIcon className="h-4 w-4 text-(--color-accent-2)" />
+          {/* Logros — sin bloque cuando la lista está vacía */}
+          {exp.achievements.length > 0 && (
+            <div className="space-y-2 mb-5">
+              <p className="flex items-center gap-2 text-sm font-medium text-(--color-ink)">
+                <SparklesIcon className="h-4 w-4 text-(--color-accent-2)" aria-hidden="true" />
                 {t('experience.achievements')}
-              </div>
-              <ul className="space-y-2 pl-6">
-                {exp.achievements.slice(0, 3).map((achievement, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.2 + i * 0.1 }}
-                    className="flex items-start gap-2 text-sm text-(--color-muted) group-hover:text-(--color-ink) transition-colors duration-300"
+              </p>
+              <ul className="space-y-2">
+                {exp.achievements.map((achievement, i) => (
+                  <li
+                    key={`${exp.id}-achievement-${i}`}
+                    className="flex items-start gap-2 text-sm text-(--color-muted)"
                   >
-                    <CheckCircleIcon className="h-4 w-4 text-(--color-accent) shrink-0 mt-0.5" />
+                    <CheckCircleIcon className="h-4 w-4 text-(--color-accent) shrink-0 mt-0.5" aria-hidden="true" />
                     <span className="leading-relaxed">{achievement}</span>
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
             </div>
           )}
 
-          {/* Tecnologías */}
-          {exp.technologies && exp.technologies.length > 0 && (
-            <div className="pt-4 border-t border-(--color-line)">
-              <div className="flex flex-wrap gap-2">
-                {exp.technologies.slice(0, 6).map((tech, i) => (
-                  <motion.span
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: index * 0.2 + i * 0.05 }}
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    className="px-3 py-1.5 bg-(--color-panel-2) text-(--color-ink) text-xs uppercase tracking-[0.15em] rounded-full border border-(--color-line) backdrop-blur-sm transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-black/30"
-                  >
-                    {tech}
-                  </motion.span>
-                ))}
-                {exp.technologies.length > 6 && (
-                  <span className="px-3 py-1.5 text-(--color-muted) text-xs font-medium">
-                    +{exp.technologies.length - 6} más
-                  </span>
-                )}
-              </div>
+          {/* Tecnologías — sin bloque cuando la lista está vacía */}
+          {exp.technologies.length > 0 && (
+            <div className="flex flex-wrap gap-2 pt-4 border-t border-(--color-border)">
+              {exp.technologies.map((tech) => (
+                <span
+                  key={`${exp.id}-tech-${tech}`}
+                  className="px-3 py-1.5 bg-(--color-surface-3) text-(--color-text-secondary) text-xs uppercase tracking-[0.15em] rounded-(--radius-pill) border border-(--color-border) backdrop-blur-sm transition-all duration-(--duration-base) group-hover:border-(--color-border-strong)"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
           )}
         </div>
-
-        {/* Borde brillante animado en hover */}
-        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-          <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-(--color-accent) via-(--color-accent-2) to-(--color-accent) opacity-20 blur-xl" />
-        </div>
-      </div>
-    </motion.div>
+      </article>
+    </li>
   );
 }
