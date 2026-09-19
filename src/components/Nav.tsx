@@ -25,8 +25,8 @@ import type { Locale } from '@/hooks/useI18n';
 const navigation = [
   { name: 'nav.home', href: '/' },
   { name: 'nav.about', href: '#about' },
+  { name: 'nav.projects', href: '#projects' },
   { name: 'nav.experience', href: '#experience' },
-  /* { name: 'nav.projects', href: '#projects' }, */
   { name: 'nav.certificates', href: '#certificates' },
   { name: 'nav.contact', href: '#contact' },
 ];
@@ -155,7 +155,7 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-3 text-(--color-muted) hover:bg-(--color-panel) transition-colors"
             onClick={() => setMobileMenuOpen(true)}
           >
-            <span className="sr-only">Open main menu</span>
+            <span className="sr-only">{t('nav.openMenu')}</span>
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
@@ -244,7 +244,7 @@ export default function Nav({ t, locale, onLanguageChange }: NavProps) {
                   className="-m-2.5 rounded-md p-2.5 text-(--color-muted)"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="sr-only">Close menu</span>
+                  <span className="sr-only">{t('nav.closeMenu')}</span>
                   <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
               </div>

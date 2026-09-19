@@ -22,5 +22,19 @@ describe('useI18n dictionary', () => {
     expect(translations.en['projects.badge']).toBe('Featured');
     expect(translations.es['contact.form.emailInvalid']).toBe('Ingresa un email válido');
     expect(translations.en['contact.form.emailInvalid']).toBe('Enter a valid email');
+    expect(translations.es['contact.form.nameTooShort']).toBe(
+      'El nombre debe tener al menos 2 caracteres'
+    );
+    expect(translations.en['contact.form.nameTooShort']).toBe(
+      'Name must be at least 2 characters'
+    );
+    expect(translations.es['contact.form.messageTooShort']).toBe(
+      'El mensaje debe tener al menos 10 caracteres'
+    );
+    expect(translations.en['contact.form.messageTooShort']).toBe(
+      'Message must be at least 10 characters'
+    );
+    expect(translations.es['contact.mailto.send']).toBe('Enviar por email');
+    expect(translations.en['contact.mailto.send']).toBe('Send via email');
   });
 });
