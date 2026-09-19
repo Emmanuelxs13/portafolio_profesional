@@ -1,6 +1,11 @@
 /**
  * Layout principal de la aplicación
- * Envuelve todas las páginas con providers y metadata global
+ * Envuelve todas las páginas con providers y metadata global.
+ *
+ * El documento se sirve con los defaults en español (lang, metadata, JSON-LD)
+ * visibles para crawlers sin JavaScript; LocaleDocumentSync (cliente) mantiene
+ * html.lang, los meta tags y el JSON-LD sincronizados con el idioma activo
+ * tras la hidratación y en cada cambio de locale.
  */
 
 import type { Metadata, Viewport } from 'next';
@@ -9,6 +14,17 @@ import './globals.css';
 import { I18nProvider } from '@/hooks/useI18n';
 import ClientWhatsAppButton from '@/components/ClientWhatsAppButton';
 import AppConfig from '@/components/AppConfig';
+import SkipLink from '@/components/SkipLink';
+import LocaleDocumentSync from '@/components/LocaleDocumentSync';
+import { getProfileSync } from '@/lib/api';
+import {
+  buildJsonLd,
+  getDocumentMeta,
+  OG_IMAGE_PATH,
+  personDataFromProfile,
+  SITE_NAME,
+  SITE_URL,
+} from '@/lib/document-meta';
 
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],
@@ -22,10 +38,13 @@ const workSans = Work_Sans({
   display: 'swap',
 });
 
+const defaultMeta = getDocumentMeta('es');
+const defaultJsonLd = buildJsonLd(personDataFromProfile(getProfileSync('es')));
+
 export const metadata: Metadata = {
-  title: 'Emmanuel Berrio Jiménez | Full-Stack Developer',
-  description:
-    'Portafolio profesional de Emmanuel Berrio Jiménez - Desarrollador Full-Stack especializado en React, Next.js, TypeScript y Node.js',
+  metadataBase: new URL(SITE_URL),
+  title: defaultMeta.title,
+  description: defaultMeta.description,
   keywords: [
     'Emmanuel Berrio',
     'Full-Stack Developer',
@@ -39,17 +58,26 @@ export const metadata: Metadata = {
   creator: 'Emmanuel Berrio Jiménez',
   openGraph: {
     type: 'website',
-    locale: 'es_ES',
+    locale: defaultMeta.ogLocale,
     alternateLocale: ['en_US'],
-    url: 'https://emmanuelberrio.dev',
-    title: 'Emmanuel Berrio Jiménez | Full-Stack Developer',
-    description: 'Portafolio profesional de Emmanuel Berrio Jiménez',
-    siteName: 'Emmanuel Berrio Portfolio',
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: defaultMeta.ogTitle,
+    description: defaultMeta.ogDescription,
+    images: [
+      {
+        url: OG_IMAGE_PATH,
+        width: 1200,
+        height: 630,
+        alt: 'Emmanuel Berrio Jiménez — Full-Stack Developer',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Emmanuel Berrio Jiménez | Full-Stack Developer',
-    description: 'Portafolio profesional de Emmanuel Berrio Jiménez',
+    title: defaultMeta.twitterTitle,
+    description: defaultMeta.twitterDescription,
+    images: [OG_IMAGE_PATH],
   },
 };
 
@@ -65,10 +93,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${bodoni.variable} ${workSans.variable}`}>
+    <html lang={defaultMeta.lang} className={`${bodoni.variable} ${workSans.variable}`}>
       <body className="antialiased">
-        <AppConfig />
+        {/* JSON-LD base servido desde el servidor (es): los crawlers lo ven sin JS */}
+        <script
+          type="application/ld+json"
+          id="json-ld"
+          dangerouslySetInnerHTML={{ __html: defaultJsonLd }}
+        />
         <I18nProvider>
+          <SkipLink />
+          <LocaleDocumentSync />
+          <AppConfig />
           {children}
           <ClientWhatsAppButton />
         </I18nProvider>

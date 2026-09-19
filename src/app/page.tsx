@@ -49,7 +49,7 @@ export default function Home() {
       <Nav t={t} locale={locale} onLanguageChange={setLocale} />
 
       {/* Contenido principal */}
-      <main id="main">
+      <main id="main" tabIndex={-1}>
         {/* Hero Section */}
         <Hero
           t={t}
