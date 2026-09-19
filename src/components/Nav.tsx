@@ -25,8 +25,8 @@ import type { Locale } from '@/hooks/useI18n';
 const navigation = [
   { name: 'nav.home', href: '/' },
   { name: 'nav.about', href: '#about' },
+  { name: 'nav.projects', href: '#projects' },
   { name: 'nav.experience', href: '#experience' },
-  /* { name: 'nav.projects', href: '#projects' }, */
   { name: 'nav.certificates', href: '#certificates' },
   { name: 'nav.contact', href: '#contact' },
 ];

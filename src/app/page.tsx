@@ -16,7 +16,7 @@ import { getProfileSync, getStatsSync } from '@/lib/api';
 
 const ExperienceTimeline = dynamic(() => import('@/components/ExperienceTimeline'));
 const EducationTimeline = dynamic(() => import('@/components/EducationTimeline'));
-/* const ProjectsGrid = dynamic(() => import('@/components/ProjectsGrid')); */
+const ProjectsGrid = dynamic(() => import('@/components/ProjectsGrid'));
 const CertificateList = dynamic(() => import('@/components/CertificateList'));
 const ReferencesSection = dynamic(() => import('@/components/ReferencesSection'));
 const ContactForm = dynamic(() => import('@/components/ContactForm'));
@@ -49,7 +49,7 @@ export default function Home() {
       <Nav t={t} locale={locale} onLanguageChange={setLocale} />
 
       {/* Contenido principal */}
-      <main>
+      <main id="main">
         {/* Hero Section */}
         <Hero
           t={t}
@@ -63,6 +63,11 @@ export default function Home() {
           website={profile.website}
         />
 
+        {/* Projects Section */}
+        <div className="deferred-section">
+          <ProjectsGrid t={t} projects={profile.projects} />
+        </div>
+
         {/* About Section */}
         <About t={t} summary={profile.summary} stats={stats} locale={locale} />
 
@@ -75,11 +80,6 @@ export default function Home() {
         <div className="deferred-section">
           <EducationTimeline t={t} education={profile.education} />
         </div>
-
-        {/* Projects Section */}
-        {/*   <div className="deferred-section">
-          <ProjectsGrid t={t} projects={profile.projects} />
-        </div> */}
 
         {/* Certificates Section */}
         <div className="deferred-section">
