@@ -8,6 +8,7 @@ import { Bodoni_Moda, Work_Sans } from 'next/font/google';
 import './globals.css';
 import { I18nProvider } from '@/hooks/useI18n';
 import ClientWhatsAppButton from '@/components/ClientWhatsAppButton';
+import AppConfig from '@/components/AppConfig';
 
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],
@@ -66,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${bodoni.variable} ${workSans.variable}`}>
       <body className="antialiased">
+        <AppConfig />
         <I18nProvider>
           {children}
           <ClientWhatsAppButton />

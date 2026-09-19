@@ -8,6 +8,7 @@
 import { motion } from 'framer-motion';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import { useI18n } from '@/hooks/useI18n';
+import ContactFormPanel from '@/components/ContactFormPanel';
 
 export default function ContactForm() {
   const { t } = useI18n();
@@ -116,6 +117,9 @@ export default function ContactForm() {
           </div>
         </motion.a>
       </div>
+
+      {/* Form or mailto fallback, decided by the server-injected SMTP signal */}
+      <ContactFormPanel />
     </div>
   );
 }
