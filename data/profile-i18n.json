@@ -66,28 +66,54 @@
         "institution": "I.U Pascual Bravo",
         "degree": "Software Development Engineering",
         "field": "Software Engineering",
-        "description": "Training in software engineering with a focus on full stack development and programming best practices."
+        "description": "Full Software Development Engineering curriculum covering programming, logic and algorithms, Object-Oriented Programming, databases, quality assurance and software architecture. Training focused on building software that is functional, tested and maintainable, with team collaboration under agile methodologies.",
+        "highlights": [
+          "Programming and logic fundamentals: algorithms, control structures, functions and problem decomposition",
+          "Object-Oriented Programming: classes, inheritance, abstraction and encapsulation",
+          "Data modeling and relational databases: schema design and SQL queries",
+          "Testing and quality assurance: test case design, unit and integration testing, and acceptance criteria",
+          "Software engineering: Git version control, team collaboration and project lifecycle under an agile methodology (SCRUM)"
+        ]
       },
       {
         "id": "edu-2",
         "institution": "Salazar y Herrera University Institution - IUSH",
         "degree": "Software Programming Technician",
         "field": "Software Programming",
-        "description": "Technical training in software programming with emphasis on web development and databases."
+        "description": "Technical training in software programming with a focus on web development and databases. Every subject was built around a real deliverable, assembling complete applications with front-end, back-end and database work from the earliest semesters.",
+        "highlights": [
+          "Programming fundamentals: programming logic, data structures and debugging",
+          "Front-end web development: HTML, CSS and JavaScript applied to responsive, accessible interfaces",
+          "Databases: relational table design, queries and SQL JOINs",
+          "Back-end applications: forms, server-side data validation and front-back integration",
+          "Version control and team collaboration with Git"
+        ]
       },
       {
         "id": "edu-3",
         "institution": "SENA",
         "degree": "Software Programming Technician",
         "field": "Software Programming",
-        "description": "SENA technical program focused on programming fundamentals and application development."
+        "description": "SENA technical program in software programming, delivered through a competency-based model and project-based learning. It covers the full cycle: algorithms, Object-Oriented Programming, databases, web development and testing.",
+        "highlights": [
+          "Algorithms and structured programming: variables, control structures, functions and arrays",
+          "Object-Oriented Programming: encapsulation, inheritance and polymorphism",
+          "Databases: table design, SQL and data management",
+          "Web application development: HTML, CSS and JavaScript in working pages and forms",
+          "Testing: error verification, result validation and quality control"
+        ]
       },
       {
         "id": "edu-4",
         "institution": "University of Antioquia",
         "degree": "English B2 Certificate",
         "field": "Languages",
-        "description": "English language training program achieving B2 level (upper-intermediate)."
+        "description": "English training up to B2 (upper-intermediate), a level high enough to work with English technical documentation and to communicate in international development teams.",
+        "highlights": [
+          "Technical reading in English: documentation, guides, standards and articles",
+          "Professional communication: meetings, email and project documentation",
+          "Technical vocabulary applied to software development and technology"
+        ]
       }
     ],
     "projects": [

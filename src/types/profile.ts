@@ -30,6 +30,8 @@ export interface Education {
   from: string;
   to: string;
   description?: string;
+  /** Áreas de formación o asignaturas clave, mostradas como lista con viñetas */
+  highlights?: string[];
 }
 
 /**

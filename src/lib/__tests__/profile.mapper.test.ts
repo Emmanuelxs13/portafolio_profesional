@@ -5,8 +5,8 @@
  * entries, empty achievements, and an es/en round-trip.
  */
 
-import { buildProfile, mergeExperience } from '@/lib/profile/profile.mapper';
-import type { Experience } from '@/types/profile';
+import { buildProfile, mergeEducation, mergeExperience } from '@/lib/profile/profile.mapper';
+import type { Education, Experience } from '@/types/profile';
 import profileEs from '../../../data/profile.json';
 
 describe('buildProfile — Spanish canonical source', () => {
@@ -127,6 +127,67 @@ describe('buildProfile — English per-field fallback', () => {
     expect(merged.description).toBe(base.description);
     expect(merged.achievements).toEqual(base.achievements);
     expect(merged.technologies).toEqual(base.technologies);
+  });
+});
+
+describe('buildProfile — education highlights', () => {
+  const esEducation: Education[] = buildProfile('es').education;
+
+  it('ships canonical Spanish highlights for every education entry', () => {
+    expect(esEducation).toHaveLength(4);
+    esEducation.forEach((edu) => {
+      expect(edu.highlights?.length ?? 0).toBeGreaterThan(0);
+    });
+    expect(esEducation.find((edu) => edu.id === 'edu-4')?.highlights).toHaveLength(3);
+  });
+
+  it('replaces highlights with the EN override when the locale provides one', () => {
+    const en = buildProfile('en').education;
+    const enPascual = en.find((edu) => edu.id === 'edu-1');
+    const esPascual = esEducation.find((edu) => edu.id === 'edu-1');
+    expect(enPascual?.highlights).toEqual([
+      'Programming and logic fundamentals: algorithms, control structures, functions and problem decomposition',
+      'Object-Oriented Programming: classes, inheritance, abstraction and encapsulation',
+      'Data modeling and relational databases: schema design and SQL queries',
+      'Testing and quality assurance: test case design, unit and integration testing, and acceptance criteria',
+      'Software engineering: Git version control, team collaboration and project lifecycle under an agile methodology (SCRUM)',
+    ]);
+    expect(enPascual?.highlights).not.toEqual(esPascual?.highlights);
+    expect(enPascual?.description).toContain('Software Development Engineering curriculum');
+  });
+
+  it('keeps the canonical Spanish highlights when the override omits them (merge helper)', () => {
+    const base: Education = {
+      id: 'edu-new',
+      institution: 'Acme University',
+      degree: 'Ingeniería en Desarrollo de Software',
+      field: 'Ingeniería de Software',
+      from: '2024-01',
+      to: 'present',
+      description: 'Descripción en español',
+      highlights: ['Álgebra lineal', 'Programación Orientada a Objetos'],
+    };
+    const merged = mergeEducation(base, {
+      degree: 'Software Development Engineering',
+      description: 'English description',
+    });
+    expect(merged.degree).toBe('Software Development Engineering');
+    expect(merged.description).toBe('English description');
+    expect(merged.highlights).toEqual(base.highlights);
+  });
+
+  it('returns the Spanish entry unchanged when an EN override is missing (education merge helper)', () => {
+    const base: Education = {
+      id: 'edu-new',
+      institution: 'Acme University',
+      degree: 'Ingeniería en Desarrollo de Software',
+      field: 'Ingeniería de Software',
+      from: '2024-01',
+      to: 'present',
+      description: 'Descripción en español',
+      highlights: ['Programación'],
+    };
+    expect(mergeEducation(base, undefined)).toEqual(base);
   });
 });
 

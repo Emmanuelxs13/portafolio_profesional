@@ -36,6 +36,7 @@ interface EducationOverride {
   degree?: string;
   field?: string;
   description?: string;
+  highlights?: string[];
 }
 
 interface ReferenceOverride {
@@ -84,13 +85,14 @@ export function mergeProject(base: Project, override?: Partial<Project>): Projec
   };
 }
 
-function mergeEducation(base: Education, override?: Partial<Education>): Education {
+export function mergeEducation(base: Education, override?: Partial<Education>): Education {
   if (!override) return base;
   return {
     ...base,
     ...(override.degree !== undefined ? { degree: override.degree } : {}),
     ...(override.field !== undefined ? { field: override.field } : {}),
     ...(override.description !== undefined ? { description: override.description } : {}),
+    ...(override.highlights !== undefined ? { highlights: override.highlights } : {}),
   };
 }
 

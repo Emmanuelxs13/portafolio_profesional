@@ -6,7 +6,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { AcademicCapIcon, CalendarIcon, BuildingLibraryIcon } from '@heroicons/react/24/outline';
+import {
+  AcademicCapIcon,
+  BuildingLibraryIcon,
+  CalendarIcon,
+  CheckCircleIcon,
+} from '@heroicons/react/24/outline';
 import { Education } from '@/types/profile';
 
 interface EducationTimelineProps {
@@ -155,6 +160,29 @@ export default function EducationTimeline({ t, education }: Readonly<EducationTi
                         <p className="text-(--color-muted) leading-relaxed group-hover:text-(--color-ink) transition-colors duration-300">
                           {edu.description}
                         </p>
+                      )}
+
+                      {/* Áreas de formación — sin bloque cuando la lista está vacía */}
+                      {edu.highlights && edu.highlights.length > 0 && (
+                        <div className="mt-4">
+                          <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-(--color-muted) mb-3">
+                            {t('education.highlights')}
+                          </p>
+                          <ul className="space-y-2">
+                            {edu.highlights.map((highlight, i) => (
+                              <li
+                                key={`${edu.id}-highlight-${i}`}
+                                className="flex items-start gap-2 text-sm text-(--color-muted) group-hover:text-(--color-ink) transition-colors duration-300"
+                              >
+                                <CheckCircleIcon
+                                  className="h-4 w-4 text-(--color-accent) shrink-0 mt-0.5"
+                                  aria-hidden="true"
+                                />
+                                <span className="leading-relaxed">{highlight}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       )}
                     </div>
                   </div>

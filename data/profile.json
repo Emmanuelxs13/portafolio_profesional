@@ -135,7 +135,14 @@
       "field": "Ingeniería de Software",
       "from": "2024-07",
       "to": "present",
-      "description": "Formación en ingeniería de software con enfoque en desarrollo full stack y mejores prácticas de programación."
+      "description": "Plan de estudios completo en Ingeniería de Desarrollo de Software: programación, lógica y algoritmia, Programación Orientada a Objetos, bases de datos, aseguramiento de la calidad y arquitectura de software. Formación centrada en construir software funcional, probado y mantenible, con trabajo colaborativo bajo metodologías ágiles.",
+      "highlights": [
+        "Fundamentos de programación y lógica: algoritmia, estructuras de control, funciones y descomposición de problemas",
+        "Programación Orientada a Objetos: clases, herencia, abstracción y encapsulamiento",
+        "Modelado de datos y bases de datos relacionales: diseño de esquemas y consultas SQL",
+        "Pruebas de testing y aseguramiento de calidad: diseño de casos de prueba, pruebas unitarias y de integración, y criterios de aceptación",
+        "Ingeniería de software: control de versiones con Git, trabajo en equipo y ciclo de vida de un proyecto bajo metodología ágil (SCRUM)"
+      ]
     },
     {
       "id": "edu-2",
@@ -144,7 +151,14 @@
       "field": "Programación de Software",
       "from": "2022-02",
       "to": "2023-05",
-      "description": "Formación técnica en programación de software con énfasis en desarrollo web y bases de datos."
+      "description": "Formación técnica en programación de software con énfasis en desarrollo web y bases de datos. Cada asignatura se apoyó en un entregable real, construyendo aplicaciones completas con front-end, back-end y base de datos desde los primeros semestres.",
+      "highlights": [
+        "Fundamentos de programación: lógica de programación, estructuras de datos y depuración de código",
+        "Desarrollo web front-end: HTML, CSS y JavaScript aplicados a interfaces responsivas y accesibles",
+        "Bases de datos: diseño de tablas relacionales, consultas y JOINs en SQL",
+        "Aplicaciones back-end: formularios, validación de datos en el servidor e integración front-back",
+        "Control de versiones y trabajo en equipo con Git"
+      ]
     },
     {
       "id": "edu-3",
@@ -153,7 +167,14 @@
       "field": "Programación de Software",
       "from": "2022-02",
       "to": "2023-05",
-      "description": "Programa técnico del SENA enfocado en fundamentos de programación y desarrollo de aplicaciones."
+      "description": "Programa técnico del SENA en programación de software, con formación por competencias y aprendizaje basado en proyectos. Cubre el ciclo completo: algoritmos, Programación Orientada a Objetos, bases de datos, desarrollo web y pruebas.",
+      "highlights": [
+        "Algoritmia y programación estructurada: variables, estructuras de control, funciones y arreglos",
+        "Programación Orientada a Objetos: encapsulamiento, herencia y polimorfismo",
+        "Bases de datos: diseño de tablas, SQL y manejo de la información",
+        "Desarrollo de aplicaciones web: HTML, CSS y JavaScript en páginas y formularios funcionales",
+        "Pruebas: verificación de errores, validación de resultados y control de calidad"
+      ]
     },
     {
       "id": "edu-4",
@@ -162,7 +183,12 @@
       "field": "Idiomas",
       "from": "2019-08",
       "to": "2023-12",
-      "description": "Programa de formación en inglés alcanzando nivel B2 (intermedio-avanzado)."
+      "description": "Formación en inglés hasta nivel B2 (intermedio-avanzado), un nivel suficiente para trabajar con documentación técnica en inglés y comunicarme en equipos de desarrollo internacionales.",
+      "highlights": [
+        "Lectura técnica en inglés: documentación, guías, estándares y artículos",
+        "Comunicación profesional: reuniones, correo electrónico y documentación de proyectos",
+        "Vocabulario técnico aplicado al desarrollo de software y la tecnología"
+      ]
     }
   ],
 
